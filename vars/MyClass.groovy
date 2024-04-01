@@ -1,9 +1,9 @@
 class MyClass {
-  string var = 'TestString'
-  string name = 'Sergey'
-  string yami
+  String var = 'TestString'
+  String name = 'Sergey'
+  String yami
 
-  MyClass(string d2){
+  MyClass(String d2){
     this.yami = 'Darkness'
     this.d2 = d2
   }
