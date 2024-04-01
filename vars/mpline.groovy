@@ -17,11 +17,10 @@ def step1() {
 
 
 def step2(String x) {
-    when {
-            expression {
-                return x == 'true'
-            }
-        }
+    if(x == 'true')
+    {
+        return 123
+    }
     node () {
         stage ("a stage inside node"){
             // do stuff here
