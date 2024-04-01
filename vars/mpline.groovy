@@ -18,10 +18,14 @@ def step1() {
 
 def step2(String x) {
     node () {
-        stage ("a stage inside node"){
+        if (x == '1') {
+            stage ("a stage inside node"){
             echo 'This is the first stage'
             def m_class = new MyClass('Hello World')
             env.cringe = m_class.yami
+        }
+        } else {
+            echo 'Skipping...'
         }
     }
 }
@@ -36,6 +40,17 @@ def step3() {
             echo "$cringe"
             """
         }
+    }
+}
+
+def step4(){
+    when {
+        expression {
+            false == true
+        }
+    }
+    steps {
+        echo 'Tests skipped'
     }
 }
 
