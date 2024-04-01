@@ -15,7 +15,24 @@ def step1() {
     }
 }
 
+
 def step2() {
+    when {
+                expression {
+                    return 'false' == 'true'
+                }
+            }
+    node () {
+        stage ("a stage inside node"){
+            // do stuff here
+            echo 'This is the first stage'
+            def m_class = new MyClass('Hello World')
+            env.cringe = m_class.yami
+        }
+    }
+}
+
+def step3() {
     node () {
         stage ("a stage inside node2"){
             // do stuff here
