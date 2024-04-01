@@ -21,6 +21,9 @@ def step2() {
             // do stuff here
             echo 'This is the first stage'
             echo "${env.cringe}"
+            sh """
+            echo "$cringe"
+            """
         }
     }
 }
