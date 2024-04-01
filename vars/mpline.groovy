@@ -1,4 +1,5 @@
 // vars/mpline.groovy
+package mpline
 
 def call() {
     echo 'Worked!'
@@ -30,5 +31,12 @@ def mySecondStage() {
         steps {
             echo 'This is the second stage'
         }
+    }
+}
+
+
+def myNewFirstStage() {
+    stage('New First Stage') {
+        echo 'This is my new first stage'
     }
 }
