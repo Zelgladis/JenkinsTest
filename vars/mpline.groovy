@@ -1,3 +1,9 @@
+// vars/mpline.groovy
+
+def call() {
+    echo 'Worked!'
+}
+
 def myPipelineFunction2() {
     pipeline {
         agent { label 'any' }
@@ -17,7 +23,7 @@ def myPipelineFunction() {
         stages {
             stage('Hello World') {
                 steps {
-                    echo 'Hello from myPipelineFunction!'
+                    echo 'Hello from MyLibrary!'
                 }
             }
         }
