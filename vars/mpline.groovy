@@ -17,10 +17,18 @@ def myPipelineFunction2() {
     }
 }
 
-def myPipelineFunction() {
-    stage('Hello World') {
-            steps {
-                echo 'Hello from MyLibrary!'
-            }
+def myFirstStage() {
+    stage('First Stage') {
+        steps {
+            echo 'This is the first stage'
         }
+    }
+}
+
+def mySecondStage() {
+    stage('Second Stage') {
+        steps {
+            echo 'This is the second stage'
+        }
+    }
 }
