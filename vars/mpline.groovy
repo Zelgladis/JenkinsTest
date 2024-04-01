@@ -16,12 +16,12 @@ def step1() {
 }
 
 
-def step2() {
+def step2(String x) {
     when {
-                expression {
-                    return 'false' == 'true'
-                }
+            expression {
+                return x == 'true'
             }
+        }
     node () {
         stage ("a stage inside node"){
             // do stuff here
