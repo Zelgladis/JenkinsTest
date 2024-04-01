@@ -1,5 +1,4 @@
 // vars/mpline.groovy
-package mpline
 
 def call() {
     echo 'Worked!'
