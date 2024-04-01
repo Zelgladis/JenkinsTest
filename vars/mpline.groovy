@@ -18,14 +18,9 @@ def myPipelineFunction2() {
 }
 
 def myPipelineFunction() {
-    pipeline {
-        agent any
-        stages {
-            stage('Hello World') {
-                steps {
-                    echo 'Hello from MyLibrary!'
-                }
+    stage('Hello World') {
+            steps {
+                echo 'Hello from MyLibrary!'
             }
         }
-    }
 }
