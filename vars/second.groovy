@@ -1,3 +1,5 @@
+// vars/second.groovy
+
 class MyClass {
   string var = 'TestString'
   string name = 'Sergey'
