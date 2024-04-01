@@ -2,7 +2,7 @@ def myPipelineFunction() {
     pipeline {
         agent any
         stages {
-            stage('Example') {
+            stage('Hello World') {
                 steps {
                     echo 'Hello from myPipelineFunction!'
                 }
