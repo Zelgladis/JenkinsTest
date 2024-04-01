@@ -1,6 +1,6 @@
 def myPipelineFunction() {
     pipeline {
-        agent any
+        agent { label 'any' }
         stages {
             stage('Hello World') {
                 steps {
