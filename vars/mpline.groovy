@@ -6,9 +6,13 @@ def call() {
 }
 
 def myPipelineFunction() {
-    node{
-        echo "123"
-    }
+    node() {
+            stage('Build') {
+                steps {
+                    // Команды для сборки проекта на агенте 'agent1'
+                }
+            }
+        }
 }
 
 def myFirstStage() {
