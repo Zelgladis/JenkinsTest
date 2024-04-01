@@ -10,7 +10,7 @@ def step1() {
         stage ("a stage inside node"){
             // do stuff here
             echo 'This is the first stage'
-            m_class = new MyClass('Hello World')
+            def m_class = new MyClass('Hello World')
             env.cringe = m_class.yami
         }
     }
