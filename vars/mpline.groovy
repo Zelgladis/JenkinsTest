@@ -23,9 +23,11 @@ def step2(String x) {
             when {
                 x 'true'
             }
+            steps {
             echo 'This is the first stage'
             def m_class = new MyClass('Hello World')
             env.cringe = m_class.yami
+            }
         }
     }
 }
