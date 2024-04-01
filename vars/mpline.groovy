@@ -4,11 +4,10 @@ def call() {
     echo 'Worked!'
 }
 
-def step1() {
+def init_env() {
     node () {
-        stage ("a stage inside node"){
+        stage ("Init ENV"){
             // do stuff here
-            echo 'This is the first stage'
             def m_class = new MyClass('Hello World')
             env.cringe = m_class.yami
         }
@@ -16,10 +15,10 @@ def step1() {
 }
 
 
-def step2(String x) {
+def step1(String x) {
     node () {
         if (x == '1') {
-            stage ("a stage inside node"){
+            stage ("Good stage 1"){
             echo 'This is the first stage'
             def m_class = new MyClass('Hello World')
             env.cringe = m_class.yami
@@ -30,9 +29,9 @@ def step2(String x) {
     }
 }
 
-def step3() {
+def step_print() {
     node () {
-        stage ("a stage inside node2"){
+        stage ("step_print"){
             // do stuff here
             echo 'This is the first stage'
             echo "${env.cringe}"
@@ -43,7 +42,7 @@ def step3() {
     }
 }
 
-def step4(){
+def failed_step(){
     when {
         expression {
             false == true
