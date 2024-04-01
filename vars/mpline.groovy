@@ -5,16 +5,9 @@ def call() {
     echo 'Worked!'
 }
 
-def myPipelineFunction2() {
-    pipeline {
-        agent { label 'any' }
-        stages {
-            stage('Hello World') {
-                steps {
-                    echo 'Hello from myPipelineFunction!'
-                }
-            }
-        }
+def myPipelineFunction() {
+    node{
+        echo "123"
     }
 }
 
