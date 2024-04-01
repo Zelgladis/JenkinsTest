@@ -6,25 +6,21 @@ def call() {
 }
 
 def step1() {
-    node() {
-            stage('Stage1') {
-                steps {
-                    // Команды для сборки проекта на агенте 'agent1'
-                    echo 'This is the first stage'
-                }
-            }
+    node ("NodeName") {
+        stage ("a stage inside node"){
+            // do stuff here
+            echo 'This is the first stage'
         }
+    }
 }
 
 def step2() {
-    node() {
-            stage('Stage2') {
-                steps {
-                    // Команды для сборки проекта на агенте 'agent1'
-                    echo 'This is the second stage'
-                }
-            }
+    node ("NodeName2") {
+        stage ("a stage inside node2"){
+            // do stuff here
+            echo 'This is the first stage'
         }
+    }
 }
 
 def myFirstStage() {
