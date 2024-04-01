@@ -5,7 +5,7 @@ class MyClass {
   string name = 'Sergey'
   string yami
 
-  MyClass(d2){
+  MyClass(string d2){
     this.yami = 'Darkness'
     this.d2 = d2
   }
