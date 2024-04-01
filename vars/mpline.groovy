@@ -24,9 +24,9 @@ def myFirstStage() {
     }
 }
 
-def mySecondStage() {
+def mySecondStage(String envVar) {
     stage('Second Stage') {
-        echo 'This is the second stage'
+        echo "This is the second stage $envVar"
     }
 }
 
