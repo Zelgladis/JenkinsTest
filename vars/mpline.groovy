@@ -54,6 +54,15 @@ def step4(){
     }
 }
 
+def clean(){
+    node () {
+        stage ("Cleaning..."){
+            // do stuff here
+            echo 'Clean complete!'
+        }
+    }
+}
+
 def myFirstStage() {
     stage('First Stage') {
         echo 'This is the first stage'
