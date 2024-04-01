@@ -20,17 +20,13 @@ def myPipelineFunction2() {
 
 def myFirstStage() {
     stage('First Stage') {
-        steps {
-            echo 'This is the first stage'
-        }
+        echo 'This is the first stage'
     }
 }
 
 def mySecondStage() {
     stage('Second Stage') {
-        steps {
-            echo 'This is the second stage'
-        }
+        echo 'This is the second stage'
     }
 }
 
