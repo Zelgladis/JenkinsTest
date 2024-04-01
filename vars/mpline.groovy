@@ -6,7 +6,7 @@ def call() {
 }
 
 def step1() {
-    node ("NodeName") {
+    node () {
         stage ("a stage inside node"){
             // do stuff here
             echo 'This is the first stage'
@@ -15,7 +15,7 @@ def step1() {
 }
 
 def step2() {
-    node ("NodeName2") {
+    node () {
         stage ("a stage inside node2"){
             // do stuff here
             echo 'This is the first stage'
