@@ -1,7 +1,7 @@
 // vars/fist.groovy
 
 class fist {
-  string var = 'TestString'
-  string name = 'Sergey'
-  string yami
+  String var = 'TestString'
+  String name = 'Sergey'
+  String yami
 }
