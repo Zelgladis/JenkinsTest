@@ -17,13 +17,14 @@ def step1() {
 
 
 def step2(String x) {
-    if(x == 'true')
-    {
-        return 123
-    }
     node () {
         stage ("a stage inside node"){
             // do stuff here
+            when {
+                expression {
+                    return x == 'true'
+                }
+            }
             echo 'This is the first stage'
             def m_class = new MyClass('Hello World')
             env.cringe = m_class.yami
