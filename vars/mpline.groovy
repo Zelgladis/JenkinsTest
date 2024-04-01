@@ -19,15 +19,9 @@ def step1() {
 def step2(String x) {
     node () {
         stage ("a stage inside node"){
-            // do stuff here
-            when {
-                x 'true'
-            }
-            steps {
             echo 'This is the first stage'
             def m_class = new MyClass('Hello World')
             env.cringe = m_class.yami
-            }
         }
     }
 }
