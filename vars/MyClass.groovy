@@ -9,4 +9,8 @@ class MyClass {
     this.yami = 'Darkness'
     this.d2 = d2
   }
+
+  void printIt() {
+        echo "JDK_HOME is: ${this.yami}"
+    }
 }
