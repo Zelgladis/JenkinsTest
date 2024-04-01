@@ -1,4 +1,4 @@
-def pipe1(){
+def myPipelineFunction() {
     pipeline {
         agent any
         stages {
