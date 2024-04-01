@@ -21,9 +21,7 @@ def step2(String x) {
         stage ("a stage inside node"){
             // do stuff here
             when {
-                expression {
-                    return x == 'true'
-                }
+                x 'true'
             }
             echo 'This is the first stage'
             def m_class = new MyClass('Hello World')
