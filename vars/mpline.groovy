@@ -7,24 +7,14 @@ def call() {
 
 def step1() {
     node() {
-            stage('Stage1') {
-                steps {
-                    // Команды для сборки проекта на агенте 'agent1'
-                    echo 'This is the first stage'
-                }
-            }
-        }
+        echo 'This is the 1 stage'
+    }
 }
 
 def step2() {
     node() {
-            stage('Stage2') {
-                steps {
-                    // Команды для сборки проекта на агенте 'agent1'
-                    echo 'This is the second stage'
-                }
-            }
-        }
+        echo 'This is the 2 stage'
+    }
 }
 
 def myFirstStage() {
