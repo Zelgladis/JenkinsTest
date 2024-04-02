@@ -1,6 +1,6 @@
 // vars/test.groovy
 
-def call(Boolean x) {
+def call(String x) {
   echo 'Test Lib'
   def n_mclass = new MyClass('Hello world')
   echo "${n_mclass.yami}"
