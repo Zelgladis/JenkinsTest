@@ -1,0 +1,42 @@
+@Library('mlib') _
+
+run_pipe(BRANCH_NAME, 'Hello World', 'TEST', MOVE_DISTR, 'asd')
+
+node() {
+    stage('Test it'){
+        def arr = ['Hell', 'Word']
+        def darr = new HashMap()
+        
+        darr.put('key', 'value')
+        darr.put('yek', 'oops!')
+        
+        echo arr[0]
+        
+        arr.each{
+            echo "${it}"
+        }
+        echo '-------------------------------------'
+        for(i=0; i < arr.size(); i++){
+            echo "${arr[i]}"
+        }
+        
+        darr.each{entry -> 
+            println "$entry.key: $entry.value"
+        }
+        
+        echo '-----------------------------------'
+        
+        def envs = new N_Class('H').get_envs()
+        envs.each{entry -> 
+            println "$entry.key: $entry.value"
+            env."${entry.key}" = "$entry.value"
+        }
+        
+        echo env.name
+        
+        echo "${BUILD_NUMBER.toInteger() + 200}"
+        
+        
+        
+    }
+}
