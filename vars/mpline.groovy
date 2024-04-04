@@ -22,6 +22,7 @@ def git_pull() {
                     credentialsId: 'GIT_TOKEN',
                     url: 'https://github.com/Zelgladis/JenkisTestGit.git'
             )
+            sh 'ls'
             
         }
     }
