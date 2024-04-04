@@ -14,6 +14,18 @@ def init_env() {
     }
 }
 
+def git_pull() {
+    node(){
+        stage('🥵Git pull project') {
+            info = git (
+                    branch: 'main',
+                    credentialsId: 'GIT_TOKEN',
+                    url: 'https://github.com/Zelgladis/JenkisTestGit.git'
+            )
+            
+        }
+    }
+}
 
 def step1(String x) {
     node () {
