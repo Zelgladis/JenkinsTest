@@ -3,9 +3,7 @@
 def call(String br){
     try{
         mpline.init_env()
-        mpline.step1(br)
-        //mpline.failed_step()
-        mpline.step_print()
+        mpline.git_pull()
     }catch(Exception e){
         throw new Exception("Something went wrong!")
         
