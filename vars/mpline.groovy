@@ -281,7 +281,7 @@ def dsl_runer_true(){
             for(int i=0; i < yamlData.pipelines.size(); i++){
                 final_content = final_content + "\n" +(jobContent.replace("**c**", "${i}"))
             }
-            echo ${final_content}
+            echo final_content
             writeFile(file: ".jenkins/test_pipline/BuildProc_2.groovy", text: "${final_content}")
             jobDsl targets: '.jenkins/test_pipline/BuildProc_2.groovy',
                     lookupStrategy: 'SEED_JOB',
