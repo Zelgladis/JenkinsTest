@@ -28,7 +28,7 @@ pipelines:
     mvncommand: clean project
     projectver: zgUetuAFJh
     mvntest: " -pl ''"
-    zxc: '269261'
+    pom_path: " -pl ''"
 - name: test1/4
   parameters:
     GitName: XIheNI
