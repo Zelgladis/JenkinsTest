@@ -11,7 +11,7 @@ pipelineJob(yamlData.pipelines[**c**].name) {
                 branchFilter('origin/(.*)')
                 sortMode('NONE')
                 selectedValue('NONE')
-                useRepository("ssh://github.com/${yamlData.pipelines[**c**].parameters.globalSystem}/${yamlData.pipelines[**c**].parameters.GitName}.git")
+                useRepository("https://github.com/${yamlData.pipelines[**c**].parameters.globalSystem}/${yamlData.pipelines[**c**].parameters.GitName}.git")
             }
       if (yamlData.pipelines[**c**].parameters.mvncommand == 'dotnet nupkg') {
         stringParam('VersionNupkg', '2.0.', 'Версия пакетов')}
