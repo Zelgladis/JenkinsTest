@@ -1,8 +1,6 @@
 def call(Map args){
     node(){
         stage('Checkout') {
-            steps {
-                script {
                     // Использование параметра GIT_BRANCH для клонирования репозитория
                     checkout([$class: 'GitSCM',
                               branches: [[name: "${params.GIT_BRANCH}"]],
@@ -14,7 +12,6 @@ def call(Map args){
                                   credentialsId: "${env.MY_GIT}"
                               ]]
                     ])
-                }
             }
         }
         stage('RunPipeX'){
