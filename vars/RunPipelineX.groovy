@@ -12,7 +12,6 @@ def call(Map args){
                                   credentialsId: "${env.MY_GIT}"
                               ]]
                     ])
-            }
         }
         stage('RunPipeX'){
             args.each { arg ->
