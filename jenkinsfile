@@ -1,0 +1,7 @@
+@Library('mlib') _
+
+run_pipe(
+        //qwer: 'Hello World', 
+        //name: 'Sergey',
+        //exs: 'FOUND'
+)

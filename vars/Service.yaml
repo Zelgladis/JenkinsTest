@@ -1,0 +1,2001 @@
+pipelines:
+- name: test0/1
+  parameters:
+    GitName: VhVM04
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: EpaT3dFb
+    mvncommand: clean project
+    projectver: 47GQQhgTyl
+    qqq: izsz2ue1TeEkY1o9
+    zxc: '170958'
+- name: test0/2
+  parameters:
+    GitName: reSle1
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: 0NC65vc4
+    mvncommand: clean project
+    projectver: miXdMLkffN
+    qqq: p11MNloa47MaJp4g
+    zxc: '772150'
+- name: test0/3
+  parameters:
+    GitName: oOQpwR
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: hOXk0isg
+    mvncommand: clean project
+    projectver: nalkH3ILlz
+    qqq: Ym8AHdTAgBqV3KRW
+    zxc: '618302'
+- name: test1/4
+  parameters:
+    GitName: OtiyvO
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: 4cVJbYfQ
+    mvncommand: clean project
+    projectver: lgXRTwbEVu
+    qqq: WRudp8c0J0ZsXdms
+    zxc: '487328'
+- name: test1/5
+  parameters:
+    GitName: Ze1Q9X
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: DzBq3cRH
+    mvncommand: clean project
+    projectver: rwjP8PrAjG
+    qqq: ThDl8C2GGYew7eOS
+    zxc: '833804'
+- name: test1/6
+  parameters:
+    GitName: 6Wmz31
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: fEWYhMCN
+    mvncommand: clean project
+    projectver: R3EjPGvEEa
+    qqq: 6Pgg23UhAwajMfFd
+    zxc: '718303'
+- name: test1/7
+  parameters:
+    GitName: jcXbCh
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: N4b1C9Az
+    mvncommand: clean project
+    projectver: PaHv815fZU
+    qqq: fWb0mXz7x3sIT0cs
+    zxc: '107792'
+- name: test2/8
+  parameters:
+    GitName: 7QRxB8
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: EAeMF3E2
+    mvncommand: clean project
+    projectver: UPXoQUMmnh
+    qqq: 23ZPdDJhGFWr8oeH
+    zxc: '745815'
+- name: test2/9
+  parameters:
+    GitName: PCsRdo
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: lnGNBfq4
+    mvncommand: clean project
+    projectver: ycqCC2AP7a
+    qqq: m62yTw1eWtDJPNZ7
+    zxc: '187094'
+- name: test2/10
+  parameters:
+    GitName: hW5buZ
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: 0W9gjUOH
+    mvncommand: clean project
+    projectver: sjFOexEM9n
+    qqq: WKRnKUog83P9rCUi
+    zxc: '682372'
+- name: test2/11
+  parameters:
+    GitName: eU966o
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: wONDGFV4
+    mvncommand: clean project
+    projectver: mOMzuZXgCu
+    qqq: QyASoVdOVwWLfDFl
+    zxc: '764338'
+- name: test3/12
+  parameters:
+    GitName: V5PMVS
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: CQLnpyrh
+    mvncommand: clean project
+    projectver: ERbwuu52v9
+    qqq: Fs9jQoCK9Rba1Oni
+    zxc: '703998'
+- name: test3/13
+  parameters:
+    GitName: np8v1m
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: NODx09bz
+    mvncommand: clean project
+    projectver: uD749sqqf0
+    qqq: UvsVbeDrVpcdydJC
+    zxc: '333674'
+- name: test3/14
+  parameters:
+    GitName: fsOiZm
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: 3oR6JVHb
+    mvncommand: clean project
+    projectver: 3wNfmHSfWq
+    qqq: Ea2RI0cdtIlGVa0q
+    zxc: '741772'
+- name: test3/15
+  parameters:
+    GitName: PaFIFs
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: nAalLNLX
+    mvncommand: clean project
+    projectver: vgdHer9YkP
+    qqq: qFvGscC3pRLAuTpT
+    zxc: '655563'
+- name: test4/16
+  parameters:
+    GitName: wtAj9b
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: BummgVBR
+    mvncommand: clean project
+    projectver: qZQe9euFw9
+    qqq: HWBrjTJWVH9sSXIB
+    zxc: '801505'
+- name: test4/17
+  parameters:
+    GitName: Juc78U
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: Dbfa4Iqk
+    mvncommand: clean project
+    projectver: 4hvbtc1IGl
+    qqq: QBoR2HIXKRxy3mPA
+    zxc: '840535'
+- name: test4/18
+  parameters:
+    GitName: O9jXUV
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: PWgw51FY
+    mvncommand: clean project
+    projectver: Gec2XrQUOs
+    qqq: xpN9Iq8W5kji5j0M
+    zxc: '953988'
+- name: test4/19
+  parameters:
+    GitName: kHprAL
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: WSwwGwwk
+    mvncommand: clean project
+    projectver: nWpK5aO252
+    qqq: jonuNJ7816MXmu7k
+    zxc: '159935'
+- name: test5/20
+  parameters:
+    GitName: sRoMZX
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: 2Eena48l
+    mvncommand: clean project
+    projectver: yytRnDJSdW
+    qqq: HGQXOrNt27FqyNYM
+    zxc: '251353'
+- name: test5/21
+  parameters:
+    GitName: GH0ENK
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: YstdFEOO
+    mvncommand: clean project
+    projectver: 7osUZFLfu4
+    qqq: Sfyomx794WOVEqSc
+    zxc: '979750'
+- name: test5/22
+  parameters:
+    GitName: wjfdiu
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: yewEJ1Hn
+    mvncommand: clean project
+    projectver: iNjBk9r8AH
+    qqq: 38X7sUqnZOppIsgY
+    zxc: '532747'
+- name: test5/23
+  parameters:
+    GitName: 22wRar
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: CAU7r3JS
+    mvncommand: clean project
+    projectver: SM62d597mq
+    qqq: xOo6S300E8AV2x7c
+    zxc: '455811'
+- name: test6/24
+  parameters:
+    GitName: 97C9hq
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: dg6zRnXT
+    mvncommand: clean project
+    projectver: onYyJU2TSZ
+    qqq: tmFQRYF4ESM19CZM
+    zxc: '392349'
+- name: test6/25
+  parameters:
+    GitName: 7WU8MY
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: YqAtHCzp
+    mvncommand: clean project
+    projectver: Ac9hgzWNRj
+    qqq: Dw71oa20vDt4WqiC
+    zxc: '956251'
+- name: test6/26
+  parameters:
+    GitName: FRxtVr
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: HdPDFdAA
+    mvncommand: clean project
+    projectver: g6BcDTtzB5
+    qqq: KZ52fBcmylmykqqv
+    zxc: '679406'
+- name: test6/27
+  parameters:
+    GitName: U7oP88
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: S3mucDfr
+    mvncommand: clean project
+    projectver: Ss1ZnR4WQC
+    qqq: gWSCELV9DnEaCe1m
+    zxc: '545301'
+- name: test7/28
+  parameters:
+    GitName: vS0bk9
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: JyvDAj9u
+    mvncommand: clean project
+    projectver: 0tBGgJV8oJ
+    qqq: nqB3mCeTWuEv2VYQ
+    zxc: '632045'
+- name: test7/29
+  parameters:
+    GitName: LBM15e
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: S9ZIaNqg
+    mvncommand: clean project
+    projectver: 1hh9eAeGZn
+    qqq: Vy3CYmal1L0eaPS3
+    zxc: '149101'
+- name: test7/30
+  parameters:
+    GitName: EbwLMm
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: V6JnMWrA
+    mvncommand: clean project
+    projectver: hZ6AiCkCJN
+    qqq: o8ZVyhBQirmpuEHP
+    zxc: '166770'
+- name: test7/31
+  parameters:
+    GitName: 8ZK7uw
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: NilYk6MM
+    mvncommand: clean project
+    projectver: FKtStNZLgX
+    qqq: P5QnDtnXXjlHZV9E
+    zxc: '621347'
+- name: test8/32
+  parameters:
+    GitName: Z7UeFk
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: AVsdFNHm
+    mvncommand: clean project
+    projectver: XQyR6Bj1hE
+    qqq: pqjf9498bpYh0GzG
+    zxc: '221036'
+- name: test8/33
+  parameters:
+    GitName: pflZwy
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: UBf82ugZ
+    mvncommand: clean project
+    projectver: UGTJdPjZTI
+    qqq: 9bUADCWNylokk6w9
+    zxc: '275252'
+- name: test8/34
+  parameters:
+    GitName: d983oD
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: bYlxfZMv
+    mvncommand: clean project
+    projectver: cwRylzv97a
+    qqq: AoIZ2JrGFTvdDz6Q
+    zxc: '763983'
+- name: test8/35
+  parameters:
+    GitName: bYmG7Q
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: COx64Y8c
+    mvncommand: clean project
+    projectver: aKeOlw4nLB
+    qqq: l8d29kyhwHNGfCFc
+    zxc: '925233'
+- name: test9/36
+  parameters:
+    GitName: RxnGLz
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: GCt7REXE
+    mvncommand: clean project
+    projectver: Clj9leFZfr
+    qqq: jXUMfBcOPK92qzD5
+    zxc: '535773'
+- name: test9/37
+  parameters:
+    GitName: hWVlue
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: bp1TDdh5
+    mvncommand: clean project
+    projectver: G4llzNAapz
+    qqq: ChghZG2Dl17NpXbO
+    zxc: '453078'
+- name: test9/38
+  parameters:
+    GitName: 6w238U
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: FScWj7VF
+    mvncommand: clean project
+    projectver: th0U0Pof0f
+    qqq: o0JUH9aSkE9fFhhO
+    zxc: '806100'
+- name: test9/39
+  parameters:
+    GitName: lzFXEh
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: H9HxXGnJ
+    mvncommand: clean project
+    projectver: p6vXJOmShB
+    qqq: KtstHU9AoDI4D3YV
+    zxc: '258203'
+- name: test10/40
+  parameters:
+    GitName: rnswcn
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: ajiA26m6
+    mvncommand: clean project
+    projectver: kS3NOSshRu
+    qqq: 09vjciscoGg6ygUh
+    zxc: '551818'
+- name: test10/41
+  parameters:
+    GitName: hUCGH8
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: y7kzxkWU
+    mvncommand: clean project
+    projectver: Tg4xe0QPRN
+    qqq: y26G1yhTFBzVxzsE
+    zxc: '752689'
+- name: test10/42
+  parameters:
+    GitName: DqgDxc
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: tlGPHy4X
+    mvncommand: clean project
+    projectver: 62cP8xnCW7
+    qqq: 3auNHiGcfohagGBX
+    zxc: '460535'
+- name: test10/43
+  parameters:
+    GitName: 6jcjpr
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: TplTf2eA
+    mvncommand: clean project
+    projectver: fjZCub5Z6n
+    qqq: Jc3cN3AUBMErWZgw
+    zxc: '744423'
+- name: test11/44
+  parameters:
+    GitName: aiVmF7
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: dvWh7GpE
+    mvncommand: clean project
+    projectver: GTXmfwvLkc
+    qqq: emjj0Ky8YLk1MyBf
+    zxc: '696210'
+- name: test11/45
+  parameters:
+    GitName: h3MKwz
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: cyDXMXTx
+    mvncommand: clean project
+    projectver: gK2HgdapcQ
+    qqq: yZnhimnPaHRvbYQf
+    zxc: '732752'
+- name: test11/46
+  parameters:
+    GitName: 5JXXDc
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: sbKRKfK7
+    mvncommand: clean project
+    projectver: 3Zq2UsgTNS
+    qqq: aSAn3Xfgjves5Jpd
+    zxc: '718922'
+- name: test11/47
+  parameters:
+    GitName: nwVJ5m
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: DpWrb0gI
+    mvncommand: clean project
+    projectver: 8CBZeM172D
+    qqq: BlA3aHu0iIvw2LQ5
+    zxc: '141767'
+- name: test12/48
+  parameters:
+    GitName: Xe39Py
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: 5aj1feLH
+    mvncommand: clean project
+    projectver: kR8oER6uWl
+    qqq: BOz62JR7Dv5meN0P
+    zxc: '808306'
+- name: test12/49
+  parameters:
+    GitName: k2iwL9
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: OOtmq4WK
+    mvncommand: clean project
+    projectver: mzfNKM84nE
+    qqq: rUmobIqMpk5LbOrN
+    zxc: '281439'
+- name: test12/50
+  parameters:
+    GitName: Jp9Z9P
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: 6nOSGtsp
+    mvncommand: clean project
+    projectver: 9racNZfFsS
+    qqq: hSiWX5Wli0uOCdWi
+    zxc: '923429'
+- name: test12/51
+  parameters:
+    GitName: 3OiMUC
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: wpHPa8Mj
+    mvncommand: clean project
+    projectver: SThpFvUjOp
+    qqq: jsSN09kZ5qQa3mwv
+    zxc: '918889'
+- name: test13/52
+  parameters:
+    GitName: KbDzVc
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: cEESMokp
+    mvncommand: clean project
+    projectver: 79KI7fvy2g
+    qqq: HV6KLLPWGQGKr9An
+    zxc: '746331'
+- name: test13/53
+  parameters:
+    GitName: 2AGGuW
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: kqIB7MXV
+    mvncommand: clean project
+    projectver: 20RO4iwCla
+    qqq: QNktkGW6ARpyYBH1
+    zxc: '860784'
+- name: test13/54
+  parameters:
+    GitName: DWzx85
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: hiueEhsR
+    mvncommand: clean project
+    projectver: JwQNc6kvAA
+    qqq: Awbw6bAp0jZEwuTX
+    zxc: '790588'
+- name: test13/55
+  parameters:
+    GitName: AMy4pj
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: 78aZZ2Q2
+    mvncommand: clean project
+    projectver: Gd0ubSlTco
+    qqq: bWSvsTQG4kwna6Ld
+    zxc: '726109'
+- name: test14/56
+  parameters:
+    GitName: 621PQl
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: mrPeFRaO
+    mvncommand: clean project
+    projectver: BO4DU6AfyN
+    qqq: uN006AcLlgqPSzFu
+    zxc: '415458'
+- name: test14/57
+  parameters:
+    GitName: d24ohg
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: o61CZ3sr
+    mvncommand: clean project
+    projectver: clsZ5ppAS5
+    qqq: PoITx1mB8JyzovZ4
+    zxc: '211523'
+- name: test14/58
+  parameters:
+    GitName: uo9XCp
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: NPfuyqEf
+    mvncommand: clean project
+    projectver: hSOMCarBmH
+    qqq: 9s5eeCbrEn8sKR48
+    zxc: '324698'
+- name: test14/59
+  parameters:
+    GitName: 8kntfZ
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: pf4eXx4m
+    mvncommand: clean project
+    projectver: F5Onwp3jzQ
+    qqq: QrGcR7dYEYtOyt1U
+    zxc: '404571'
+- name: test15/60
+  parameters:
+    GitName: fDS94P
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: wnNS7fw9
+    mvncommand: clean project
+    projectver: ZB9XMsyXmv
+    qqq: iHM6C7wKXThQ8BHG
+    zxc: '376922'
+- name: test15/61
+  parameters:
+    GitName: GhpqQR
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: cye5c0dd
+    mvncommand: clean project
+    projectver: Oe3ukNLdsS
+    qqq: pYgFlXsu1a4eiCdm
+    zxc: '468681'
+- name: test15/62
+  parameters:
+    GitName: a71QTc
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: q5satD7H
+    mvncommand: clean project
+    projectver: KILd4aNAAB
+    qqq: TXQ7KHXvZWsTqP9C
+    zxc: '680150'
+- name: test15/63
+  parameters:
+    GitName: 79Hrvj
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: RbUvnrl0
+    mvncommand: clean project
+    projectver: w3yujD7peh
+    qqq: fWQzuhvQhvJQ7R9x
+    zxc: '819668'
+- name: test16/64
+  parameters:
+    GitName: 3u5XAj
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: e1oSZRoE
+    mvncommand: clean project
+    projectver: o1FuT8vsMb
+    qqq: U5zj5elB45YJYkn3
+    zxc: '824534'
+- name: test16/65
+  parameters:
+    GitName: uhufdM
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: D724ITJF
+    mvncommand: clean project
+    projectver: etqBccvm3A
+    qqq: 5rUy46nSzQngtgGU
+    zxc: '982210'
+- name: test16/66
+  parameters:
+    GitName: UpfZxd
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: 7JDjVl5f
+    mvncommand: clean project
+    projectver: cUptOq267n
+    qqq: JRuxT7pCSfeDnNF4
+    zxc: '806258'
+- name: test16/67
+  parameters:
+    GitName: ZSgrxh
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: C9ldXZD2
+    mvncommand: clean project
+    projectver: m5QjX8DpCZ
+    qqq: i0rMlzTHKfWBEinV
+    zxc: '432836'
+- name: test17/68
+  parameters:
+    GitName: W3W7Yo
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: InkLjW7p
+    mvncommand: clean project
+    projectver: mporHrOBtk
+    qqq: p9kEkejJNKeeyRtx
+    zxc: '607688'
+- name: test17/69
+  parameters:
+    GitName: ErT2A5
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: 5rKwkay2
+    mvncommand: clean project
+    projectver: VhPj9D6gJC
+    qqq: PectZ8MJz4HB9R7G
+    zxc: '534512'
+- name: test17/70
+  parameters:
+    GitName: c82HJy
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: Yi8UwYzP
+    mvncommand: clean project
+    projectver: 8dHxdJQKGD
+    qqq: C4clAeg2gVDxs49j
+    zxc: '783660'
+- name: test17/71
+  parameters:
+    GitName: a5AQ11
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: 5pBu17Dl
+    mvncommand: clean project
+    projectver: dvSXNs5BlX
+    qqq: 8jmrvNbEU2UVtA1G
+    zxc: '181703'
+- name: test18/72
+  parameters:
+    GitName: r3XCXz
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: badNAtjj
+    mvncommand: clean project
+    projectver: EyUTcR3648
+    qqq: RJDDfrOM3yL5leU1
+    zxc: '665506'
+- name: test18/73
+  parameters:
+    GitName: nCKCut
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: UX1Tqr3Y
+    mvncommand: clean project
+    projectver: 0YKY1kuVNY
+    qqq: se779isoS6JSPFOm
+    zxc: '575791'
+- name: test18/74
+  parameters:
+    GitName: GgrFIB
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: ZTBcU7He
+    mvncommand: clean project
+    projectver: RDMtZnx4wU
+    qqq: Z8yB54J0pSDLefFo
+    zxc: '805724'
+- name: test18/75
+  parameters:
+    GitName: IrEFhv
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: F2Mzyc5N
+    mvncommand: clean project
+    projectver: gGhJsPXrcR
+    qqq: AZ4lsdDCkcW2t3RV
+    zxc: '866981'
+- name: test19/76
+  parameters:
+    GitName: 3q3Uwx
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: 2KNijflJ
+    mvncommand: clean project
+    projectver: hlxhZ2n1Qx
+    qqq: jUwjroPvvrySi9Gi
+    zxc: '335338'
+- name: test19/77
+  parameters:
+    GitName: W4PNge
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: c8gESs08
+    mvncommand: clean project
+    projectver: fBqg6L6pE7
+    qqq: Py4FPzsWe1JUZTjs
+    zxc: '893692'
+- name: test19/78
+  parameters:
+    GitName: AMDVtC
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: IanJez6o
+    mvncommand: clean project
+    projectver: vIzJsIYYim
+    qqq: YDwQ6eMXcgADiLTT
+    zxc: '619860'
+- name: test19/79
+  parameters:
+    GitName: cotNRh
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: 57DB3Cg5
+    mvncommand: clean project
+    projectver: 6VOVGKPBxl
+    qqq: 2vHfrOUfAc08cugG
+    zxc: '578723'
+- name: test20/80
+  parameters:
+    GitName: MtXv1I
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: T5PnKUJX
+    mvncommand: clean project
+    projectver: Bprzu8HN1h
+    qqq: GRARzPvKSzY3uvvd
+    zxc: '517582'
+- name: test20/81
+  parameters:
+    GitName: E1cmxU
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: ntoBfUuM
+    mvncommand: clean project
+    projectver: IGYOj7DjbK
+    qqq: eY65PYdUHtXdB0fY
+    zxc: '658172'
+- name: test20/82
+  parameters:
+    GitName: 4SsAUk
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: r2o3vC2a
+    mvncommand: clean project
+    projectver: pOk0qawO5V
+    qqq: e1NzXSyx1JGl9Pm6
+    zxc: '212534'
+- name: test20/83
+  parameters:
+    GitName: U2nBwX
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: JdL67p7i
+    mvncommand: clean project
+    projectver: 14ndBfVtJh
+    qqq: LG8pDPd6e63LgBIX
+    zxc: '963044'
+- name: test21/84
+  parameters:
+    GitName: oQT86A
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: 6ASDnhyZ
+    mvncommand: clean project
+    projectver: LEK5jSKDkG
+    qqq: OIykL0vSRwAwRprc
+    zxc: '262668'
+- name: test21/85
+  parameters:
+    GitName: zMDUek
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: wtoqz68W
+    mvncommand: clean project
+    projectver: Wp0fPaZR4o
+    qqq: dGsocgJob6VyQLYQ
+    zxc: '286097'
+- name: test21/86
+  parameters:
+    GitName: 01H8Vj
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: sVoHZexx
+    mvncommand: clean project
+    projectver: BnQa8i076D
+    qqq: fufYf4G5hUNlFDN8
+    zxc: '507280'
+- name: test21/87
+  parameters:
+    GitName: vyBgBw
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: VA5G7K9i
+    mvncommand: clean project
+    projectver: INh1xemIUP
+    qqq: A58SuLaZC3UCLXsN
+    zxc: '714306'
+- name: test22/88
+  parameters:
+    GitName: gGJwrA
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: uIKgeUBx
+    mvncommand: clean project
+    projectver: ERdMYJL8cy
+    qqq: 5zs0tiAVzju3Sxrx
+    zxc: '343235'
+- name: test22/89
+  parameters:
+    GitName: PeJbZ4
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: cmoBfxAU
+    mvncommand: clean project
+    projectver: 584WdKG24T
+    qqq: eOXcpbknV1UqcGN0
+    zxc: '472778'
+- name: test22/90
+  parameters:
+    GitName: tNvE3Q
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: H8Wx1f2G
+    mvncommand: clean project
+    projectver: NuBZk7Zb5B
+    qqq: arFVQtcj1gEG0EPN
+    zxc: '344095'
+- name: test22/91
+  parameters:
+    GitName: yq5a9P
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: PsRi71Nt
+    mvncommand: clean project
+    projectver: h5dyHzd5tD
+    qqq: EcmUJpqFD4dbazDp
+    zxc: '168612'
+- name: test23/92
+  parameters:
+    GitName: Yxz5iV
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: meBqOMtB
+    mvncommand: clean project
+    projectver: PB9osIFVTt
+    qqq: 3EQpVHwFX9wT2BcR
+    zxc: '704691'
+- name: test23/93
+  parameters:
+    GitName: ZdMv0v
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: FDAM3MgV
+    mvncommand: clean project
+    projectver: ixnr5zJcHm
+    qqq: 0qRyLVWP0PfL3l8T
+    zxc: '437309'
+- name: test23/94
+  parameters:
+    GitName: XPiHoL
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: tzbhccl0
+    mvncommand: clean project
+    projectver: GaTyvbNfSV
+    qqq: 7QBf0xiL0qwUWH2h
+    zxc: '528264'
+- name: test23/95
+  parameters:
+    GitName: fdwQDG
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: pFCfLSEr
+    mvncommand: clean project
+    projectver: hPCHIEBm13
+    qqq: P23mgzZZN0lGCwtT
+    zxc: '865493'
+- name: test24/96
+  parameters:
+    GitName: 3OHHhT
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: Jrk8PRp5
+    mvncommand: clean project
+    projectver: atWOjEs74M
+    qqq: B6Xa6aX8Phsg8Lrh
+    zxc: '371645'
+- name: test24/97
+  parameters:
+    GitName: hlobbb
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: gI02hlzQ
+    mvncommand: clean project
+    projectver: 9L3gSYzKdQ
+    qqq: otUiiQpnkxlJRHIE
+    zxc: '212004'
+- name: test24/98
+  parameters:
+    GitName: AHmyTq
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: BJSh3nVQ
+    mvncommand: clean project
+    projectver: XenvgCSzwu
+    qqq: PBV5c4V6H6KsvzQj
+    zxc: '976004'
+- name: test24/99
+  parameters:
+    GitName: UmaTOC
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: Tesnuhc0
+    mvncommand: clean project
+    projectver: Hvwwq2jcWe
+    qqq: pd5vlMWmfVt3h4LL
+    zxc: '995199'
+- name: test25/100
+  parameters:
+    GitName: iThRxn
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: BAOSVo8B
+    mvncommand: clean project
+    projectver: 8UMWFH3N9w
+    qqq: 2lRDIawZDpcSzMeR
+    zxc: '690201'
+- name: test25/101
+  parameters:
+    GitName: nZ4dE5
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: esVpuyvy
+    mvncommand: clean project
+    projectver: FOlANa4yp4
+    qqq: lgBFEOpypDNLq8MB
+    zxc: '349353'
+- name: test25/102
+  parameters:
+    GitName: 409VaD
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: kdRIowN0
+    mvncommand: clean project
+    projectver: OH0RuqerJ4
+    qqq: cg6fNUVYTJmueahW
+    zxc: '676405'
+- name: test25/103
+  parameters:
+    GitName: fJnw45
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: tqbAD78v
+    mvncommand: clean project
+    projectver: UFt63xaZHh
+    qqq: wN0Spf8bm50e5mz4
+    zxc: '243649'
+- name: test26/104
+  parameters:
+    GitName: hQXCLI
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: VK9NsFWa
+    mvncommand: clean project
+    projectver: Wj0lpBX83Z
+    qqq: ZfUAhCEGdIvfb6YZ
+    zxc: '945277'
+- name: test26/105
+  parameters:
+    GitName: SBU1O8
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: z2EpEcTj
+    mvncommand: clean project
+    projectver: TvAKJPECIy
+    qqq: w7OGwIPzR9fO2nPp
+    zxc: '425055'
+- name: test26/106
+  parameters:
+    GitName: Q0lXHH
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: BARL4FNY
+    mvncommand: clean project
+    projectver: ixS7AfKnmU
+    qqq: O9N2OiFEc64jFbJq
+    zxc: '791490'
+- name: test26/107
+  parameters:
+    GitName: 2SYae3
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: RqIW9fMw
+    mvncommand: clean project
+    projectver: 5vRiRDk2Fx
+    qqq: RQnayWiIRnEUkYWG
+    zxc: '262765'
+- name: test27/108
+  parameters:
+    GitName: k1XT56
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: dQzxZIUp
+    mvncommand: clean project
+    projectver: 74UH6hBpVZ
+    qqq: v3VQYg2js97b0e1v
+    zxc: '754569'
+- name: test27/109
+  parameters:
+    GitName: WeGVN0
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: X5oH85pR
+    mvncommand: clean project
+    projectver: dhaEzMyf9Z
+    qqq: TWcMFAGqcLlZbxhI
+    zxc: '605492'
+- name: test27/110
+  parameters:
+    GitName: I39HXA
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: jMnOpwJI
+    mvncommand: clean project
+    projectver: 4SpDZYT3hh
+    qqq: cEdrNe7UhJxvHXkZ
+    zxc: '472106'
+- name: test27/111
+  parameters:
+    GitName: bZNfUe
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: Q7mUjbei
+    mvncommand: clean project
+    projectver: KO20mP0ijE
+    qqq: K5KI5gqkzZ8K6gfR
+    zxc: '350461'
+- name: test28/112
+  parameters:
+    GitName: W4Ut3g
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: DPe2wLmj
+    mvncommand: clean project
+    projectver: C7MNe7uOdl
+    qqq: nxqty8vrvDuSIlFH
+    zxc: '482695'
+- name: test28/113
+  parameters:
+    GitName: 6HlFZS
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: awRL3bg9
+    mvncommand: clean project
+    projectver: 5DlLVxtnr2
+    qqq: AZzPljpfft44EwcB
+    zxc: '518510'
+- name: test28/114
+  parameters:
+    GitName: nEUMKI
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: uHIYBCWB
+    mvncommand: clean project
+    projectver: 1lGKW5IHW9
+    qqq: eumnJQsFllKGAdwc
+    zxc: '558042'
+- name: test28/115
+  parameters:
+    GitName: xA3a8i
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: cqABEhrg
+    mvncommand: clean project
+    projectver: LG2l3p2mGZ
+    qqq: 77Mhs35Lzbl4a4y9
+    zxc: '736177'
+- name: test29/116
+  parameters:
+    GitName: zupHkf
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: K68ju6Do
+    mvncommand: clean project
+    projectver: O4aMX8avCz
+    qqq: BORLeFwem9dXiCHj
+    zxc: '133842'
+- name: test29/117
+  parameters:
+    GitName: L3RWFJ
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: 3vbbn4Ol
+    mvncommand: clean project
+    projectver: GqWctGHUD3
+    qqq: DUv5gwoVWnvJw6r8
+    zxc: '858903'
+- name: test29/118
+  parameters:
+    GitName: jpuyUK
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: FeIU3oXM
+    mvncommand: clean project
+    projectver: 0FP0mkFTx3
+    qqq: WQkhBTd8Vo6PWjVG
+    zxc: '580121'
+- name: test29/119
+  parameters:
+    GitName: RCG5hC
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: 4lK5exrP
+    mvncommand: clean project
+    projectver: R7fgJfSvvk
+    qqq: gUhWML1uGfQfgZjO
+    zxc: '802748'
+- name: test30/120
+  parameters:
+    GitName: K6REAr
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: yDiYWuyz
+    mvncommand: clean project
+    projectver: 6xMTykOuXs
+    qqq: WCcrN563ABALGoMr
+    zxc: '532274'
+- name: test30/121
+  parameters:
+    GitName: pk41A3
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: sW1COzHX
+    mvncommand: clean project
+    projectver: j2poJm4kKk
+    qqq: RMUovZyLezpoA3EY
+    zxc: '497139'
+- name: test30/122
+  parameters:
+    GitName: KxuhF1
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: HKiQ6KAC
+    mvncommand: clean project
+    projectver: FSXKfoKNfJ
+    qqq: PSzCMnacewYNPn1F
+    zxc: '643774'
+- name: test30/123
+  parameters:
+    GitName: ohGhA1
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: 0OW687Tg
+    mvncommand: clean project
+    projectver: c677tqDnyo
+    qqq: a7veE4JmR1EIOo4Q
+    zxc: '452569'
+- name: test31/124
+  parameters:
+    GitName: sCuXIJ
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: nX8HeadK
+    mvncommand: clean project
+    projectver: X2DRlpiylV
+    qqq: HMNIZTfWqQoIlzjK
+    zxc: '630662'
+- name: test31/125
+  parameters:
+    GitName: Jls51Y
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: MNF4aziU
+    mvncommand: clean project
+    projectver: VhZ2DeL4g9
+    qqq: d123KFD2tVoOEYh1
+    zxc: '602605'
+- name: test31/126
+  parameters:
+    GitName: EhZlzo
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: BR7wnH5h
+    mvncommand: clean project
+    projectver: xH75Z2mpmt
+    qqq: jI7Hq6HOI875pfHu
+    zxc: '146835'
+- name: test31/127
+  parameters:
+    GitName: XQn3tm
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: 5JmYmoHS
+    mvncommand: clean project
+    projectver: yKdpd6Nt6N
+    qqq: WCHWIvBj3ywtYesS
+    zxc: '598367'
+- name: test32/128
+  parameters:
+    GitName: JFuJbQ
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: 7yEY8N8R
+    mvncommand: clean project
+    projectver: 6ocA47ZHPq
+    qqq: imLbkGsa7UBRWBKL
+    zxc: '714070'
+- name: test32/129
+  parameters:
+    GitName: STq2al
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: hAF26gJE
+    mvncommand: clean project
+    projectver: 0u07v7ZAU2
+    qqq: NyKGUd3vcsRXtNRw
+    zxc: '867498'
+- name: test32/130
+  parameters:
+    GitName: RMpXwq
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: KoxBGvG5
+    mvncommand: clean project
+    projectver: OqPj6Qsv5e
+    qqq: b1TrrVI8NDeQvQLP
+    zxc: '301159'
+- name: test32/131
+  parameters:
+    GitName: oF1ryk
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: 8WsP7YrJ
+    mvncommand: clean project
+    projectver: e599xTtLg5
+    qqq: jLAUSZ43MufnhWv0
+    zxc: '507136'
+- name: test33/132
+  parameters:
+    GitName: DdxcdZ
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: gsnZQ80G
+    mvncommand: clean project
+    projectver: NuZzwsEX9K
+    qqq: g2Re1aavwm8EQgU4
+    zxc: '617607'
+- name: test33/133
+  parameters:
+    GitName: Wm83q2
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: rzp0Mf0k
+    mvncommand: clean project
+    projectver: y2mysw0AiY
+    qqq: zlGP2DjHL1a3zLLz
+    zxc: '884113'
+- name: test33/134
+  parameters:
+    GitName: wlaMiJ
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: SqXnnUFG
+    mvncommand: clean project
+    projectver: idfZODLHFT
+    qqq: QjhEsrhX8jnWMAEN
+    zxc: '380379'
+- name: test33/135
+  parameters:
+    GitName: jbYME9
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: FTaFpH9V
+    mvncommand: clean project
+    projectver: OiaaflaQ6C
+    qqq: CaK6R5MY3BG3hqvV
+    zxc: '574690'
+- name: test34/136
+  parameters:
+    GitName: l99EPi
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: uCvA0AxI
+    mvncommand: clean project
+    projectver: TZmM492NBG
+    qqq: iyqGf2WVFtjc0WN9
+    zxc: '132998'
+- name: test34/137
+  parameters:
+    GitName: ML2Wqc
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: eniiGJmd
+    mvncommand: clean project
+    projectver: AK6bm6OjY4
+    qqq: 1quuX48eFT5gp6UV
+    zxc: '492738'
+- name: test34/138
+  parameters:
+    GitName: KCtenJ
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: SGljICEZ
+    mvncommand: clean project
+    projectver: RTpN1ZWPTH
+    qqq: Ym1LPfIIvwu4NXK1
+    zxc: '925420'
+- name: test34/139
+  parameters:
+    GitName: Fh6NbK
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: D7kXFdeA
+    mvncommand: clean project
+    projectver: fMpmPwQxxS
+    qqq: Xj2Zadv0jetFZL4I
+    zxc: '566066'
+- name: test35/140
+  parameters:
+    GitName: CHdf3V
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: bfwutGbM
+    mvncommand: clean project
+    projectver: GiO46n5wtG
+    qqq: 61a0Qdz6oZM79aiG
+    zxc: '657537'
+- name: test35/141
+  parameters:
+    GitName: ANeIUY
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: W88IE13K
+    mvncommand: clean project
+    projectver: SBREeSSc4Q
+    qqq: bl8P8lj63XMIIBtI
+    zxc: '305358'
+- name: test35/142
+  parameters:
+    GitName: 3TO72Z
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: Qu7clZKU
+    mvncommand: clean project
+    projectver: HFSKVHzcLT
+    qqq: 8xmHQtQjMn9jrN9O
+    zxc: '599169'
+- name: test35/143
+  parameters:
+    GitName: Sluh6g
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: cj1N5NcL
+    mvncommand: clean project
+    projectver: h0AhivKHD9
+    qqq: SqQBGa9ZdQRJGp2I
+    zxc: '346881'
+- name: test36/144
+  parameters:
+    GitName: sWlR03
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: FgwUQhnE
+    mvncommand: clean project
+    projectver: tizkzCAfbC
+    qqq: ReNkQhT7lDz4n489
+    zxc: '626629'
+- name: test36/145
+  parameters:
+    GitName: bbR0VZ
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: 7bef4VeJ
+    mvncommand: clean project
+    projectver: mQvZ2OoHu6
+    qqq: bozPRb9rT48PxT48
+    zxc: '339411'
+- name: test36/146
+  parameters:
+    GitName: IqWdzC
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: KHSp59lm
+    mvncommand: clean project
+    projectver: DmmKFuHMy6
+    qqq: C74S7S9YKwAWrgBW
+    zxc: '252102'
+- name: test36/147
+  parameters:
+    GitName: VmbEa8
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: CJn0tWO9
+    mvncommand: clean project
+    projectver: d6PU88Kwmi
+    qqq: zZwrjJNFKBCumQQu
+    zxc: '564836'
+- name: test37/148
+  parameters:
+    GitName: zZLGUm
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: Qj83aVRH
+    mvncommand: clean project
+    projectver: 0F9TPUK2uS
+    qqq: IaYszSun3PGL7B6R
+    zxc: '760935'
+- name: test37/149
+  parameters:
+    GitName: xHlBtF
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: U1cWopZL
+    mvncommand: clean project
+    projectver: 1Saxzinsvk
+    qqq: Ch4tZQ6Mzzlq764I
+    zxc: '820361'
+- name: test37/150
+  parameters:
+    GitName: A2VVKb
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: VHIE7322
+    mvncommand: clean project
+    projectver: uhvRCButNw
+    qqq: 8ciZJp1z1VGnx7dg
+    zxc: '851117'
+- name: test37/151
+  parameters:
+    GitName: DlLf5H
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: SWveJIix
+    mvncommand: clean project
+    projectver: Pa3DMtwnPl
+    qqq: nO7wHQ8GvP6rXu2u
+    zxc: '495576'
+- name: test38/152
+  parameters:
+    GitName: 16kjGx
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: mWlIwzAr
+    mvncommand: clean project
+    projectver: yImwD1tiyx
+    qqq: 61UXLpuR3Wf5S456
+    zxc: '254004'
+- name: test38/153
+  parameters:
+    GitName: 8p4aJk
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: V9Oyt8UB
+    mvncommand: clean project
+    projectver: 63dkbysB4B
+    qqq: n7nGSoWAHZLSN1EK
+    zxc: '916277'
+- name: test38/154
+  parameters:
+    GitName: j2Jt4x
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: ItUnQUH8
+    mvncommand: clean project
+    projectver: X8pwEKwTtt
+    qqq: 4mvob0NG0TwMKJ4G
+    zxc: '346061'
+- name: test38/155
+  parameters:
+    GitName: 5N6UX9
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: kcWZshS4
+    mvncommand: clean project
+    projectver: sfzfyXjcko
+    qqq: sV68B4vNCYMkOnKb
+    zxc: '955117'
+- name: test39/156
+  parameters:
+    GitName: 78dUOS
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: ozqGnCSC
+    mvncommand: clean project
+    projectver: 2v4AsWo4Ze
+    qqq: AvzxqJJiJjGg3kwg
+    zxc: '485082'
+- name: test39/157
+  parameters:
+    GitName: NZ3t4D
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: O4TnjVV8
+    mvncommand: clean project
+    projectver: TweIzO7IRn
+    qqq: R5YYjTCUpmOCP5jR
+    zxc: '706147'
+- name: test39/158
+  parameters:
+    GitName: l4AirR
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: PhcfqYov
+    mvncommand: clean project
+    projectver: ixj5vdHbr6
+    qqq: PP6ly5qINonH3KRU
+    zxc: '587849'
+- name: test39/159
+  parameters:
+    GitName: aDSkuc
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: pyp6WIxh
+    mvncommand: clean project
+    projectver: YwKClDJWCq
+    qqq: cEd69qsl5zE0Sl0a
+    zxc: '864430'
+- name: test40/160
+  parameters:
+    GitName: KmWoG3
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: JuI3iVhK
+    mvncommand: clean project
+    projectver: 3zFBDDULRC
+    qqq: 51tvhHq2Rgco9bn9
+    zxc: '329969'
+- name: test40/161
+  parameters:
+    GitName: 47ks2z
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: RcAgvGF1
+    mvncommand: clean project
+    projectver: bzMQwDyMwi
+    qqq: mMoRNiP41zqUx87b
+    zxc: '100022'
+- name: test40/162
+  parameters:
+    GitName: MUDtSg
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: 0bdcbE9w
+    mvncommand: clean project
+    projectver: vxKA1lHoiJ
+    qqq: 7ogPInL9gUamzty0
+    zxc: '659543'
+- name: test40/163
+  parameters:
+    GitName: qgLzmZ
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: TANejlAN
+    mvncommand: clean project
+    projectver: 36CA7Q6aWU
+    qqq: JmphEzHsizkEqcmZ
+    zxc: '243942'
+- name: test41/164
+  parameters:
+    GitName: 5kViYF
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: feLxHMAw
+    mvncommand: clean project
+    projectver: jBb2cZ5v2u
+    qqq: BtvKJx9HpXP2GQ73
+    zxc: '168168'
+- name: test41/165
+  parameters:
+    GitName: hx7dTW
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: jQieYcAK
+    mvncommand: clean project
+    projectver: nV6lHrANEW
+    qqq: YEUsQBWAGNm1B6RU
+    zxc: '524925'
+- name: test41/166
+  parameters:
+    GitName: PCJqGT
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: RFYtY3yg
+    mvncommand: clean project
+    projectver: HcvJp5MudD
+    qqq: NU8f0PNjg2XyFskf
+    zxc: '408729'
+- name: test41/167
+  parameters:
+    GitName: ob55LF
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: X6aSRbma
+    mvncommand: clean project
+    projectver: xDuf4wSK7f
+    qqq: 2LoN4pjZuUi3mODE
+    zxc: '179588'
+- name: test42/168
+  parameters:
+    GitName: UfZ8fl
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: QysHEGWJ
+    mvncommand: clean project
+    projectver: Y1z3Apen6r
+    qqq: SvPOkF1giip90tQx
+    zxc: '592628'
+- name: test42/169
+  parameters:
+    GitName: E9NMH8
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: gFLCgmcW
+    mvncommand: clean project
+    projectver: SVlbOLfovV
+    qqq: Pj4KAtMCON0g6yOH
+    zxc: '573405'
+- name: test42/170
+  parameters:
+    GitName: joY08l
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: 8NqdCPEt
+    mvncommand: clean project
+    projectver: x8xK12qLHC
+    qqq: shplUKSujLKeFnFq
+    zxc: '694167'
+- name: test42/171
+  parameters:
+    GitName: imDAK9
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: nO7W3FLO
+    mvncommand: clean project
+    projectver: UgnPLbipCq
+    qqq: qd7mGywGC67jrmAi
+    zxc: '640740'
+- name: test43/172
+  parameters:
+    GitName: xi0ssg
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: 7nk9BAqS
+    mvncommand: clean project
+    projectver: Lt5RyZvbv5
+    qqq: EStmQOtjqZnAMg7J
+    zxc: '859793'
+- name: test43/173
+  parameters:
+    GitName: 4xq3zI
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: KB9xHSsP
+    mvncommand: clean project
+    projectver: 5P2xk1WVCK
+    qqq: Y7L64DZhoXvwhtfb
+    zxc: '276256'
+- name: test43/174
+  parameters:
+    GitName: oncj5A
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: 18pmcO7C
+    mvncommand: clean project
+    projectver: YHmxcMY8h3
+    qqq: FQ8KJps4Xun2mJxc
+    zxc: '154217'
+- name: test43/175
+  parameters:
+    GitName: ColNU4
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: DFP7Skly
+    mvncommand: clean project
+    projectver: HciZnY0YYj
+    qqq: HvXTG0DutZ6Ir2zx
+    zxc: '318816'
+- name: test44/176
+  parameters:
+    GitName: dV34XA
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: jZJ1OPfF
+    mvncommand: clean project
+    projectver: 8MgyN6XM5P
+    qqq: uZonmJwoKEEXDiEB
+    zxc: '117802'
+- name: test44/177
+  parameters:
+    GitName: pDjD3Q
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: VvxyRUpJ
+    mvncommand: clean project
+    projectver: axaLNkVZfx
+    qqq: rdW7slIwwYKq3bUy
+    zxc: '919919'
+- name: test44/178
+  parameters:
+    GitName: AErQ0R
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: nY62Agtf
+    mvncommand: clean project
+    projectver: Qfq9gYxbjj
+    qqq: SEP2jV6aEmFRpUBy
+    zxc: '801462'
+- name: test44/179
+  parameters:
+    GitName: jmUJDT
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: uZ5EcvY2
+    mvncommand: clean project
+    projectver: pLRx2vLWrI
+    qqq: lmUgM06jQqsT9lBG
+    zxc: '131372'
+- name: test45/180
+  parameters:
+    GitName: Exzbxp
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: lGRqYP4u
+    mvncommand: clean project
+    projectver: XzHdfgOgtv
+    qqq: lzCf6Hva5C0i1bYc
+    zxc: '622018'
+- name: test45/181
+  parameters:
+    GitName: wSMagS
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: hNztaxma
+    mvncommand: clean project
+    projectver: F1BNBtdBgU
+    qqq: XBVpjRX3T03UprH4
+    zxc: '376154'
+- name: test45/182
+  parameters:
+    GitName: 4TRvfH
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: 4jc5iuai
+    mvncommand: clean project
+    projectver: yTt00ILF0T
+    qqq: newu6PaFw9kgA2Gq
+    zxc: '629403'
+- name: test45/183
+  parameters:
+    GitName: R1XtLy
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: ATfbJqdK
+    mvncommand: clean project
+    projectver: Hyjf3K8yo5
+    qqq: DkODyHstIrofovfn
+    zxc: '218957'
+- name: test46/184
+  parameters:
+    GitName: NC21Zr
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: qYpiO8Ri
+    mvncommand: clean project
+    projectver: 8sXJ2WziKe
+    qqq: Bl4DABRSf9ykbAuC
+    zxc: '702710'
+- name: test46/185
+  parameters:
+    GitName: pImRzK
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: ZU3ohQZC
+    mvncommand: clean project
+    projectver: SJLuPv8j5J
+    qqq: 1LKO2UCkUHa4iagn
+    zxc: '489823'
+- name: test46/186
+  parameters:
+    GitName: 9SZVFs
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: 3YHfM6uz
+    mvncommand: clean project
+    projectver: 22Of0zr36O
+    qqq: pFGeEBIjF89AOEb1
+    zxc: '444701'
+- name: test46/187
+  parameters:
+    GitName: azNzkG
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: Bk7p3NGj
+    mvncommand: clean project
+    projectver: raihB6sPt3
+    qqq: ios74GXLPvynAtdA
+    zxc: '765668'
+- name: test47/188
+  parameters:
+    GitName: 32X2xQ
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: 8CAaPsPb
+    mvncommand: clean project
+    projectver: 81Sp7hzuDF
+    qqq: 5dQ2D2G0VeqwbxaA
+    zxc: '271365'
+- name: test47/189
+  parameters:
+    GitName: Hs7FKG
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: ODON1Yt8
+    mvncommand: clean project
+    projectver: AeW9RLUhpA
+    qqq: 7L0chDAZM4d3ohTT
+    zxc: '954416'
+- name: test47/190
+  parameters:
+    GitName: PMga4q
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: mE0EgkEF
+    mvncommand: clean project
+    projectver: R2ESy2Iq5t
+    qqq: 64Mno6emvA5nsEs2
+    zxc: '427483'
+- name: test47/191
+  parameters:
+    GitName: TFiDhL
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: QcOMduT6
+    mvncommand: clean project
+    projectver: tL4k1Qo6RE
+    qqq: J2cQab6VPjg9vkSG
+    zxc: '754399'
+- name: test48/192
+  parameters:
+    GitName: mVLMZL
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: 8EoVKbsr
+    mvncommand: clean project
+    projectver: 94uU5dXfz5
+    qqq: 5QqiH4kGc7zZG6ij
+    zxc: '433444'
+- name: test48/193
+  parameters:
+    GitName: aeqiZI
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: atBUklda
+    mvncommand: clean project
+    projectver: KPBP3GOTP4
+    qqq: 7x5hzPHhnJHZeBUY
+    zxc: '596650'
+- name: test48/194
+  parameters:
+    GitName: DHkzGg
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: BP10w5Sc
+    mvncommand: clean project
+    projectver: 23QGmeO9sO
+    qqq: ykS17scUN5KPCPKF
+    zxc: '527736'
+- name: test48/195
+  parameters:
+    GitName: PERVZ8
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: n7MWxrwo
+    mvncommand: clean project
+    projectver: 2Yz0HgcWB2
+    qqq: 4ltlq1lMRq2hqw2c
+    zxc: '499775'
+- name: test49/196
+  parameters:
+    GitName: m5zUY4
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: zwH8ZLqo
+    mvncommand: clean project
+    projectver: mKtzTzRDvc
+    qqq: NaJ6Jh5B7X7WL33U
+    zxc: '833694'
+- name: test49/197
+  parameters:
+    GitName: W6F7on
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: qerweR1o
+    mvncommand: clean project
+    projectver: psCAlw5IVI
+    qqq: 3jkxkPjK6EhrRt4n
+    zxc: '492009'
+- name: test49/198
+  parameters:
+    GitName: G9Guwa
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: mOzrxFd9
+    mvncommand: clean project
+    projectver: AT6F3pZTW2
+    qqq: YltaVYjTVNzy8HVi
+    zxc: '824049'
+- name: test49/199
+  parameters:
+    GitName: nDvQ8n
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: HQPHoLLT
+    mvncommand: clean project
+    projectver: LvpFlQYzdj
+    qqq: X5pF04M5VhfcOXDG
+    zxc: '222954'
+- name: test50/200
+  parameters:
+    GitName: EAiFAV
+    Platform: Platform
+    globalSystem: globalSystem
+    mono: RAVUEYuf
+    mvncommand: clean project
+    projectver: qyoPr7oOB5
+    qqq: MWvDpqxNKHhhgz4o
+    zxc: '303726'
