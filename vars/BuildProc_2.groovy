@@ -28,19 +28,18 @@ pipelineJob(yamlData.pipelines[**c**].name) {
     definition {
         cps {
             def var_block = "" + \
-                "${(yamlData.pipelines[**c**].parameters.mono ? "${spaces}mono: '${yamlData.pipelines[**c**].parameters.mono}'," : "")}" + \
-                "${(yamlData.pipelines[**c**].parameters.mvncommand ? "${spaces}mvncommand: '${yamlData.pipelines[**c**].parameters.mvncommand}'," : "")}" + \
-                "${(yamlData.pipelines[**c**].parameters.GitName ? "${spaces}GitName: '${yamlData.pipelines[**c**].parameters.GitName}'," : "")}" + \
-                "${(yamlData.pipelines[**c**].parameters.Platform ? "${spaces}Platform: '${yamlData.pipelines[**c**].parameters.Platform}'," : "")}" + \
-                "${(yamlData.pipelines[**c**].parameters.globalSystem ? "${spaces}globalSystem: '${yamlData.pipelines[**c**].parameters.globalSystem}'," : "")}" + \
-                "${(yamlData.pipelines[**c**].parameters.ProjectPath ? "${spaces}ProjectPath: '${yamlData.pipelines[**c**].parameters.ProjectPath}'," : "")}" + \
-                "${(yamlData.pipelines[**c**].parameters.k8s_namespace ? "${spaces}k8s_namespace: '${yamlData.pipelines[**c**].parameters.k8s_namespace}'," : "")}" + \
-                "${(yamlData.pipelines[**c**].parameters.k8s_cluster_api ? "${spaces}k8s_cluster_api: '${yamlData.pipelines[**c**].parameters.k8s_cluster_api}'," : "")}" + \
-                "${(yamlData.pipelines[**c**].parameters.server_name ? "${spaces}server_name: '${yamlData.pipelines[**c**].parameters.server_name}'," : "")}" + \
-                "${(yamlData.pipelines[**c**].parameters.standServiceDir ? "${spaces}standServiceDir: '${yamlData.pipelines[**c**].parameters.standServiceDir}'," : "")}" + \
-                "${(yamlData.pipelines[**c**].parameters.DotNetDockerPath ? "${spaces}DotNetDockerPath: '${yamlData.pipelines[**c**].parameters.DotNetDockerPath}'," : "")}" + \
-                "${(yamlData.pipelines[**c**].parameters.mvntest ? "${spaces}mvntest: '${yamlData.pipelines[**c**].parameters.mvntest}'," : "")}" + \     
-                "${(yamlData.pipelines[**c**].parameters.pom_path ? "${spaces}pom_path: '${yamlData.pipelines[**c**].parameters.pom_path}'," : "")}"
+                "${(yamlData.pipelines[**c**].parameters.mono ? "${tabiki}mono: '${yamlData.pipelines[**c**].parameters.mono}'," : "")}" + \
+                "${(yamlData.pipelines[**c**].parameters.mvncommand ? "${tabiki}mvncommand: '${yamlData.pipelines[**c**].parameters.mvncommand}'," : "")}" + \
+                "${(yamlData.pipelines[**c**].parameters.GitName ? "${tabiki}GitName: '${yamlData.pipelines[**c**].parameters.GitName}'," : "")}" + \
+                "${(yamlData.pipelines[**c**].parameters.Platform ? "${tabiki}Platform: '${yamlData.pipelines[**c**].parameters.Platform}'," : "")}" + \
+                "${(yamlData.pipelines[**c**].parameters.globalSystem ? "${tabiki}globalSystem: '${yamlData.pipelines[**c**].parameters.globalSystem}'," : "")}" + \
+                "${(yamlData.pipelines[**c**].parameters.projectver ? "${tabiki}projectver: '${yamlData.pipelines[**c**].parameters.projectver}'," : "")}" + \
+                "${(yamlData.pipelines[**c**].parameters.asd ? "${tabiki}asd: '${yamlData.pipelines[**c**].parameters.asd}'," : "")}" + \
+                "${(yamlData.pipelines[**c**].parameters.zxc ? "${tabiki}zxc: '${yamlData.pipelines[**c**].parameters.zxc}'," : "")}" + \
+                "${(yamlData.pipelines[**c**].parameters.asdx ? "${tabiki}asdx: '${yamlData.pipelines[**c**].parameters.asdx}'," : "")}" + \
+                "${(yamlData.pipelines[**c**].parameters.zxc2 ? "${tabiki}zxc2: '${yamlData.pipelines[**c**].parameters.zxc2}'," : "")}" + \
+                "${(yamlData.pipelines[**c**].parameters.qqq ? "${tabiki}qqq: '${yamlData.pipelines[**c**].parameters.qqq}'," : "")}" + \
+                "${(yamlData.pipelines[**c**].parameters.zxc3 ? "${tabiki}zxc3: '${yamlData.pipelines[**c**].parameters.zxc3}'," : "")}"
             // Получаем красивый паплайн
             def scriptContent = "@Library('lab') _\n" + \
                 "RunPipelineX(" + \
