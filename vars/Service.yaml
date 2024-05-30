@@ -27,7 +27,7 @@ pipelines:
     mono: SiU7qSJv
     mvncommand: clean project
     projectver: zgUetuAFJh
-    mvntest: " -pl ''"
+    mvntest: " -pl "
     pom_path: " -pl ''"
 - name: test1/4
   parameters:
