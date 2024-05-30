@@ -27,7 +27,7 @@ pipelines:
     mono: SiU7qSJv
     mvncommand: clean project
     projectver: zgUetuAFJh
-    qqq: oVpWBgi4G4s1eMWu
+    mvntest: "\" -pl ''\""
     zxc: '269261'
 - name: test1/4
   parameters:
