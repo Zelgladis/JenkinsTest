@@ -35,13 +35,7 @@ pipelineJob(yamlData.pipelines[**c**].name) {
                 "${(yamlData.pipelines[**c**].parameters.globalSystem ? "${spaces}globalSystem: '${yamlData.pipelines[**c**].parameters.globalSystem}'," : "")}" + \
                 "${(yamlData.pipelines[**c**].parameters.ProjectPath ? "${spaces}ProjectPath: '${yamlData.pipelines[**c**].parameters.ProjectPath}'," : "")}" + \
                 "${(yamlData.pipelines[**c**].parameters.k8s_namespace ? "${spaces}k8s_namespace: '${yamlData.pipelines[**c**].parameters.k8s_namespace}'," : "")}" + \
-                "${(yamlData.pipelines[**c**].parameters.k8s_cluster_api ? "${spaces}k8s_cluster_api: '${yamlData.pipelines[**c**].parameters.k8s_cluster_api}'," : "")}" + \
-                "${(yamlData.pipelines[**c**].parameters.server_name ? "${spaces}server_name: '${yamlData.pipelines[**c**].parameters.server_name}'," : "")}" + \
-                "${(yamlData.pipelines[**c**].parameters.standServiceDir ? "${spaces}standServiceDir: '${yamlData.pipelines[**c**].parameters.standServiceDir}'," : "")}" + \
-                "${(yamlData.pipelines[**c**].parameters.DotNetDockerPath ? "${spaces}DotNetDockerPath: '${yamlData.pipelines[**c**].parameters.DotNetDockerPath}'," : "")}" + \
-                "${(yamlData.pipelines[**c**].parameters.mvntest ? "${spaces}mvntest: '${yamlData.pipelines[**c**].parameters.mvntest}'," : "")}" + \
-                "${(yamlData.pipelines[**c**].parameters.service_path ? "${spaces}service_path: '${yamlData.pipelines[**c**].parameters.service_path}'," : "")}" + \        
-                "${(yamlData.pipelines[**c**].parameters.pom_path ? "${spaces}pom_path: '${yamlData.pipelines[**c**].parameters.pom_path}'," : "")}"
+                "${(yamlData.pipelines[**c**].parameters.k8s_cluster_api ? "${spaces}k8s_cluster_api: '${yamlData.pipelines[**c**].parameters.k8s_cluster_api}'," : "")}"
             // Получаем красивый паплайн
             def scriptContent = "@Library('lab') _\n" + \
                 "RunPipelineX(" + \
