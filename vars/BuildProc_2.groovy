@@ -1,4 +1,4 @@
-pipelineJob(yamlData.pipelines[**c**].name) {
+pipelineJob(yamlData.pipelines[c].name) {
     parameters {
             gitParameter {
                 name('BRANCH_NAME')
@@ -11,14 +11,14 @@ pipelineJob(yamlData.pipelines[**c**].name) {
                 branchFilter('origin/(.*)')
                 sortMode('NONE')
                 selectedValue('NONE')
-                useRepository("ssh://git@github.com/${yamlData.pipelines[**c**].parameters.globalSystem}/${yamlData.pipelines[**c**].parameters.GitName}.git")
+                useRepository("ssh://git@github.com/${yamlData.pipelines[c].parameters.globalSystem}/${yamlData.pipelines[c].parameters.GitName}.git")
             }
-      if (yamlData.pipelines[**c**].parameters.mvncommand == 'dotnet nupkg') {
+      if (yamlData.pipelines[c].parameters.mvncommand == 'dotnet nupkg') {
         stringParam('VersionNupkg', '2.0.', 'Версия пакетов')}
       else {
         booleanParam('Move_Distr', false, 'Перемещение дистрибутива для перекладки в CDL')
         booleanParam('Deploy_to_dev', false, 'Установка пакета на DSO')
-        if (yamlData.pipelines[**c**].parameters.Platform == 'OC') {
+        if (yamlData.pipelines[c].parameters.Platform == 'OC') {
           stringParam('Version_inv', '', 'Указываем вертку Inv')
           stringParam('Version_supply', '', 'Указываем ветку Supply')
         }
@@ -28,20 +28,20 @@ pipelineJob(yamlData.pipelines[**c**].name) {
     definition {
         cps {
             def var_block = "" + \
-                "${(yamlData.pipelines[**c**].parameters.mono ? "${spaces}mono: '${yamlData.pipelines[**c**].parameters.mono}'," : "")}" + \
-                "${(yamlData.pipelines[**c**].parameters.mvncommand ? "${spaces}mvncommand: '${yamlData.pipelines[**c**].parameters.mvncommand}'," : "")}" + \
-                "${(yamlData.pipelines[**c**].parameters.GitName ? "${spaces}GitName: '${yamlData.pipelines[**c**].parameters.GitName}'," : "")}" + \
-                "${(yamlData.pipelines[**c**].parameters.Platform ? "${spaces}Platform: '${yamlData.pipelines[**c**].parameters.Platform}'," : "")}" + \
-                "${(yamlData.pipelines[**c**].parameters.globalSystem ? "${spaces}globalSystem: '${yamlData.pipelines[**c**].parameters.globalSystem}'," : "")}" + \
-                "${(yamlData.pipelines[**c**].parameters.ProjectPath ? "${spaces}ProjectPath: '${yamlData.pipelines[**c**].parameters.ProjectPath}'," : "")}" + \
-                "${(yamlData.pipelines[**c**].parameters.k8s_namespace ? "${spaces}k8s_namespace: '${yamlData.pipelines[**c**].parameters.k8s_namespace}'," : "")}" + \
-                "${(yamlData.pipelines[**c**].parameters.k8s_cluster_api ? "${spaces}k8s_cluster_api: '${yamlData.pipelines[**c**].parameters.k8s_cluster_api}'," : "")}" + \
-                "${(yamlData.pipelines[**c**].parameters.server_name ? "${spaces}server_name: '${yamlData.pipelines[**c**].parameters.server_name}'," : "")}" + \
-                "${(yamlData.pipelines[**c**].parameters.standServiceDir ? "${spaces}standServiceDir: '${yamlData.pipelines[**c**].parameters.standServiceDir}'," : "")}" + \
-                "${(yamlData.pipelines[**c**].parameters.DotNetDockerPath ? "${spaces}DotNetDockerPath: '${yamlData.pipelines[**c**].parameters.DotNetDockerPath}'," : "")}"  + \
-                "${(yamlData.pipelines[**c**].parameters.mvntest ? "${spaces}mvntest: '${yamlData.pipelines[**c**].parameters.mvntest}'," : "")}" + \
-                "${(yamlData.pipelines[**c**].parameters.service_path ? "${spaces}service_path: '${yamlData.pipelines[**c**].parameters.service_path}'," : "")}" + \
-                "${(yamlData.pipelines[**c**].parameters.pom_path ? "${spaces}pom_path: \"${yamlData.pipelines[**c**].parameters.pom_path}\"," : "")}"
+                "${(yamlData.pipelines[c].parameters.mono ? "${spaces}mono: '${yamlData.pipelines[c].parameters.mono}'," : "")}" + \
+                "${(yamlData.pipelines[c].parameters.mvncommand ? "${spaces}mvncommand: '${yamlData.pipelines[c].parameters.mvncommand}'," : "")}" + \
+                "${(yamlData.pipelines[c].parameters.GitName ? "${spaces}GitName: '${yamlData.pipelines[c].parameters.GitName}'," : "")}" + \
+                "${(yamlData.pipelines[c].parameters.Platform ? "${spaces}Platform: '${yamlData.pipelines[c].parameters.Platform}'," : "")}" + \
+                "${(yamlData.pipelines[c].parameters.globalSystem ? "${spaces}globalSystem: '${yamlData.pipelines[c].parameters.globalSystem}'," : "")}" + \
+                "${(yamlData.pipelines[c].parameters.ProjectPath ? "${spaces}ProjectPath: '${yamlData.pipelines[c].parameters.ProjectPath}'," : "")}" + \
+                "${(yamlData.pipelines[c].parameters.k8s_namespace ? "${spaces}k8s_namespace: '${yamlData.pipelines[c].parameters.k8s_namespace}'," : "")}" + \
+                "${(yamlData.pipelines[c].parameters.k8s_cluster_api ? "${spaces}k8s_cluster_api: '${yamlData.pipelines[c].parameters.k8s_cluster_api}'," : "")}" + \
+                "${(yamlData.pipelines[c].parameters.server_name ? "${spaces}server_name: '${yamlData.pipelines[c].parameters.server_name}'," : "")}" + \
+                "${(yamlData.pipelines[c].parameters.standServiceDir ? "${spaces}standServiceDir: '${yamlData.pipelines[c].parameters.standServiceDir}'," : "")}" + \
+                "${(yamlData.pipelines[c].parameters.DotNetDockerPath ? "${spaces}DotNetDockerPath: '${yamlData.pipelines[c].parameters.DotNetDockerPath}'," : "")}"  + \
+                "${(yamlData.pipelines[c].parameters.mvntest ? "${spaces}mvntest: '${yamlData.pipelines[c].parameters.mvntest}'," : "")}" + \
+                "${(yamlData.pipelines[c].parameters.service_path ? "${spaces}service_path: '${yamlData.pipelines[c].parameters.service_path}'," : "")}" + \
+                "${(yamlData.pipelines[c].parameters.pom_path ? "${spaces}pom_path: \"${yamlData.pipelines[c].parameters.pom_path}\"," : "")}"
             // Получаем красивый паплайн
             def scriptContent = "@Library('lab') _\n" + \
                 "RunPipelineX(" + \

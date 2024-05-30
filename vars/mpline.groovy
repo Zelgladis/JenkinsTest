@@ -279,7 +279,7 @@ def dsl_runer_true(){
             }
             jobContent = readFile("vars/BuildProc_2.groovy")
             for(int i=0; i < yamlData.pipelines.size(); i++){
-                final_content = final_content + "\n" +(jobContent.replace("**c**", "${i}"))
+                final_content = final_content + "\n" +(jobContent.replace("[c]", "[${i}]"))
             }
             echo final_content
             writeFile(file: ".jenkins/test_pipline/BuildProc_2.groovy", text: "${final_content}")
