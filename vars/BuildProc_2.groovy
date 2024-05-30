@@ -2,11 +2,11 @@ pipelineJob(yamlData.pipelines[**c**].name) {
     parameters {
             gitParameter {
                 name('BRANCH_NAME')
-                branch('master')
+                branch('main')
                 description('Необходимо выбрать ветку для сборки')
                 tagFilter('*')
                 type('BRANCH_TAG')
-                defaultValue('master')
+                defaultValue('main')
                 quickFilterEnabled(true)
                 branchFilter('origin/(.*)')
                 sortMode('NONE')
