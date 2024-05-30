@@ -285,7 +285,7 @@ def dsl_runer_true(){
             jobDsl targets: '.jenkins/test_pipline/BuildProc_2.groovy',
                     lookupStrategy: 'SEED_JOB',
                     ignoreExisting: false,
-                    removedJobAction: "DISABLE",
+                    removedJobAction: "DELETE",
                     additionalParameters: [
                             yamlData: yamlData,
                     ],
