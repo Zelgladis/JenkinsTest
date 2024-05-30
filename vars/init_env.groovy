@@ -13,6 +13,7 @@ def call(args){
             }
             env.cringe2 = env.cringe
             env.GIT_CREDENTIALS_ID = 'SSH_MIO' // ID ваших учетных данных в Jenkins
+            env.MY_GIT = 'MY_GIT'
         }
     }
 }

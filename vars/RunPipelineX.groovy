@@ -9,7 +9,7 @@ def call(Map args){
                               submoduleCfg: [],
                               userRemoteConfigs: [[
                                   url: 'ssh://git@github.com/Zelgladis/JenkinsTest.git',
-                                  credentialsId: "${env.MY_GIT}"
+                                  credentialsId: "MY_GIT"
                               ]]
                     ])
         }
