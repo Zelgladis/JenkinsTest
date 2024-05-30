@@ -38,7 +38,8 @@ pipelineJob(yamlData.pipelines[**c**].name) {
                 "${(yamlData.pipelines[**c**].parameters.k8s_cluster_api ? "${spaces}k8s_cluster_api: '${yamlData.pipelines[**c**].parameters.k8s_cluster_api}'," : "")}" + \
                 "${(yamlData.pipelines[**c**].parameters.server_name ? "${spaces}server_name: '${yamlData.pipelines[**c**].parameters.server_name}'," : "")}" + \
                 "${(yamlData.pipelines[**c**].parameters.standServiceDir ? "${spaces}standServiceDir: '${yamlData.pipelines[**c**].parameters.standServiceDir}'," : "")}" + \
-                "${(yamlData.pipelines[**c**].parameters.DotNetDockerPath ? "${spaces}DotNetDockerPath: '${yamlData.pipelines[**c**].parameters.DotNetDockerPath}'," : "")}" 
+                "${(yamlData.pipelines[**c**].parameters.DotNetDockerPath ? "${spaces}DotNetDockerPath: '${yamlData.pipelines[**c**].parameters.DotNetDockerPath}'," : "")}"  + \
+                "${(yamlData.pipelines[**c**].parameters.mvntest ? "${spaces}mvntest: '${yamlData.pipelines[**c**].parameters.mvntest}'," : "")}"
             // Получаем красивый паплайн
             def scriptContent = "@Library('lab') _\n" + \
                 "RunPipelineX(" + \
