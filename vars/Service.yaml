@@ -1,9 +1,9 @@
 pipelines:
 - name: test0/1
   parameters:
-    GitName: uMweww
+    GitName: JenkinsTest
     Platform: Platform
-    globalSystem: globalSystem
+    globalSystem: Zelgladis
     mono: MQMN6n67
     mvncommand: clean project
     projectver: f3XYi9u9UV
@@ -11,9 +11,9 @@ pipelines:
     zxc: '705894'
 - name: test0/2
   parameters:
-    GitName: KvcOgv
+    GitName: JenkinsTest
     Platform: Platform
-    globalSystem: globalSystem
+    globalSystem: Zelgladis
     mono: F8IvJuA3
     mvncommand: clean project
     projectver: ofi3rYlMmt
@@ -21,9 +21,9 @@ pipelines:
     zxc: '903927'
 - name: test0/3
   parameters:
-    GitName: 6NcPwj
+    GitName: JenkinsTest
     Platform: Platform
-    globalSystem: globalSystem
+    globalSystem: Zelgladis
     mono: SiU7qSJv
     mvncommand: clean project
     projectver: zgUetuAFJh
@@ -31,9 +31,9 @@ pipelines:
     pom_path: " -pl ''"
 - name: test1/4
   parameters:
-    GitName: XIheNI
+    GitName: JenkinsTest
     Platform: Platform
-    globalSystem: globalSystem
+    globalSystem: Zelgladis
     mono: bC1uHGJF
     mvncommand: clean project
     projectver: 5ySpaWBVl8
@@ -41,9 +41,9 @@ pipelines:
     zxc: '633840'
 - name: test1/5
   parameters:
-    GitName: EyD0rt
+    GitName: JenkinsTest
     Platform: Platform
-    globalSystem: globalSystem
+    globalSystem: Zelgladis
     mono: u7CXRvLM
     mvncommand: clean project
     projectver: 3G5RRzWMdj
@@ -51,9 +51,9 @@ pipelines:
     zxc: '695518'
 - name: test1/6
   parameters:
-    GitName: QUq0wP
+    GitName: JenkinsTest
     Platform: Platform
-    globalSystem: globalSystem
+    globalSystem: Zelgladis
     mono: 0rc2tvOi
     mvncommand: clean project
     projectver: 91E9un41j5
