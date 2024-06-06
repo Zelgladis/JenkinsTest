@@ -8,84 +8,72 @@ def call(args) {
 
 def git_pull(bracnh_name, url){ 
     //kljkljlkjlkjlkkjljlkjljkj
-    node(){
-        stage('🥵Git pull project') {
-            info = git (
-                    branch: bracnh_name,
-                    credentialsId: 'GIT_TOKEN',
-                    url: url
-            )
-            sh 'ls'
-            
-        }
+    stage('🥵Git pull project') {
+        info = git (
+                branch: bracnh_name,
+                credentialsId: 'GIT_TOKEN',
+                url: url
+        )
+        sh 'ls'
+        
     }
 }
 
 def yaml_read() {
-    node(){
-        stage('yaml read'){
-            def mkey = ''
-            def mvalue = ''
-            echo '--------------------------------------------'
-            
-            //def fex = fileExists 'conf.yml'
-            if(fileExists('conf.yml1')){
-                def configVal = readYaml file: "conf.yml"
-                configVal.each{entry1 -> 
-                    entry1.value.each{entry2 -> 
-                        echo "${entry2.key.toString()} : ${entry2.value.toString()}"
-                    }
+    stage('yaml read'){
+        def mkey = ''
+        def mvalue = ''
+        echo '--------------------------------------------'
+        
+        //def fex = fileExists 'conf.yml'
+        if(fileExists('conf.yml1')){
+            def configVal = readYaml file: "conf.yml"
+            configVal.each{entry1 -> 
+                entry1.value.each{entry2 -> 
+                    echo "${entry2.key.toString()} : ${entry2.value.toString()}"
                 }
             }
-
         }
+
     }
 }
 
 
 def step1(String x) {
-    node () {
-        if (x == 'test') {
-            stage ("Good stage 1"){
-            echo 'This is the first stage'
-            echo env.asd
-            echo "env.cringe2 = ${env.cringe2}"
-        }
-        } else {
-            echo 'Skipping...'
-        }
+    if (x == 'test') {
+        stage ("Good stage 1"){
+        echo 'This is the first stage'
+        echo env.asd
+        echo "env.cringe2 = ${env.cringe2}"
+    }
+    } else {
+        echo 'Skipping...'
     }
 }
 
 def step_print() {
-    node () {
-        stage ("step_print"){
-            // do stuff here
-            echo 'This is the first stage'
-            echo "${env.cringe}"
-            sh """
-            echo "$cringe"
-            """
-        }
+    stage ("step_print"){
+        // do stuff here
+        echo 'This is the first stage'
+        echo "${env.cringe}"
+        sh """
+        echo "$cringe"
+        """
     }
 }
 
 def failed_step(x){
-    node(){
-        stage('failed_step'){
-            if(x == 'true'){
-                echo 'not failed'
-            }
+    stage('failed_step'){
+        if(x == 'true'){
+            echo 'not failed'
         }
     }
 }
 
 def clean(){
-    node () {
-        stage ("Cleaning..."){
-            // do stuff here
-            echo 'Clean complete!'
-        }
+    stage ("Cleaning..."){
+        // do stuff here
+        echo 'Clean complete!'
     }
 }
 
@@ -109,188 +97,172 @@ def myNewFirstStage() {
 }
 
 def pompom() {
-    node() {
-        stage('Check Java Version') {
-            def pomFiles = sh(
+    stage('Check Java Version') {
+        def pomFiles = sh(
+                returnStdout: true,
+                script: 'find . -name pom.xml'
+        ).trim()
+
+        echo "${pomFiles}"
+
+        def javaVersion = ''
+        for (String pomFile : pomFiles.split("\\n")) {
+            def version = sh(
                     returnStdout: true,
-                    script: 'find . -name pom.xml'
+                    //script: "grep '<java.version>[^<]*</java.version>|<maven.compiler.source>[^<]*</maven.compiler.source>' $pomFile | sed -n 's/.*>\\([^<]*\\)<\\/\\(java.version\\|maven.compiler.source\\)>/\\1/p' | head -n 1"
+                    script: """"\$pomFile" | sed -n '/<java\\.version\\|maven\\.compiler\\.source>/ { s/.*<\\(java\\.version\\|maven\\.compiler\\.source\\)>\\(.*\\)<\\/\\1>.*/\\2/p;q }'"""
             ).trim()
-
-            echo "${pomFiles}"
-
-            def javaVersion = ''
-            for (String pomFile : pomFiles.split("\\n")) {
-                def version = sh(
-                        returnStdout: true,
-                        //script: "grep '<java.version>[^<]*</java.version>|<maven.compiler.source>[^<]*</maven.compiler.source>' $pomFile | sed -n 's/.*>\\([^<]*\\)<\\/\\(java.version\\|maven.compiler.source\\)>/\\1/p' | head -n 1"
-                        script: """"\$pomFile" | sed -n '/<java\\.version\\|maven\\.compiler\\.source>/ { s/.*<\\(java\\.version\\|maven\\.compiler\\.source\\)>\\(.*\\)<\\/\\1>.*/\\2/p;q }'"""
-                ).trim()
-                if (!version.isEmpty()) {
-                    javaVersion = version
-                    break
-                }
+            if (!version.isEmpty()) {
+                javaVersion = version
+                break
             }
+        }
 
-            if (javaVersion.isEmpty()) {
-                error("Java version not found in any pom.xml file")
-            } else {
-                echo "Java version found: $javaVersion"
-            }
+        if (javaVersion.isEmpty()) {
+            error("Java version not found in any pom.xml file")
+        } else {
+            echo "Java version found: $javaVersion"
         }
     }
 }
 
 def wtfworked() {
-    node() {
-        stage('Check JDK Version') {
-            def pomFiles = sh(returnStdout: true, script: 'find . -name pom.xml').trim().split('\n')
+    stage('Check JDK Version') {
+        def pomFiles = sh(returnStdout: true, script: 'find . -name pom.xml').trim().split('\n')
 
-            def javaVersion = ""
-            def mavenCompilerVersion = ""
-            for (String pomFile : pomFiles) {
-                def sourceTagPattern = /<(java\.version|maven\.compiler\.source)>([^<]+)<\/(?:java\.version|maven\.compiler\.source)>/
-                def pomContent = sh(returnStdout: true, script: "cat $pomFile")
+        def javaVersion = ""
+        def mavenCompilerVersion = ""
+        for (String pomFile : pomFiles) {
+            def sourceTagPattern = /<(java\.version|maven\.compiler\.source)>([^<]+)<\/(?:java\.version|maven\.compiler\.source)>/
+            def pomContent = sh(returnStdout: true, script: "cat $pomFile")
 
-                def matcher = (pomContent =~ sourceTagPattern)
-                if (matcher.find()) {
-                    if (!javaVersion && matcher.group(1) == "java.version") {
-                        javaVersion = matcher.group(2)
-                    }
-                    if (!mavenCompilerVersion && matcher.group(1) == "maven.compiler.source") {
-                        mavenCompilerVersion = matcher.group(2)
-                    }
-                    if (javaVersion && mavenCompilerVersion) {
-                        break
-                    }
+            def matcher = (pomContent =~ sourceTagPattern)
+            if (matcher.find()) {
+                if (!javaVersion && matcher.group(1) == "java.version") {
+                    javaVersion = matcher.group(2)
+                }
+                if (!mavenCompilerVersion && matcher.group(1) == "maven.compiler.source") {
+                    mavenCompilerVersion = matcher.group(2)
+                }
+                if (javaVersion && mavenCompilerVersion) {
+                    break
                 }
             }
-
-            def selectedVersion = javaVersion ?: mavenCompilerVersion ?: ""
-            echo "Selected JDK version: $javaVersion" 
         }
+
+        def selectedVersion = javaVersion ?: mavenCompilerVersion ?: ""
+        echo "Selected JDK version: $javaVersion" 
     }
 }
 
 def degra2(){
-    node(){
-        stage('Hello World'){
-                currentBuild.displayName = "Zen-${env.BUILD_NUMBER}"
-                echo currentBuild.displayName
-        }
+    stage('Hello World'){
+            currentBuild.displayName = "Zen-${env.BUILD_NUMBER}"
+            echo currentBuild.displayName
     }
 }
 
 def git_now(){
-    node(){
-        stage('JenkinsTest GIT clone'){
-            info = git (
-                branch: 'main',
-                credentialsId: 'GIT_TOKEN',
-                url: 'https://github.com/Zelgladis/JenkinsTest.git'
-            )
-        }
+    stage('JenkinsTest GIT clone'){
+        info = git (
+            branch: 'main',
+            credentialsId: 'GIT_TOKEN',
+            url: 'https://github.com/Zelgladis/JenkinsTest.git'
+        )
     }
     
 }
 
 def generate_pipe(){
-    node(){
-        stage('Генерация DSL') {
-            //checkout scm
-            script {
-                env.service_name = 'testovii'
-                def jenkinsBaseDirectory = "${WORKSPACE}/.jenkins"
-                def jobDslDir = "${jenkinsBaseDirectory}/JobDSL/"
-                sh "ls"
-                templateJobContent = readFile("vars/BuildProcessing.groovy")
-                jobContent = (templateJobContent
-                        .replace("service_name", "testovii2"))
-                writeFile(file: ".jenkins/test_pipline/BuildProcessing.groovy", text: "${jobContent}")
-            }
+    stage('Генерация DSL') {
+        //checkout scm
+        script {
+            env.service_name = 'testovii'
+            def jenkinsBaseDirectory = "${WORKSPACE}/.jenkins"
+            def jobDslDir = "${jenkinsBaseDirectory}/JobDSL/"
+            sh "ls"
+            templateJobContent = readFile("vars/BuildProcessing.groovy")
+            jobContent = (templateJobContent
+                    .replace("service_name", "testovii2"))
+            writeFile(file: ".jenkins/test_pipline/BuildProcessing.groovy", text: "${jobContent}")
         }
     }
 }
 
 
 def create_pipe(){
-    node() {
-        stage('Запуск DSL') {
-            def yamlData = readYaml file: "vars/Service.yaml"
-            def conka = 'LOLIRUYU'
+    stage('Запуск DSL') {
+        def yamlData = readYaml file: "vars/Service.yaml"
+        def conka = 'LOLIRUYU'
+        jobDsl targets: '.jenkins/test_pipline/BuildProcessing.groovy',
+                lookupStrategy: 'SEED_JOB',
+                ignoreExisting: false,
+                removedJobAction: "DELETE",
+                additionalParameters: [
+                        conka: conka,
+                        yamlData: yamlData,
+                ],
+                sandbox: true
+    }
+}
+
+def dsl_runer(){
+    stage('dsl_runer'){
+        def yamlData = readYaml file: "vars/Service.yaml"
+
+        yamlData.pipelines.each { pipeline ->
+            jobContent = readFile("vars/BuildProcessing.groovy")
+            writeFile(file: ".jenkins/test_pipline/BuildProcessing.groovy", text: "${jobContent}")
+            
             jobDsl targets: '.jenkins/test_pipline/BuildProcessing.groovy',
                     lookupStrategy: 'SEED_JOB',
                     ignoreExisting: false,
                     removedJobAction: "DELETE",
                     additionalParameters: [
-                            conka: conka,
-                            yamlData: yamlData,
+                            pipeline: pipeline,
                     ],
                     sandbox: true
-        }
-    }
-}
-
-def dsl_runer(){
-    node(){
-        stage('dsl_runer'){
-            def yamlData = readYaml file: "vars/Service.yaml"
-
-            yamlData.pipelines.each { pipeline ->
-                jobContent = readFile("vars/BuildProcessing.groovy")
-                writeFile(file: ".jenkins/test_pipline/BuildProcessing.groovy", text: "${jobContent}")
-                
-                jobDsl targets: '.jenkins/test_pipline/BuildProcessing.groovy',
-                        lookupStrategy: 'SEED_JOB',
-                        ignoreExisting: false,
-                        removedJobAction: "DELETE",
-                        additionalParameters: [
-                                pipeline: pipeline,
-                        ],
-                        sandbox: true
-            }
         }
     }
 }
 
 
 def dsl_runer_true(){
-    node(){
-        stage('dsl_runer'){
-            def yamlData = readYaml file: "vars/Service.yaml"
-            def final_content = 'def yamlData = yamlData\n' + \
-                                'def spaces = "\\n   "\n'
-            yamlData.pipelines.each { pipeline ->
-                if (pipeline.name.contains('/')) {
-                    def splited = pipeline.name.split('/')
-                    def builded_path = ''
-                    if(splited[0] == ''){
-                        builded_path = '/'
+    stage('dsl_runer'){
+        def yamlData = readYaml file: "vars/Service.yaml"
+        def final_content = 'def yamlData = yamlData\n' + \
+                            'def spaces = "\\n   "\n'
+        yamlData.pipelines.each { pipeline ->
+            if (pipeline.name.contains('/')) {
+                def splited = pipeline.name.split('/')
+                def builded_path = ''
+                if(splited[0] == ''){
+                    builded_path = '/'
+                }
+                for (int i = 0; i < splited.size() - 1; i++) {
+                    if(splited[i] == ''){continue}
+                    if(i == (splited.size()-2)){
+                        builded_path = builded_path + splited[i]
+                    }else{
+                        builded_path = builded_path + splited[i] + '/'
                     }
-                    for (int i = 0; i < splited.size() - 1; i++) {
-                        if(splited[i] == ''){continue}
-                        if(i == (splited.size()-2)){
-                            builded_path = builded_path + splited[i]
-                        }else{
-                            builded_path = builded_path + splited[i] + '/'
-                        }
-                        final_content = final_content + "folder('${builded_path}'){}\n"
-                    }
+                    final_content = final_content + "folder('${builded_path}'){}\n"
                 }
             }
-            jobContent = readFile("vars/BuildProc_2.groovy")
-            for(int i=0; i < yamlData.pipelines.size(); i++){
-                final_content = final_content + "\n" +(jobContent.replace("[c]", "[${i}]"))
-            }
-            writeFile(file: ".jenkins/test_pipline/BuildProc_2.groovy", text: "${final_content}")
-            jobDsl targets: ".jenkins/test_pipline/BuildProc_2.groovy",
-                    lookupStrategy: 'SEED_JOB',
-                    ignoreExisting: false,
-                    removedJobAction: "DELETE",
-                    additionalParameters: [
-                            yamlData: yamlData,
-                    ],
-                    sandbox: true
         }
+        jobContent = readFile("vars/BuildProc_2.groovy")
+        for(int i=0; i < yamlData.pipelines.size(); i++){
+            final_content = final_content + "\n" +(jobContent.replace("[c]", "[${i}]"))
+        }
+        writeFile(file: ".jenkins/test_pipline/BuildProc_2.groovy", text: "${final_content}")
+        jobDsl targets: ".jenkins/test_pipline/BuildProc_2.groovy",
+                lookupStrategy: 'SEED_JOB',
+                ignoreExisting: false,
+                removedJobAction: "DELETE",
+                additionalParameters: [
+                        yamlData: yamlData,
+                ],
+                sandbox: true
     }
 }
 
@@ -325,13 +297,11 @@ def par_test()
 
 
 def test_backend(){
-    node(){
-        stage('gradle'){
-            sh"""
-                ls $JAVA_HOME
-                ./gradlew 'clean build' -x test
-            """
-        }
+    stage('gradle'){
+        sh"""
+            ls $JAVA_HOME
+            ./gradlew 'clean build' -x test
+        """
     }
 }
 
@@ -340,65 +310,55 @@ def runmaptest(mape){
 }
 
 def maptest(mape){
-    node(){
-        stage('Hello'){
-        env.mye = 'hello World'
-        mape.each{ m ->
-            env."${m.key}" = "$m.value"
-            echo env."${m.key}"
-        }
-        echo env.lol
-        sh'echo $lol'
-        sh'echo $lol'
-        sh"echo ${lol}"
-        sh'echo \${lol}'
-        sh"echo ${env.lol}"
-        }
+    stage('Hello'){
+    env.mye = 'hello World'
+    mape.each{ m ->
+        env."${m.key}" = "$m.value"
+        echo env."${m.key}"
     }
-    
+    echo env.lol
+    sh'echo $lol'
+    sh'echo $lol'
+    sh"echo ${lol}"
+    sh'echo \${lol}'
+    sh"echo ${env.lol}"
+    }
 }
 
 def nex_stage(){
-    node(){
-        stage('next_stage'){
-            sh"""
-                echo 'New Time'
-                echo $lol
-                echo $ser
-            """
-        }
+    stage('next_stage'){
+        sh"""
+            echo 'New Time'
+            echo $lol
+            echo $ser
+        """
     }
-    
 }
 
 def find_test(){
-    node(){
-        stage('sex'){
-            sh"""
-            find '.' -type f -name '*.nupkg' -maxdepth 20 | while IFS= read -r file; do
-                repo_file=\${file#./}
-                echo "Upload: \$repo_file"
-            done
-            """
-        }
+    stage('sex'){
+        sh"""
+        find '.' -type f -name '*.nupkg' -maxdepth 20 | while IFS= read -r file; do
+            repo_file=\${file#./}
+            echo "Upload: \$repo_file"
+        done
+        """
     }
 }
 
 def forach(){
-    node {
-        stage('forach sh') {
-            def configVal = readYaml file: "conf.yml"
-            def spis = configVal.someproj.nupkg
-            env.spis = spis.join(',')
+    stage('forach sh') {
+        def configVal = readYaml file: "conf.yml"
+        def spis = configVal.someproj.nupkg
+        env.spis = spis.join(',')
 
-            sh """
-                IFS=','
-                for item in \$spis; do
-                    echo \$item
-                    cd "\$WORKSPACE/\$item"
-                    echo 'Some_Action'
-                done
-            """
-        }
+        sh """
+            IFS=','
+            for item in \$spis; do
+                echo \$item
+                cd "\$WORKSPACE/\$item"
+                echo 'Some_Action'
+            done
+        """
     }
 }
