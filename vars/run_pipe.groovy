@@ -9,7 +9,7 @@ def call(){
 def run_backend(){
     mpline.init_env()
     mpline.git_pull('master', 'https://github.com/Zelgladis/test_backend-todo-list.git')
-    mpline.test_backend()
+    mpline.degra2()
 }
 
 def degra(){
