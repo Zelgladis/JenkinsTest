@@ -1,9 +1,11 @@
 // vars/mpline.groovy
 
 def call(args) {
-    init_env(args)
-    git_pull(params.BRANCH_NAME, params.URL)
-    dsl_runer_true()
+    node(){
+        init_env(args)
+        git_pull(params.BRANCH_NAME, params.URL)
+        dsl_runer_true()
+    }
 }
 
 def git_pull(bracnh_name, url){ 
