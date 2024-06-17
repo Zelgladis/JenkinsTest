@@ -22,7 +22,9 @@ pipelineJob(yamlData.pipelines[c].name) {
                 description('Решение всех проблем')
             }
             //p_val = job.getProperty(ParametersDefinitionProperty)?.getParameterDefinition('PARAM_NAME').getDefaultParameterValue()?.value
-
+            if (binding.variables.PARAM_NAME != null){
+              p_val = binding.variables.PARAM_NAME
+            }
             if (p_val[c] == null) {
                 stringParam('PARAM_NAME', 'default_value', 'Description of the parameter')
             } else {
