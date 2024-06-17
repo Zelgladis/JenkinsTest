@@ -22,7 +22,6 @@ pipelineJob(yamlData.pipelines[c].name) {
             //p_val = job.getProperty(ParametersDefinitionProperty)?.getParameterDefinition('PARAM_NAME').getDefaultParameterValue()?.value
             p_val = Jenkins.instance.getItemByFullName(yamlData.pipelines[c].name)?.getProperty(hudson.model.ParametersDefinitionProperty)?.getParameterDefinition('PARAM_NAME')?.defaultValue
 
-            echo p_val
 
             if (p_val == null) {
                 stringParam('PARAM_NAME', 'default_value', 'Description of the parameter')
