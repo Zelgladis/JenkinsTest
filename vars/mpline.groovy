@@ -233,7 +233,10 @@ def dsl_runer_true(){
     stage('dsl_runer'){
         def yamlData = readYaml file: "vars/Service.yaml"
         def final_content = 'def yamlData = yamlData\n' + \
-                            'def spaces = "\\n   "\n'
+                            'def spaces = "\\n   "\n' + \
+                            'import jenkins.model.Jenkins' + \
+                            'import hudson.model.ParametersDefinitionProperty' + \
+                            'import hudson.model.StringParameterDefinition'
         yamlData.pipelines.each { pipeline ->
             if (pipeline.name.contains('/')) {
                 def splited = pipeline.name.split('/')
