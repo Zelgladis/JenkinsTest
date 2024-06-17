@@ -17,7 +17,7 @@ pipelineJob(yamlData.pipelines[c].name) {
                 type('org.jenkinsci.plugins.plaincredentials.impl.StringCredentialsImpl')
                 required()
                 defaultValue('MY_SUPER_KEY')
-                description('WT*')
+                description('Решение всех проблем')
             }
 
       if (yamlData.pipelines[c].parameters.mvncommand == 'dotnet nupkg') {
