@@ -19,7 +19,7 @@ pipelines:
     projectver: ofi3rYlMmt
     qqq: HH7BZL0UBBmpHiAJ
     zxc: '903927'
-- name: test0/3
+- name: test0/3/2
   parameters:
     GitName: JenkinsTest
     Platform: Platform
