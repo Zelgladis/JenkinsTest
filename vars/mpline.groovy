@@ -230,9 +230,9 @@ def dsl_runer(){
 
 def rekurwa(String stroka, String res=''){
     st_list = stroka.split('/')
-    res += "folder('${st_str[0]}'){}\n"
+    res += "folder('${st_list[0]}'){}\n"
     if(st_list.size() != 1){
-        return rekurwa(st_str[1..(st_str.size())].join('/'), res)
+        return rekurwa(st_list[1..(st_list.size())].join('/'), res)
     }else{
         return res
     }
