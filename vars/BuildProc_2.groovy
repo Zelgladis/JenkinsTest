@@ -13,12 +13,12 @@ pipelineJob(yamlData.pipelines[c].name) {
                 selectedValue('NONE')
                 useRepository("ssh://git@github.com/${yamlData.pipelines[c].parameters.globalSystem}/${yamlData.pipelines[c].parameters.GitName}.git")
             }
-              credentialsParam('Hello') {
+              credentialsParam('DEPLOY_KEY') {
+                type('org.jenkinsci.plugins.plaincredentials.impl.StringCredentialsImpl')
+                required()
                 defaultValue('mio')
-                description('DECR')
-                required(true)
-                type(getType(''))
-              } 
+                description('WT*')
+            }
 
       if (yamlData.pipelines[c].parameters.mvncommand == 'dotnet nupkg') {
         stringParam('VersionNupkg', '2.0.', 'Версия пакетов')}
