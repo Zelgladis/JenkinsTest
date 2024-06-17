@@ -228,13 +228,14 @@ def dsl_runer(){
     }
 }
 
-def rekurwa(String stroka, String res=''){
+def rekurwa(String stroka, String res='', folders=[]){
     st_list = stroka.split('/')
-    res += "folder('${st_list[0]}'){}\n"
     if(st_list.size() != 1){
-        return rekurwa(st_list[1..(st_list.size()-1)].join('/'), res)
+        folders.add(st_list[0])
+        res += "folder('${st_list[0]}'){}\n"
+        return rekurwa(st_list[1..(st_list.size()-1)].join('/'), res, folders)
     }else{
-        return res
+        return [res, folders]
     }
 }
 
@@ -250,7 +251,9 @@ def dsl_runer_true(){
             if (pipeline.name.contains('/')) {
                 def splited = pipeline.name.split('/')
                 def builded_path = ''
-                println rekurwa(pipeline.name)
+                def rarr = rekurwa(pipeline.name)
+                println rarr[1]
+
                 if(splited[0] == ''){
                     builded_path = '/'
                 }
