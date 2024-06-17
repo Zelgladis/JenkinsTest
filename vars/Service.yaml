@@ -49,7 +49,7 @@ pipelines:
     projectver: 3G5RRzWMdj
     qqq: ZPRFfgLj8oBj3SVV
     zxc: '695518'
-- name: test1/6
+- name: test1/6/10
   parameters:
     GitName: JenkinsTest
     Platform: Platform
