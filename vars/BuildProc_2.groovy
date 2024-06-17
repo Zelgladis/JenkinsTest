@@ -26,7 +26,6 @@ pipelineJob(yamlData.pipelines[c].name) {
             if (p_val == null) {
                 stringParam('PARAM_NAME', 'default_value', 'Description of the parameter')
             } else {
-                // Если параметр уже существует, сохраняем его текущее значение
                 stringParam('PARAM_NAME', p_val, 'Description of the parameter')
             }
 
