@@ -21,7 +21,12 @@ pipelineJob(yamlData.pipelines[c].name) {
             }
             // Проверяем, существует ли параметр и его текущее значение
             def job = Jenkins.instance.getItemByFullName(yamlData.pipelines[c].name)
-            def p_val = job.getProperty(ParametersDefinitionProperty)?.getParameterDefinition('PARAM_NAME').getDefaultParameterValue()?.value
+            if(job){
+              def p_val = job.getProperty(ParametersDefinitionProperty)?.getParameterDefinition('PARAM_NAME').getDefaultParameterValue()?.value
+            }else{
+              def p_val = 'DEFAULT'
+            }
+            
             if (p_val == null) {
                 stringParam('PARAM_NAME', 'default_value', 'Description of the parameter')
             } else {
