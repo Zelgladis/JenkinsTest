@@ -1,5 +1,5 @@
 //p_val.add(Jenkins.instance.getItemByFullName(yamlData.pipelines[c].name)?.getProperty(hudson.model.ParametersDefinitionProperty)?.getParameterDefinition('PARAM_NAME')?.defaultValue)
-p_val.add(job(yamlData.pipelines[c].name)?.getProperty('ParametersDefinitionProperty')?.defaultValue)
+p_val.add(job(yamlData.pipelines[c].name)?.getProperty()?.getParameterDefinition('PARAM_NAME')?.defaultValue)
 
 pipelineJob(yamlData.pipelines[c].name) {
     parameters {
