@@ -29,7 +29,7 @@ pipelineJob(yamlData.pipelines[c].name) {
             //binding.variables.each {
             //  println "${it.key} = ${it.value}"
             //}
-            println job.getProperty(ParametersDefinitionProperty.class)
+            println job(yamlData.pipelines[c].name).params.get('PARAM_NAME')
             if (p_val[c] == null) {
                 stringParam('PARAM_NAME', 'default_value', 'Description of the parameter')
             } else {
