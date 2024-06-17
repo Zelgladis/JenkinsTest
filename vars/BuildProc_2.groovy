@@ -20,11 +20,12 @@ pipelineJob(yamlData.pipelines[c].name) {
                 description('Решение всех проблем')
             }
             // Проверяем, существует ли параметр и его текущее значение
-            def p_val = 'DEFAULT'
             def job = Jenkins.instance.getItemByFullName(yamlData.pipelines[c].name)
             if(job){
               //p_val = job.getProperty(ParametersDefinitionProperty)?.getParameterDefinition('PARAM_NAME').getDefaultParameterValue()?.value
-              p_val = Jenkins.instance.getItemByFullName(yamlData.pipelines[c].name)?.getProperty(hudson.model.ParametersDefinitionProperty)?.getParameterDefinition('PARAM_NAME')?.defaultValue
+              def p_val = Jenkins.instance.getItemByFullName(yamlData.pipelines[c].name)?.getProperty(hudson.model.ParametersDefinitionProperty)?.getParameterDefinition('PARAM_NAME')?.defaultValue
+            }else{
+              def p_val = 'DEF'
             }
             
             if (p_val == null) {
