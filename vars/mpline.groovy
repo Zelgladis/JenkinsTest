@@ -236,8 +236,7 @@ def dsl_runer_true(){
                             'import hudson.model.ParametersDefinitionProperty\n' + \
                             'import hudson.model.StringParameterDefinition\n' + \
                             'def yamlData = yamlData\n' + \
-                            'def spaces = "\\n   "\n' + \
-                            'List p_val = []\n'
+                            'def spaces = "\\n   "\n'
         yamlData.pipelines.each { pipeline ->
             if (pipeline.name.contains('/')) {
                 def splited = pipeline.name.split('/')
