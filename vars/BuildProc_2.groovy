@@ -1,3 +1,4 @@
+def p_val = Jenkins.instance.getItemByFullName(yamlData.pipelines[c].name)?.getProperty(hudson.model.ParametersDefinitionProperty)?.getParameterDefinition('PARAM_NAME')?.defaultValue
 pipelineJob(yamlData.pipelines[c].name) {
     parameters {
             gitParameter {
@@ -20,8 +21,6 @@ pipelineJob(yamlData.pipelines[c].name) {
                 description('Решение всех проблем')
             }
             //p_val = job.getProperty(ParametersDefinitionProperty)?.getParameterDefinition('PARAM_NAME').getDefaultParameterValue()?.value
-            p_val = Jenkins.instance.getItemByFullName(yamlData.pipelines[c].name)?.getProperty(hudson.model.ParametersDefinitionProperty)?.getParameterDefinition('PARAM_NAME')?.defaultValue
-
 
             if (p_val == null) {
                 stringParam('PARAM_NAME', 'default_value', 'Description of the parameter')
