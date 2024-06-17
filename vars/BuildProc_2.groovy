@@ -16,7 +16,7 @@ pipelineJob(yamlData.pipelines[c].name) {
               credentialsParam('DEPLOY_KEY') {
                 type('org.jenkinsci.plugins.plaincredentials.impl.StringCredentialsImpl')
                 required()
-                defaultValue('mio')
+                defaultValue('MY_SUPER_KEY')
                 description('WT*')
             }
 
