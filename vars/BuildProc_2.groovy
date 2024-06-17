@@ -23,7 +23,7 @@ pipelineJob(yamlData.pipelines[c].name) {
             def job_name = 'creatertest/'+yamlData.pipelines[c].name
             def p_val = Jenkins.instance.getItemByFullName(job_name)?.getProperty(hudson.model.ParametersDefinitionProperty)?.getParameterDefinition('PARAM_NAME')?.defaultValue
 
-            if (p_val[c] == null) {
+            if (p_val == null) {
                 stringParam('PARAM_NAME', 'default_value', 'Description of the parameter')
             } else {
                 // Если параметр уже существует, сохраняем его текущее значение
