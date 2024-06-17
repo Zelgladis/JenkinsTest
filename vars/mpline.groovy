@@ -232,7 +232,7 @@ def rekurwa(String stroka, String res=''){
     st_list = stroka.split('/')
     res += "folder('${st_list[0]}'){}\n"
     if(st_list.size() != 1){
-        return rekurwa(st_list[1..(st_list.size())].join('/'), res)
+        return rekurwa(st_list[1..(st_list.size()-1)].join('/'), res)
     }else{
         return res
     }
