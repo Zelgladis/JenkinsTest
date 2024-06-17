@@ -13,7 +13,8 @@ pipelineJob(yamlData.pipelines[c].name) {
                 selectedValue('NONE')
                 useRepository("ssh://git@github.com/${yamlData.pipelines[c].parameters.globalSystem}/${yamlData.pipelines[c].parameters.GitName}.git")
             }
-            nonStoredPasswordParam('MY_SECRET', 'Enter your secret password')
+            //nonStoredPasswordParam('MY_SECRET', 'Enter your secret password')
+            credentialsParam(null, 'Creds_pass', true, type(String type))
 
       if (yamlData.pipelines[c].parameters.mvncommand == 'dotnet nupkg') {
         stringParam('VersionNupkg', '2.0.', 'Версия пакетов')}
