@@ -23,13 +23,8 @@ pipelineJob(yamlData.pipelines[c].name) {
                 description('Решение всех проблем')
             }
             //p_val = job.getProperty(ParametersDefinitionProperty)?.getParameterDefinition('PARAM_NAME').getDefaultParameterValue()?.value
-            if (binding.variables.PARAM_NAME != null){
-              p_val = binding.variables.PARAM_NAME
-            }
-            //binding.variables.each {
-            //  println "${it.key} = ${it.value}"
-            //}
-            p_val = Jenkins.instance.getItemByFullName('creatertest/t'+yamlData.pipelines[c].name)?.getProperty(hudson.model.ParametersDefinitionProperty)?.getParameterDefinition('PARAM_NAME')?.defaultValue
+            def job_name = 'creatertest/'+yamlData.pipelines[c].name
+            p_val = Jenkins.instance.getItemByFullName(job_name)?.getProperty(hudson.model.ParametersDefinitionProperty)?.getParameterDefinition('PARAM_NAME')?.defaultValue
             if (p_val[c] == null) {
                 stringParam('PARAM_NAME', 'default_value', 'Description of the parameter')
             } else {
