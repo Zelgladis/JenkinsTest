@@ -17,7 +17,7 @@ pipelineJob(yamlData.pipelines[c].name) {
                 defaultValue('mio')
                 description('DECR')
                 required(true)
-                type(String)
+                type(getType(''))
               } 
 
       if (yamlData.pipelines[c].parameters.mvncommand == 'dotnet nupkg') {
