@@ -254,7 +254,7 @@ def dsl_runer_true(){
                 def builded_path = ''
                 def rarr = rekurwa(pipeline.name)
                 rarr[1].each{
-                    if(it not in folders){
+                    if(!folders.contains(it)){
                         folders.add(it)
                     }
                 }
