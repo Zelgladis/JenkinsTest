@@ -19,6 +19,15 @@ pipelineJob(yamlData.pipelines[c].name) {
                 defaultValue('QWE')
                 description('Решение всех проблем')
             }
+            // Проверяем, существует ли параметр и его текущее значение
+            def existingValue = getCurrentValue('PARAM_NAME')
+            if (existingValue == null) {
+                stringParam('PARAM_NAME', 'default_value', 'Description of the parameter')
+            } else {
+                // Если параметр уже существует, сохраняем его текущее значение
+                stringParam('PARAM_NAME', existingValue, 'Description of the parameter')
+            }
+
 
       if (yamlData.pipelines[c].parameters.mvncommand == 'dotnet nupkg') {
         stringParam('VersionNupkg', '2.0.', 'Версия пакетов')}
