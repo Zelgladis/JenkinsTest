@@ -247,12 +247,17 @@ def dsl_runer_true(){
                             'import hudson.model.StringParameterDefinition\n' + \
                             'def yamlData = yamlData\n' + \
                             'def spaces = "\\n   "\n'
+        def folders = []
         yamlData.pipelines.each { pipeline ->
             if (pipeline.name.contains('/')) {
                 def splited = pipeline.name.split('/')
                 def builded_path = ''
                 def rarr = rekurwa(pipeline.name)
-                println rarr[1]
+                rarr[1].each{
+                    if(it not in folders){
+                        folders.add(it)
+                    }
+                }
 
                 if(splited[0] == ''){
                     builded_path = '/'
@@ -268,6 +273,7 @@ def dsl_runer_true(){
                 }
             }
         }
+        println folders
         jobContent = readFile("vars/BuildProc_2.groovy")
         for(int i=0; i < yamlData.pipelines.size(); i++){
             final_content = final_content + "\n" +(jobContent.replace("[c]", "[${i}]"))
