@@ -1,5 +1,5 @@
 //p_val.add(Jenkins.instance.getItemByFullName(yamlData.pipelines[c].name)?.getProperty(hudson.model.ParametersDefinitionProperty)?.getParameterDefinition('PARAM_NAME')?.defaultValue)
-p_val.add(job(yamlData.pipelines[c].name)?.getProperty(ParametersDefinitionProperty.class)?.getParameterDefinition('PARAM_NAME')?.defaultValue)
+//p_val.add(job(yamlData.pipelines[c].name)?.getProperty(ParametersDefinitionProperty.class)?.getParameterDefinition('PARAM_NAME')?.defaultValue)
 
 pipelineJob(yamlData.pipelines[c].name) {
     parameters {
@@ -26,8 +26,11 @@ pipelineJob(yamlData.pipelines[c].name) {
             if (binding.variables.PARAM_NAME != null){
               p_val = binding.variables.PARAM_NAME
             }
-            binding.variables.each {
-              println "${it.key} = ${it.value}"
+            //binding.variables.each {
+            //  println "${it.key} = ${it.value}"
+            //}
+            job(yamlData.pipelines[c].name).getProperties.each{
+              println "${it.key} = ${it.value}"  
             }
             if (p_val[c] == null) {
                 stringParam('PARAM_NAME', 'default_value', 'Description of the parameter')
