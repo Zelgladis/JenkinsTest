@@ -23,7 +23,8 @@ pipelineJob(yamlData.pipelines[c].name) {
             def p_val = 'DEFAULT'
             def job = Jenkins.instance.getItemByFullName(yamlData.pipelines[c].name)
             if(job){
-              p_val = job.getProperty(ParametersDefinitionProperty)?.getParameterDefinition('PARAM_NAME').getDefaultParameterValue()?.value
+              //p_val = job.getProperty(ParametersDefinitionProperty)?.getParameterDefinition('PARAM_NAME').getDefaultParameterValue()?.value
+              p_val = project / 'properties' / 'hudson.model.ParametersDefinitionProperty' / parameterDefinitions / 'hudson.model.StringParameterDefinition'.find { it.name.text() == 'PARAM_NAME' }
             }
             
             if (p_val == null) {
