@@ -25,9 +25,11 @@ pipelineJob(yamlData.pipelines[c].name) {
             if (binding.variables.PARAM_NAME != null){
               p_val = binding.variables.PARAM_NAME
             }
-            binding.variables.each {
-              println "${it.key} = ${it.value}"
-            }
+             Executor.currentExecutor().currentExecutable
+              ParametersAction parametersAction = build.getAction(ParametersAction)
+              parametersAction.parameters.each { ParameterValue v ->
+                  println v
+              }
             if (p_val[c] == null) {
                 stringParam('PARAM_NAME', 'default_value', 'Description of the parameter')
             } else {
