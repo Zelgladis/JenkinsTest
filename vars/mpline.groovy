@@ -267,7 +267,7 @@ def dsl_runer_true(){
         folders.each{
             final_content = final_content + "folder('${it}'){}\n"
         }
-        final_content = final_content + "folder('${builded_path}'){}\n"
+        //final_content = final_content + "folder('${builded_path}'){}\n"
         jobContent = readFile("vars/BuildProc_2.groovy")
         for(int i=0; i < yamlData.pipelines.size(); i++){
             final_content = final_content + "\n" +(jobContent.replace("[c]", "[${i}]"))
