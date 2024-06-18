@@ -238,7 +238,7 @@ def rekurwa(String stroka, String res='', folders=[], prew=''){
             prew = st_list[0]
         }
         folders.add(st_list[0])
-        return rekurwa(next_vals, res, folders)
+        return rekurwa(next_vals, folders, prew)
     }else{
         return folders
     }
