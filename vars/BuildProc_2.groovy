@@ -29,6 +29,8 @@ pipelineJob(yamlData.pipelines[c].name) {
                 stringParam('PARAM_NAME', p_val, 'Description of the parameter')
             }
 
+            println job(job_name).getProperty(hudson.model.ParametersDefinitionProperty)?.getParameterDefinition('PARAM_NAME')?.defaultValue
+
 
       if (yamlData.pipelines[c].parameters.mvncommand == 'dotnet nupkg') {
         stringParam('VersionNupkg', '2.0.', 'Версия пакетов')}
