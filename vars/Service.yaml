@@ -29,7 +29,7 @@ pipelines:
     projectver: 5ySpaWBVl8
     qqq: ioSumh6JWuKeLYWl
     zxc: '633840'
-- name: test1/fii1
+- name: test1/noo/job3
   parameters:
     GitName: JenkinsTest
     Platform: Platform
