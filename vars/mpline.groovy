@@ -228,7 +228,7 @@ def dsl_runer(){
     }
 }
 
-def rekurwa(String stroka, String res='', folders=[], prew=''){
+def rekurwa(String stroka, folders=[], prew=''){
     st_list = stroka.split('/')
     if(st_list.size() != 1){
         next_vals = st_list[1..(st_list.size()-1)].join('/')
