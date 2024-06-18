@@ -26,7 +26,7 @@ pipelineJob(yamlData.pipelines[c].name) {
             //def param = params.find { it.name == 'PARAM_NAME' }
             job.with {
               parameters {
-                    def param = get(paramName)
+                    def param = get('PARAM_NAME')
                     if (param instanceof hudson.model.StringParameterDefinition) {
                         println "Parameter '$paramName' found in job '$jobName'"
                         println "Default value: ${param.defaultValue}"
