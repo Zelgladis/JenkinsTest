@@ -228,7 +228,20 @@ def dsl_runer(){
     }
 }
 
-def rekurwa(String stroka, ArrayList folders=[], String prew=''){
+def splitPath(String path) {
+    def segments = path.split('/')
+    return generateSegments(segments, 0, [])
+}
+
+def generateSegments(String[] segments, int index, List<String> result) {
+    if (index == segments.length - 1) {
+        return result
+    }
+    result << segments[0..index].join('/')
+    return generateSegments(segments, index + 1, result)
+}
+
+def rekurwa(String stroka, List<String> folders=[], String prew=''){
     st_list = stroka.split('/')
     if(st_list.size() != 1){
         next_vals = st_list[1..(st_list.size()-1)].join('/')
@@ -256,6 +269,7 @@ def dsl_runer_true(){
         yamlData.pipelines.each { pipeline ->
             if (pipeline.name.contains('/')) {
                 def bober = rekurwa(pipeline.name)
+                println splitPath(pipeline.name)
                 bober.each{
                     if(!folders.contains(it)){
                         folders.add(it)
