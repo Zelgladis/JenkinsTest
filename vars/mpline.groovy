@@ -287,6 +287,7 @@ def dsl_runer_true(){
                 }
             }
         }
+        println folders
         folders.each{
             final_content = final_content + "folder('${it}'){}\n"
         }
