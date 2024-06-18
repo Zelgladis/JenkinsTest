@@ -228,14 +228,19 @@ def dsl_runer(){
     }
 }
 
-def rekurwa(String stroka, String res='', folders=[]){
+def rekurwa(String stroka, String res='', folders=[], prew){
     st_list = stroka.split('/')
+    next_vals = st_list[1..(st_list.size()-1)].join('/')
     if(st_list.size() != 1){
+        if(prew){
+            prew = prew + '/' + st_list[0]
+        }else{
+            prew = st_list[0]
+        }
         folders.add(st_list[0])
-        res += "folder('${st_list[0]}'){}\n"
-        return rekurwa(st_list[1..(st_list.size()-1)].join('/'), res, folders)
+        return rekurwa(next_vals, res, folders)
     }else{
-        return [res, folders]
+        return folders
     }
 }
 
@@ -250,30 +255,19 @@ def dsl_runer_true(){
         def folders = []
         yamlData.pipelines.each { pipeline ->
             if (pipeline.name.contains('/')) {
-                def splited = pipeline.name.split('/')
-                def builded_path = ''
-                def rarr = rekurwa(pipeline.name)
-                rarr[1].each{
+                def fold_arr = rekurwa(pipeline.name)
+                fold_rarr.each{
                     if(!folders.contains(it)){
                         folders.add(it)
                     }
                 }
-
-                if(splited[0] == ''){
-                    builded_path = '/'
-                }
-                for (int i = 0; i < splited.size() - 1; i++) {
-                    if(splited[i] == ''){continue}
-                    if(i == (splited.size()-2)){
-                        builded_path = builded_path + splited[i]
-                    }else{
-                        builded_path = builded_path + splited[i] + '/'
-                    }
-                    final_content = final_content + "folder('${builded_path}'){}\n"
-                }
             }
         }
         println folders
+        folders.each{
+            final_content = final_content + "folder('${it}'){}\n"
+        }
+        final_content = final_content + "folder('${builded_path}'){}\n"
         jobContent = readFile("vars/BuildProc_2.groovy")
         for(int i=0; i < yamlData.pipelines.size(); i++){
             final_content = final_content + "\n" +(jobContent.replace("[c]", "[${i}]"))
