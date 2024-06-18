@@ -259,8 +259,8 @@ def rekurwa2(String stroka, List<String> folders=[], String prew=''){
 
 def rekurwa(String stroka, index=0 ,List<String> res=[]){
     sp_str = stroka.split('/')
-    if(sp_str.size() != index-2){
-        res.add(sp_str[0..index+1].join('/'))
+    if(sp_str.size() != index-1){
+        res.add(sp_str[0..index].join('/'))
         return rekurwa(stroka, index+1, res)
     }else{
         return res
