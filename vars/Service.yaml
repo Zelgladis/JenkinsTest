@@ -19,16 +19,6 @@ pipelines:
     projectver: ofi3rYlMmt
     qqq: HH7BZL0UBBmpHiAJ
     zxc: '903927'
-- name: test0/3
-  parameters:
-    GitName: JenkinsTest
-    Platform: Platform
-    globalSystem: Zelgladis
-    mono: SiU7qSJv
-    mvncommand: clean project
-    projectver: zgUetuAFJh
-    mvntest: " -pl "
-    pom_path: " -pl ''"
 - name: test1/4
   parameters:
     GitName: JenkinsTest
@@ -39,7 +29,7 @@ pipelines:
     projectver: 5ySpaWBVl8
     qqq: ioSumh6JWuKeLYWl
     zxc: '633840'
-- name: test1/5
+- name: test1/fii1
   parameters:
     GitName: JenkinsTest
     Platform: Platform
@@ -49,13 +39,3 @@ pipelines:
     projectver: 3G5RRzWMdj
     qqq: ZPRFfgLj8oBj3SVV
     zxc: '695518'
-- name: test1/6
-  parameters:
-    GitName: JenkinsTest
-    Platform: Platform
-    globalSystem: Zelgladis
-    mono: 0rc2tvOi
-    mvncommand: clean project
-    projectver: 91E9un41j5
-    qqq: MuUvyKNslyAjNedv
-    zxc: '376496'
