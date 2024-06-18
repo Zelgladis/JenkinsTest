@@ -241,7 +241,7 @@ def generateSegments(String[] segments, int index, List<String> result) {
     return generateSegments(segments, index + 1, result)
 }
 
-def rekurwa(String stroka, List<String> folders=[], String prew=''){
+def rekurwa2(String stroka, List<String> folders=[], String prew=''){
     st_list = stroka.split('/')
     if(st_list.size() != 1){
         next_vals = st_list[1..(st_list.size()-1)].join('/')
@@ -251,9 +251,19 @@ def rekurwa(String stroka, List<String> folders=[], String prew=''){
             prew = st_list[0]
         }
         folders.add(prew)
-        return rekurwa(next_vals, folders, prew)
+        return rekurwa2(next_vals, folders, prew)
     }else{
         return folders
+    }
+}
+
+def rekurwa(String stroka, index=0 ,List<String> res=[]){
+    sp_str = stroka,split('/')
+    if(sp_str.size() != index-1){
+        res.add(sp_str[0..index+1].join('/'))
+        return rekurwa(stroka, index+1, res)
+    }else{
+        return res
     }
 }
 
