@@ -255,8 +255,8 @@ def dsl_runer_true(){
         def folders = []
         yamlData.pipelines.each { pipeline ->
             if (pipeline.name.contains('/')) {
-                def fold_arr = rekurwa(pipeline.name)
-                fold_rarr.each{
+                def bober = rekurwa(pipeline.name)
+                bober.each{
                     if(!folders.contains(it)){
                         folders.add(it)
                     }
