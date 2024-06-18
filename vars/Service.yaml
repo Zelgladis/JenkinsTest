@@ -1,4 +1,14 @@
 pipelines:
+- name: fist_try
+  parameters:
+    GitName: JenkinsTest
+    Platform: Platform
+    globalSystem: Zelgladis
+    mono: MQMN6n67
+    mvncommand: clean project
+    projectver: f3XYi9u9UV
+    qqq: mkfkISCmYGVCVCy8
+    zxc: '705894'
 - name: test0/1
   parameters:
     GitName: JenkinsTest
