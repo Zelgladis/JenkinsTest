@@ -29,8 +29,10 @@ pipelineJob(yamlData.pipelines[c].name) {
                 stringParam('PARAM_NAME', p_val, 'Description of the parameter')
             }
 
-            println job(job_name).getProperty('Phudson.model.ParametersDefinitionProperty')?.getParameterDefinition('PARAM_NAME')?.defaultValue
-
+            //println job(job_name).getProperty('Phudson.model.ParametersDefinitionProperty')?.getParameterDefinition('PARAM_NAME')?.defaultValue
+            def params = getProperty('hudson.model.ParametersDefinitionProperty')?.parameterDefinitions
+            def param = params.find { it.name == 'PARAM_NAME' }
+            println param
 
       if (yamlData.pipelines[c].parameters.mvncommand == 'dotnet nupkg') {
         stringParam('VersionNupkg', '2.0.', 'Версия пакетов')}
