@@ -276,7 +276,7 @@ def dsl_runer_true(){
         yamlData.pipelines.each { pipeline ->
             if (pipeline.name.contains('/')) {
                 def bober = rekurwa(pipeline.name)
-                pipeline.parameters['sys_num'] = pipeline.name.split('/')[0]
+                pipeline.parameters.sys_num = pipeline.name.split('/')[0]
                 println pipeline.name.split('/')[0]
                 bober.each{
                     if(!folders.contains(it)){
