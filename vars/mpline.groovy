@@ -277,6 +277,7 @@ def dsl_runer_true(){
             if (pipeline.name.contains('/')) {
                 def bober = rekurwa(pipeline.name)
                 pipeline.parameters['sys_num'] = pipeline.name.split('/')[0]
+                printl pipeline.name.split('/')[0]
                 bober.each{
                     if(!folders.contains(it)){
                         folders.add(it)
