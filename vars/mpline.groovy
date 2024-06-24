@@ -270,10 +270,7 @@ def rekurwa(String stroka, int i=0 ,List<String> res=[]){
 def dsl_runer_true(){
     stage('dsl_runer'){
         def yamlData = readYaml file: "vars/Service.yaml"
-        def final_content = 'import jenkins.model.Jenkins\n' + \
-                            'import hudson.model.ParametersDefinitionProperty\n' + \
-                            'import hudson.model.StringParameterDefinition\n' + \
-                            'def yamlData = yamlData\n' + \
+        def final_content = 'def yamlData = yamlData\n' + \
                             'def spaces = "\\n   "\n'
         def folders = []
         yamlData.pipelines.each { pipeline ->
