@@ -287,7 +287,7 @@ def dsl_runer_true(){
                 }
             }
         }
-        println folders
+        pipeline.parameters['sys_num'] = pipeline.name.split('/')[0]
         folders.each{
             final_content = final_content + "folder('${it}'){}\n"
         }
