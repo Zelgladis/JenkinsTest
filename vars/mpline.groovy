@@ -273,13 +273,10 @@ def dsl_runer_true(){
         def final_content = 'def yamlData = yamlData\n' + \
                             'def spaces = "\\n   "\n'
         def folders = []
-        yamlData.pipelines[1].parameters['sys_num'] = yamlData.pipelines[1].name.split('/')[0]
-        //println yamlData.pipelines[1].parameters
         yamlData.pipelines.each { pipeline ->
             if (pipeline.name.contains('/')) {
                 def bober = rekurwa(pipeline.name)
-                //pipeline.parameters.sys_num = pipeline.name.split('/')[0]
-                //println pipeline.name.split('/')[0]
+                pipeline.parameters.sys_num = pipeline.name.split('/')[0]
                 bober.each{
                     if(!folders.contains(it)){
                         folders.add(it)
