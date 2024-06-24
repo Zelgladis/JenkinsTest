@@ -284,7 +284,8 @@ def dsl_runer_true(){
                 }
             }
         }
-        //pipeline.parameters['sys_num'] = pipeline.name.split('/')[0]
+        def str = pipeline.name.split('/')[0]
+        pipeline.parameters['sys_num'] = str
         folders.each{
             final_content = final_content + "folder('${it}'){}\n"
         }
