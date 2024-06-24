@@ -22,7 +22,7 @@ pipelineJob(yamlData.pipelines[c].name) {
 
             def job_name = 'creatertest/'+yamlData.pipelines[c].name
             def jobName = 'creatertest/'+yamlData.pipelines[c].name
-            def p_val = Jenkins.instance.getItemByFullName(job_name)?.getProperty(hudson.model.ParametersDefinitionProperty)?.getParameterDefinition('PARAM_NAME')?.defaultValue
+            //def p_val = Jenkins.instance.getItemByFullName(job_name)?.getProperty(hudson.model.ParametersDefinitionProperty)?.getParameterDefinition('PARAM_NAME')?.defaultValue
             //println job(job_name).getProperty('Phudson.model.ParametersDefinitionProperty')?.getParameterDefinition('PARAM_NAME')?.defaultValue
             //def param = params.find { it.name == 'PARAM_NAME' }
             def paramName = 'PARAM_NAME'
@@ -34,11 +34,11 @@ pipelineJob(yamlData.pipelines[c].name) {
                 println "Parameter '$paramName' is not a StringParameterDefinition or does not exist in job '$jobName'"
             }
 
-            if (p_val == null) {
-                stringParam('PARAM_NAME', 'default_value', 'Description of the parameter')
-            } else {
-                stringParam('PARAM_NAME', p_val, 'Description of the parameter')
-            }
+            //if (p_val == null) {
+            //    stringParam('PARAM_NAME', 'default_value', 'Description of the parameter')
+            //} else {
+            //    stringParam('PARAM_NAME', p_val, 'Description of the parameter')
+            //}
 
       if (yamlData.pipelines[c].parameters.mvncommand == 'dotnet nupkg') {
         stringParam('VersionNupkg', '2.0.', 'Версия пакетов')}
