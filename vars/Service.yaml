@@ -14,7 +14,7 @@ pipelines:
     GitName: JenkinsTest
     Platform: Platform
     globalSystem: Zelgladis
-    mono: MQMN6n67
+    mono: MQMN6n679
     mvncommand: clean project
     projectver: f3XYi9u9UV
     qqq: mkfkISCmYGVCVCy8
