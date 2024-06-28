@@ -1,6 +1,7 @@
 def call(){
     stage('TestPackage'){
+        import mypro.lol
         echo 'asdfghj'
-        mypro.lol()
+        lol()
     }
 }
