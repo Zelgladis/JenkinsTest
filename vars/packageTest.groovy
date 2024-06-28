@@ -1,5 +1,5 @@
 def call(){
     stage('TestPackage'){
-        lol.()
+        mypro.lol()
     }
 }
