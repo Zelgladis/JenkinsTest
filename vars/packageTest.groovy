@@ -1,5 +1,6 @@
 def call(){
+    import test
     stage('TestPackage'){
-        test2.mypro()
+        test.mypro()
     }
 }
