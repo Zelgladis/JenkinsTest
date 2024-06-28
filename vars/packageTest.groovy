@@ -1,8 +1,11 @@
-import mypro.lol
+import mypro
 
 def call(){
     stage('TestPackage'){
-        echo 'asdfghj'
-        mypro.lol()
+        //echo 'asdfghj'
+        //mypro.lol()
+    }
+    stage('asd'){
+
     }
 }
