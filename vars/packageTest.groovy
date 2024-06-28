@@ -3,6 +3,6 @@ import mypro.lol
 def call(){
     stage('TestPackage'){
         echo 'asdfghj'
-        lol()
+        mypro.lol()
     }
 }
