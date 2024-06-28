@@ -1,5 +1,3 @@
-import mypro
-
 def call(){
     stage('TestPackage'){
         //echo 'asdfghj'
