@@ -1,4 +1,4 @@
-import come.mypro
+import come
 
 def call(){
     stage('TestPackage'){
