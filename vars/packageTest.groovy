@@ -1,9 +1,12 @@
-import come.mypro
+import come.*
 
 def call() {
     stage('TestPackage') {
-        myproInstance = new come.mypro()
-        myproInstance.mypro()
-        myproInstance.ddd()
+        mypr = new come.mypro()
+        myzal = new come.zaluna()
+        mypr.mypro()
+        mypr.ddd()
+        myzal()
+
     }
 }
