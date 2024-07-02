@@ -1,8 +1,9 @@
-import come.mypro
+import come
 
 def call() {
     stage('TestPackage') {
-        myproInstance = new mypro()
+        myproInstance = new come.mypro()
         myproInstance.mypro()
+        myproInstance.ddd()
     }
 }
