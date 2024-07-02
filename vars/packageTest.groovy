@@ -10,6 +10,7 @@ def call() {
         mypr.ddd()
         myzal()
         fff()
+        come.mypro.mypro()
 
     }
 }
