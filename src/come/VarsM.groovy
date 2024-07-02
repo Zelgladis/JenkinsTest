@@ -8,7 +8,7 @@ class VarsM {
     static String closeCol = '\u001B[0m'
     static String greeting = 'Hello World!'
 
-    static void VarsM() {
+    static void printAsd() {
         echo asd
     }
 }
