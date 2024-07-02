@@ -1,5 +1,5 @@
 package come
 
-def call(){
+def mypro(){
     echo 'Hello World! mypro'
 }
