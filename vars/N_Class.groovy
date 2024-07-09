@@ -7,11 +7,11 @@ class N_Class{
         envs.put('GIT_USERNAME', 'zelgladis')
         envs.put('PACKMAN', 'zelcnts-ozin-zalupa-konya')
         envs.put('testing', "${envs.PACKMAN}")
-        envs.put('matches', (envs.testing =~ /-(.*?)-/))
+        envs.put('matches', (envs.get('testing') =~ /-(.*?)-/))
         //def matches = (envs.testing =~ /-(.*?)-/)
         //def x = matches ? matches[0][1] : null
         //envs.put('projectenv', x)
-        envs.put('projectenv', (envs['matches'] ? envs['matches'][0][1] : null))
+        envs.put('projectenv', (envs.get('matches') ? envs('matches')[0][1] : null))
 
         if(var == 'true'){
             envs.put('loc', 'ru')
