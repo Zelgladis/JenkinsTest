@@ -11,7 +11,7 @@ class N_Class{
         //def matches = (envs.testing =~ /-(.*?)-/)
         //def x = matches ? matches[0][1] : null
         //envs.put('projectenv', x)
-        envs.put('projectenv', (envs.get('matches') ? envs('matches')[0][1] : null))
+        envs.put('projectenv', (envs.get('matches') ? envs.get('matches')[0][1] : null))
 
         if(var == 'true'){
             envs.put('loc', 'ru')
