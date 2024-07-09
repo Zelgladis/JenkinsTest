@@ -5,7 +5,7 @@ class N_Class{
         envs = new HashMap()
         envs.put('JAVA_HOME', '/home/mio/dist/jdk-11.0.2')
         envs.put('GIT_USERNAME', 'zelgladis')
-        envs.put('PACKMAN', 'zelcnts-ozin-zalupa-konya')
+        envs.put('PACKMAN', 'zelcnts-ozin')
         envs.put('testing', "${envs.PACKMAN}")
         def matches = (envs.testing =~ /-(.*?)(-|$)/)
         def x = matches ? matches[0][1] : null
