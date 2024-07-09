@@ -8,7 +8,7 @@ class N_Class{
         envs.put('PACKMAN', 'zelcnts-ozin-zalupa-konya')
         envs.put('testing', "${envs.PACKMAN}")
         def matches = (envs.testing =~ /-(.*?)-/)
-        def x = matches ? envs.matches[0][1] : '123'
+        def x = matches ? matches[0][1] : null
         envs.put('projectenv', x)
 
         if(var == 'true'){
