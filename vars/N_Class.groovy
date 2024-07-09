@@ -6,9 +6,9 @@ class N_Class{
         envs.put('JAVA_HOME', '/home/mio/dist/jdk-11.0.2')
         envs.put('GIT_USERNAME', 'zelgladis')
         envs.put('PACKMAN', 'zelcnts-ozin-zalupa-konya')
-        envs.put('testing', "${envs.PACKMAN}")
-        envs.put('matches', envs.testing =~ /-(.*?)-/)
-        envs.put('projectenv', envs.matches ? envs.matches[0][1] : null)
+        //envs.put('testing', "${envs.PACKMAN}")
+        //envs.put('matches', envs.testing =~ /-(.*?)-/)
+        //envs.put('projectenv', envs.matches ? envs.matches[0][1] : null)
 
         if(var == 'true'){
             envs.put('loc', 'ru')
