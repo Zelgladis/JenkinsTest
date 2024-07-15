@@ -1,4 +1,4 @@
-def call(args){
+def call(HashMap args){
     node () {
         stage ("Init ENV"){
             def envs = new N_Class('H')
