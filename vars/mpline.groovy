@@ -406,7 +406,7 @@ def forach(){
 def fiif_test(){
     stage('IF TEST') {
         sh"""
-            if [[ "$hell" == "true" ]]; then
+            if [ "$hell" = "true" ]; then
                 echo "true"
             else
                 echo "false"
