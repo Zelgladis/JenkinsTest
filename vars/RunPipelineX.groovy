@@ -1,5 +1,6 @@
 def call(Map args){
     node(){
+        mpline.init_env(args)
         stage('Checkout') {
                     // Использование параметра GIT_BRANCH для клонирования репозитория
                     //checkout([$class: 'GitSCM',
@@ -21,6 +22,7 @@ def call(Map args){
             params.each { para ->
                 echo "$para"
             }
+            echo env.target_list
         }
     }
     
