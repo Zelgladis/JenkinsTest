@@ -24,6 +24,10 @@ pipelines:
     projectver: f3XYi9u9UV
     qqq: mkfkISCmYGVCVCy8
     zxc: '705894'
+    target_list: 
+      - sosiska
+      - kolbaska
+      - vetyanka
 - name: test0/1
   parameters:
     GitName: JenkinsTest
