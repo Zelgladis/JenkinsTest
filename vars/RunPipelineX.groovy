@@ -22,7 +22,7 @@ def call(Map args){
             params.each { para ->
                 echo "$para"
             }
-            echo env.target_list
+            echo args.target_list
         }
     }
     
