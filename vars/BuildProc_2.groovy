@@ -1,5 +1,6 @@
 pipelineJob(yamlData.pipelines[c].name) {
     parameters {
+            nonStoredPasswordParam('vault_password', 'Пароль для дешифровки')
             gitParameter {
                 name('BRANCH_NAME')
                 branch('main')
