@@ -12,7 +12,7 @@ def call(Map args){
                     //              credentialsId: "MY_GIT"
                     //          ]]
                     //])
-                    echo target_list
+                    echo target_list.collect {"\n\t\t'${it}'" }.join(', ')
         }
         stage('RunPipeX'){
             args.each { arg ->
