@@ -7,8 +7,6 @@ pipelines:
 - name: K4/81-12/cnts-rqtx-notification-manager
   parameters:
     CONTOUR: ./inventory/K4/cnts-rqtx-notification-manager
-    k8s_cluster_api: https://PS5_some.api
-    k8s_namespace: PS5_space
 - name: PROD/PS5/81-11/cnts-bnkr-api-gateway
   parameters:
     CONTOUR: ./inventory/PROD/cnts-bnkr-api-gateway
