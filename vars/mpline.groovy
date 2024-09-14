@@ -282,6 +282,21 @@ def dsl_runer_true(){
                         folders.add(it)
                     }
                 }
+                if (k8s_metka == 'PS2') {
+                    pipeline.parameters['k8s_cluster_api'] = 'SOME_PS2_API'
+                    pipeline.parameters['k8s_namespace'] = 'PS2_NAMESPACE'
+                    pipeline.parameters['values'] = 'values.ps2'
+                }else if(k8s_metka == 'PS5'){
+                    pipeline.parameters['k8s_cluster_api'] = 'SOME_PS5_API'
+                    pipeline.parameters['k8s_namespace'] = 'PS5_NAMESPACE'
+                    pipeline.parameters['values'] = 'values.ps5'
+                }
+            }
+            if(!pipeline.parameters.containsKey('Platform')){
+                pipeline.parameters['Platform'] = 'OC'
+            }
+            if(!pipeline.parameters.containsKey('globalSystem')){
+                pipeline.parameters['globalSystem'] = 'cnts'
             }
         }
         
