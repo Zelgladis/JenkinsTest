@@ -51,7 +51,7 @@ pipelineJob(yamlData.pipelines[c].name) {
                 "${(yamlData.pipelines[c].parameters.mvntest ? "${spaces}mvntest: '${yamlData.pipelines[c].parameters.mvntest}'," : "")}" + \
                 "${(yamlData.pipelines[c].parameters.service_path ? "${spaces}service_path: '${yamlData.pipelines[c].parameters.service_path}'," : "")}" + \
                 "${(yamlData.pipelines[c].parameters.pom_path ? "${spaces}pom_path: \"${yamlData.pipelines[c].parameters.pom_path}\"," : "")}" + \
-                "${(yamlData.pipelines[c].parameters.target_list ? "${spaces}target_list: \"${yamlData.pipelines[c].parameters.target_list}\"," : "")}" + \
+                "${(yamlData.pipelines[c].parameters.target_list ? "${spaces}target_list: ${yamlData.pipelines[c].parameters.target_list}," : "")}" + \
                 "${(yamlData.pipelines[c].parameters.sys_num ? "${spaces}sys_num: \"${yamlData.pipelines[c].parameters.sys_num}\"," : "")}"
             // Получаем красивый паплайн
             def scriptContent = "@Library('lab') _\n" + \
