@@ -168,7 +168,7 @@ def git_now(){
     stage('JenkinsTest GIT clone'){
         info = git (
             branch: 'main',
-            credentialsId: 'GIT_TOKEN',
+            credentialsId: 'git_key',
             url: 'https://github.com/Zelgladis/JenkinsTest.git'
         )
     }
