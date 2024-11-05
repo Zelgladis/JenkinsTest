@@ -8,7 +8,7 @@ def call(){
                 ls ./JenkinsTest/
             """
             // Тут твоя команда с helm -o json
-            def jsonContent = sh(script: 'cat ./JenkinsTest/testUsers.json', returnStdout: true).trim()
+            def jsonContent = sh(script: 'cat ./JenkisTestGit/testUsers.json', returnStdout: true).trim()
             // Парсим JSON
             def history = new groovy.json.JsonSlurper().parseText(jsonContent)
             // Извлекаем версии
