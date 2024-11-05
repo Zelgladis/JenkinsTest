@@ -3,7 +3,7 @@ def call(){
                                                       usernameVariable: 'GIT_USERNAME', 
                                                       passwordVariable: 'GIT_PASSWORD')]) {
         sh"""
-            git clone https://\$GIT_USERNAME:\$GIT_PASSWORD@github.com:Zelgladis/JenkinsTest.git
+            git clone https://\$GIT_USERNAME:\$GIT_PASSWORD@github.com/Zelgladis/JenkinsTest.git
         """
         def versions = []
         def command = "cat ./JenkinsTest/testUsers.json"
