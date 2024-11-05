@@ -1,4 +1,7 @@
 def call(){
+    stage("Clean"){
+        cleanWs()
+    }
     stage("ParseTheWOrld"){
         withCredentials([usernamePassword(credentialsId: 'git_key', 
                                                         usernameVariable: 'GIT_USERNAME', 
@@ -16,8 +19,5 @@ def call(){
             // Выводим версии
             echo "Versions: ${versions.join(', ')}"
         }
-    }
-    stage("Clean"){
-        cleanWs()
-    }
+    }   
 }
