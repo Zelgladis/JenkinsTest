@@ -10,14 +10,14 @@ def call(){
                 git clone https://\$GIT_USERNAME:\$GIT_PASSWORD@github.com/Zelgladis/JenkinsTest.git
                 ls
             """
-            def versions = []
-            def command = "cat testUsers.json"
-            def process = command.execute()
-            process.in.eachLine { line ->
-                def history = new groovy.json.JsonSlurper().parseText(line)
-                versions = history.collect { it.revision }
-            }
-            echo versions
+            // Тут твоя команда с helm -o json
+            def jsonContent = sh(script: 'cat ./JenkinsTest/testUsers.json', returnStdout: true).trim()
+            // Парсим JSON
+            def history = new groovy.json.JsonSlurper().parseText(jsonContent)
+            // Извлекаем версии
+            def versions = history.collect { it.revision }
+            // Выводим версии
+            echo "Versions: ${versions.join(', ')}"
         }
     }
 }
