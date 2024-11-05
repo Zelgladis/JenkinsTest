@@ -19,6 +19,7 @@ def call(){
             // Выводим версии
             echo "Versions: ${versions}"
             echo "${trueVers}"
+            return '123,321,1234'
         }
     }   
 }
