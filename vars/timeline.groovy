@@ -14,7 +14,7 @@ def call(){
             // Парсим JSON
             def history = new groovy.json.JsonSlurper().parseText(jsonContent)
             // Извлекаем версии
-            def versions = history.collect { it.revision }
+            def versions = history.users.collect { user -> user.revision }
             // Выводим версии
             echo "Versions: ${versions}"
         }
