@@ -1,4 +1,4 @@
-def (){
+def call(){
     def choices = timeline() // Получаем актуальные значения
     stage("Выбор значения") {
         def selectedOption = input message: 'Выберите опцию', parameters: [
