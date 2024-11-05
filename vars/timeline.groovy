@@ -8,7 +8,6 @@ def call(){
                                                         passwordVariable: 'GIT_PASSWORD')]) {
             sh"""
                 git clone https://\$GIT_USERNAME:\$GIT_PASSWORD@github.com/Zelgladis/JenkisTestGit.git
-                ls ./JenkinsTest/
             """
             // Тут твоя команда с helm -o json
             def jsonContent = sh(script: 'cat ./JenkisTestGit/testUsers.json', returnStdout: true).trim()
