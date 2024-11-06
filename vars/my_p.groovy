@@ -1,37 +1,46 @@
-def call(){
-    stage("asd"){
-        echo currentBuild
-    }
-}
-
 def addOrUpdateChoice() {
-    // Создаём новый параметр выбора
-    def newChoiceParam = [
-        $class: 'ChoiceParameterDefinition',
-        name: 'VersionRollback',
-        choices: timeline(),
-        description: 'Select a version to rollback'
-    ]
+    // Список для хранения параметров
+    def updatedParams = []
 
-    // Получаем текущие параметры, сохраняя их структуру
-    def currentParams = []
-    def found = false
-    for (param in currentBuild.build().getProject().getProperty('parameters')) {
-        if (param.name == 'VersionRollback') {
-            currentParams << newChoiceParam // Заменяем существующий параметр
-            found = true
+    // Проверка наличия параметра VersionRollback
+    def rollbackExists = false
+
+    // Собираем все текущие параметры
+    for (param in params.keySet()) {
+        if (param == 'VersionRollback') {
+            // Если параметр VersionRollback уже есть, обновляем его
+            updatedParams << [
+                $class: 'ChoiceParameterDefinition',
+                name: 'VersionRollback',
+                choices: timeline(),
+                description: 'Select a version to rollback'
+            ]
+            rollbackExists = true
         } else {
-            currentParams << param // Добавляем все остальные параметры без изменений
+            // Обрабатываем другие типы параметров
+            def value = params[param]
+            if (value instanceof Boolean) {
+                updatedParams << [$class: 'BooleanParameterDefinition', name: param, defaultValue: value, description: "Existing boolean parameter: ${param}"]
+            } else if (value instanceof String) {
+                updatedParams << [$class: 'StringParameterDefinition', name: param, defaultValue: value, description: "Existing string parameter: ${param}"]
+            } else {
+                // Если есть другие типы, можно добавить доп. обработку
+            }
         }
     }
 
-    // Если параметр VersionRollback не найден, добавляем его в конец
-    if (!found) {
-        currentParams << newChoiceParam
+    // Если параметр VersionRollback не существует, добавляем его
+    if (!rollbackExists) {
+        updatedParams << [
+            $class: 'ChoiceParameterDefinition',
+            name: 'VersionRollback',
+            choices: timeline(),
+            description: 'Select a version to rollback'
+        ]
     }
 
-    // Устанавливаем параметры джобы с обновленным списком
+    // Устанавливаем параметры с новым и существующими значениями
     properties([
-        parameters(currentParams)
+        parameters(updatedParams)
     ])
 }
