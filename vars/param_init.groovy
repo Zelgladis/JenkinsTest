@@ -1,17 +1,16 @@
 def call(){
     stage('Parametr Initialisation'){
-        def my_params = []
-
         my_params.add(paramen_ret(type: 'bool',name: 'BoolTest', valueBool: true, description: 'Hello world'))
         my_params.add(paramen_ret(type: 'bool',name: 'BoolTest2', description: '2 world'))
-        my_params.add(paramen_ret(type: 'choice',name: 'VersionRollback', choices: timeline() ,description: 'Select a version to rollback'))
+        reInit()
+    }
+}
 
-        my_params = my_params.findAll { it != null }
-
-        properties([
+def reInit(){
+    my_params = my_params.findAll { it != null }
+    properties([
             parameters(my_params)
         ])
-    }
 }
 
 def paramen_ret(Map args){
