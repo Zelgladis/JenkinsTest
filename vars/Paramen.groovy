@@ -9,7 +9,8 @@ class Paramen{
     
     Paramen(String name,
             ArrayList choices = new ArrayList()
-    ){
+            )
+    {
         this.name = name
         this.choices = choices
     }
