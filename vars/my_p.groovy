@@ -1,4 +1,4 @@
-def addOrUpdateChoice2() {
+def adasafaffwfqffqwfwf() {
     // Список для хранения параметров
     def updatedParams = []
 
