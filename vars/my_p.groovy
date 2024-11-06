@@ -32,43 +32,42 @@ def adasafaffwfqffqwfwf() {
 }
 
 def addOrUpdateChoice() {
-    // Список для хранения параметров в исходном порядке
+    // Создаем список параметров с сохранением порядка
     def orderedParams = []
     def rollbackUpdated = false
 
-    // Обходим текущие параметры и сохраняем их типы и значения
+    // Определяем новый параметр выбора VersionRollback
+    def newChoiceParam = [
+        $class: 'ChoiceParameterDefinition',
+        name: 'VersionRollback',
+        choices: timeline(),
+        description: 'Select a version to rollback'
+    ]
+
+    // Проходим по всем текущим параметрам, сохраняя их структуру
     for (param in params.keySet()) {
         if (param == 'VersionRollback') {
-            // Обновляем существующий параметр VersionRollback
-            orderedParams << [
-                $class: 'ChoiceParameterDefinition',
-                name: 'VersionRollback',
-                choices: timeline(),
-                description: 'Select a version to rollback'
-            ]
+            // Обновляем VersionRollback, если он уже существует
+            orderedParams << newChoiceParam
             rollbackUpdated = true
         } else {
+            // Определяем типы других параметров
             def value = params[param]
             if (value instanceof Boolean) {
                 orderedParams << [$class: 'BooleanParameterDefinition', name: param, defaultValue: value, description: "Existing boolean parameter: ${param}"]
             } else if (value instanceof String) {
                 orderedParams << [$class: 'StringParameterDefinition', name: param, defaultValue: value, description: "Existing string parameter: ${param}"]
             }
-            // Добавьте обработку других типов при необходимости
+            // Можно добавить дополнительные типы, если нужно
         }
     }
 
-    // Если параметр VersionRollback не найден, добавляем его в конец
+    // Добавляем параметр VersionRollback в конец, если его не было
     if (!rollbackUpdated) {
-        orderedParams << [
-            $class: 'ChoiceParameterDefinition',
-            name: 'VersionRollback',
-            choices: timeline(),
-            description: 'Select a version to rollback'
-        ]
+        orderedParams << newChoiceParam
     }
 
-    // Устанавливаем параметры, сохраняя исходный порядок
+    // Устанавливаем параметры, сохраняя их порядок
     properties([
         parameters(orderedParams)
     ])
