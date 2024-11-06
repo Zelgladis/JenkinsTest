@@ -1,8 +1,3 @@
-import hudson.model.ParametersDefinitionProperty
-import hudson.model.ChoiceParameterDefinition
-import hudson.model.BooleanParameterDefinition
-import hudson.model.StringParameterDefinition
-
 def call(){
     def addOrUpdateChoice() {
         def job = Jenkins.instance.getItemByFullName(env.JOB_NAME)
