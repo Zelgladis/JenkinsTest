@@ -16,3 +16,7 @@ def call(){
             timeline()
         }
 }
+
+def addchoice(){
+    call()
+}
