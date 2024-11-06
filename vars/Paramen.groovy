@@ -14,8 +14,4 @@ class Paramen{
         this.name = name
         this.choices = choices
     }
-
-    public void printName(){
-        println this.name
-    }
 }
