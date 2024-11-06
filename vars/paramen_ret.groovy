@@ -16,4 +16,5 @@ def call(Map args){
         default:
             ret = "Ни одно из условий не подошло"
     return ret
+    }
 }
