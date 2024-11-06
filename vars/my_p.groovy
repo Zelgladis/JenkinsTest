@@ -44,7 +44,7 @@ def addChoice2() {
     def newParam = [
         $class: 'ChoiceParameterDefinition',
         name: 'VersionRollback',
-        choices: call(),
+        choices: timeline(),
         description: 'Select a version to rollback'
     ]
 
