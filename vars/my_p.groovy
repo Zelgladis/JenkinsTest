@@ -1,3 +1,9 @@
+def call(){
+    stage("asd"){
+        echo currentBuild
+    }
+}
+
 def addOrUpdateChoice() {
     // Создаём новый параметр выбора
     def newChoiceParam = [
