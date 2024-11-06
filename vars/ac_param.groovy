@@ -22,3 +22,7 @@ def call(){
 def addchoice(){
     call()
 }
+
+def add_to_param(){
+    params.DynamicChoice.choices = ["123"]
+}
