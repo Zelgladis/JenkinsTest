@@ -61,7 +61,7 @@ def addOrUpdateChoice() {
     // Получаем текущие параметры и определяем их типы
     def existingParams = params.keySet().collect { key ->
         def value = params[key]
-        
+        echo value
         switch (value.class) {
             case Boolean:
                 return [$class: 'BooleanParameterDefinition', name: key, defaultValue: value, description: "Existing boolean parameter: ${key}"]
