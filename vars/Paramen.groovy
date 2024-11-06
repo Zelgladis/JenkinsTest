@@ -1,4 +1,4 @@
-Class Paramen{
+class Paramen{
     String name;
     ArrayList choices;
     String value;
