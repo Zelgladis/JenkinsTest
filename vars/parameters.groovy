@@ -10,4 +10,8 @@ def call(){
         choices: ["123", "456", "789"],  // Новые значения
         description: 'Select a dynamic option'
     ])
+
+    properties([
+        parameters(allParams)
+    ])
 }
