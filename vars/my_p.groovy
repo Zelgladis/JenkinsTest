@@ -8,7 +8,9 @@ def adasafaffwfqffqwfwf() {
     // Собираем все текущие параметры
     for (param in params.keySet()) {
         def value = params[param]
-        if (value instanceof Boolean) {
+        if (param == 'VersionRollback') {
+        }
+        else if (value instanceof Boolean) {
             updatedParams << [$class: 'BooleanParameterDefinition', name: param, defaultValue: value, description: "Existing boolean parameter: ${param}"]
         } else if (value instanceof String) {
             updatedParams << [$class: 'StringParameterDefinition', name: param, defaultValue: value, description: "Existing string parameter: ${param}"]
