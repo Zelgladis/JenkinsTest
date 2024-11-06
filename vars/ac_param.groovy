@@ -24,5 +24,9 @@ def addchoice(){
 }
 
 def add_to_param(){
-    params.DynamicChoice.choices = ["123"]
+    node {
+        stage("Pohui"){
+            params.DynamicChoice.choices = ["123"]
+        }
+    }
 }
