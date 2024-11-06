@@ -1,4 +1,5 @@
 def call(Map args){
+    def ret
     pname = args.get('name', 'Null')
     choices = args.get('choices', 'Null')
     value = args.get('value', 'Null')
@@ -8,14 +9,11 @@ def call(Map args){
     parclass = args.get('parclass', 'Null')
     description = args.get('description', 'Null')
 
-    if(nvalue == ''){
-            nvalue = value
-        }
-        switch (type) {
-            case 'string':
-                return booleanParam(name: pname, defaultValue: valueBool, description: description)
-                break
-            default:
-                return "Ни одно из условий не подошло"
-    }
+    switch (type) {
+        case 'string':
+            ret = booleanParam(name: pname, defaultValue: valueBool, description: description)
+            break
+        default:
+            ret = "Ни одно из условий не подошло"
+    return ret
 }
