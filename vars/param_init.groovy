@@ -1,12 +1,12 @@
-def call(){
+def call(List my_params){
     stage('Parametr Initialisation'){
         my_params.add(paramen_ret(type: 'bool',name: 'BoolTest', valueBool: true, description: 'Hello world'))
         my_params.add(paramen_ret(type: 'bool',name: 'BoolTest2', description: '2 world'))
-        reInit()
+        reInit(my_params)
     }
 }
 
-def reInit(){
+def reInit(List my_params){
     my_params = my_params.findAll { it != null }
     properties([
             parameters(my_params)

@@ -1,10 +1,10 @@
-def my_params 
 def call(){
     node(){
-        param_init()
+        def my_params 
+        param_init(my_params)
 
         echo "initialized"
 
-        sec_act()
+        sec_act(my_params)
     }
 }
