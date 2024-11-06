@@ -16,6 +16,6 @@ class Paramen{
     }
 
     void printName(){
-        echo this.name
+        println this.name
     }
 }
