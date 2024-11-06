@@ -15,3 +15,21 @@ def call(){
         parameters(allParams)
     ])
 }
+
+
+def addChoice() {
+    // Получаем текущие параметры
+    def currentProperties = currentBuild.rawBuild.getAction(ParametersAction)?.parameters
+
+    // Добавляем новый параметр
+    def newParameter = new ChoiceParameterDefinition(
+        'VersionRollback', 
+        timeline(), 
+        'Select a version to rollback'
+    )
+    
+    // Проверяем, если параметр уже существует, то обновляем
+    if (!currentProperties?.any { it.name == 'VersionRollback' }) {
+        currentBuild.rawBuild.addAction(new ParametersAction(currentProperties + newParameter))
+    }
+}
