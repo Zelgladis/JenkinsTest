@@ -3,8 +3,8 @@ class Paramen{
     ArrayList choices
     String value
     String type
-    String defaultValue
-    String class
+    String defValue
+    String parclass
     String description
     
     Paramen(String name,
