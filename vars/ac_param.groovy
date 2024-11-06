@@ -2,10 +2,10 @@ def call(){
     node {
         properties([
             parameters([
-                [$class: 'ChoiceParameterDefinition', 
-                name: 'DynamicChoice', 
-                choices: timeline(), 
-                description: 'Select a dynamic option']
+                [$class: 'ChoiceParameterDefinition2', 
+                    name: 'DynamicChoice', 
+                    choices: timeline(), 
+                    description: 'Select a dynamic option']
             ])
         ])
 
