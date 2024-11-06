@@ -1,4 +1,4 @@
-def adasafaffwfqffqwfwf() {
+def addOrUpdateChoice() {
     // Список для хранения параметров
     def updatedParams = []
 
@@ -8,8 +8,7 @@ def adasafaffwfqffqwfwf() {
     // Собираем все текущие параметры
     for (param in params.keySet()) {
         def value = params[param]
-        if (param == 'VersionRollback') {
-        }
+        if (param == 'VersionRollback') {}
         else if (value instanceof Boolean) {
             updatedParams << [$class: 'BooleanParameterDefinition', name: param, defaultValue: value, description: "Existing boolean parameter: ${param}"]
         } else if (value instanceof String) {
@@ -33,7 +32,7 @@ def adasafaffwfqffqwfwf() {
     ])
 }
 
-def addOrUpdateChoice() {
+def addOrUpdateChoice2() {
     // Создаем список параметров с сохранением порядка
     def orderedParams = []
     def rollbackUpdated = false
