@@ -1,6 +1,6 @@
 class Paramen{
     String name
-    ArrayList choices
+    List choices
     String value
     String type
     String defValue
@@ -8,7 +8,7 @@ class Paramen{
     String description
     
     Paramen(String name,
-            ArrayList choices = new ArrayList()
+            List choices = []
             )
     {
         this.name = name
