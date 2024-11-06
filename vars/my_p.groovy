@@ -38,7 +38,6 @@ def addChoice2() {
     // Получаем текущие параметры
     def existingParams = params.keySet().collect { key ->
         [$class: 'StringParameterDefinition', name: key, defaultValue: params[key], description: "Existing parameter: ${key}"]
-        echo params
     }
 
     // Добавляем новый параметр, сохраняя старые
@@ -53,4 +52,6 @@ def addChoice2() {
     properties([
         parameters(existingParams + newParam)
     ])
+
+    echo params
 }
