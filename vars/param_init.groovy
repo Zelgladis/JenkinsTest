@@ -2,7 +2,7 @@ def call(){
     stage('Parametr Initialisation'){
         def my_params = []
 
-        my_params.add(paramen_ret(type: 'bool',name: 'BoolTest', defValue: true, description: 'Hello world'))
+        my_params.add(paramen_ret(type: 'bool',name: 'BoolTest', valueBool: true, description: 'Hello world'))
         my_params.add(paramen_ret(type: 'bool',name: 'BoolTest2', description: '2 world'))
 
         properties([
