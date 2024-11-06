@@ -4,6 +4,7 @@ def call(){
 
         my_params.add(paramen_ret(type: 'bool',name: 'BoolTest', valueBool: true, description: 'Hello world'))
         my_params.add(paramen_ret(type: 'bool',name: 'BoolTest2', description: '2 world'))
+        my_params.add(paramen_ret(type: 'choice',name: 'VersionRollback', choices: timeline() ,description: 'Select a version to rollback'))
 
         my_params = my_params.findAll { it != null }
 
@@ -28,20 +29,20 @@ def paramen_ret(Map args){
         case 'bool':
             ret = booleanParam(name: pname, defaultValue: valueBool, description: description)
             break
+        case 'string':
+            ret = string(name: pname, defaultValue: value, description: description)
+            break
+        case 'choice':
+            ret = [
+                $class: 'ChoiceParameterDefinition', 
+                name: pname, 
+                choices: choices,
+                description: description
+            ]
+            break
         default:
             ret = "Ни одно из условий не подошло"
     }
     return ret
 }
 
-
-
-
-//allParams.add(booleanParam(name: "TestBool", defaultValue: false, description: "Test boolean parameter"))
-//allParams.add(string(name: "TestString", defaultValue: "default value", description: "Test string parameter"))
-//allParams.add([
-//    $class: 'ChoiceParameterDefinition', 
-//    name: 'DynamicChoice', 
-//    choices: ["123", "456", "789"],  // Новые значения
-//    description: 'Select a dynamic option'
-//])
