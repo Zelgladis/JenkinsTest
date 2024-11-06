@@ -1,3 +1,8 @@
+import hudson.model.ParametersDefinitionProperty
+import hudson.model.ChoiceParameterDefinition
+import hudson.model.BooleanParameterDefinition
+import hudson.model.StringParameterDefinition
+
 def call(){
     def allParams = []
     allParams.add(booleanParam(name: "TestBool", defaultValue: false, description: "Test boolean parameter"))
@@ -94,11 +99,6 @@ def addOrUpdateChoice() {
 }
 
 def penisi(){
-    import hudson.model.ParametersDefinitionProperty
-    import hudson.model.ChoiceParameterDefinition
-    import hudson.model.BooleanParameterDefinition
-    import hudson.model.StringParameterDefinition
-
     def addOrUpdateChoice() {
         def job = Jenkins.instance.getItemByFullName(env.JOB_NAME)
         def paramsProperty = job.getProperty(ParametersDefinitionProperty)
