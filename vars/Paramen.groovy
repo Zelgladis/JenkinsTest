@@ -25,7 +25,7 @@ class Paramen{
             nvalue = this.value
         }
         switch (type) {
-            case 'string':
+            case 'bool':
                 return booleanParam(name: this.name, defaultValue: this.valueBool, description: this.description)
                 break
             default:

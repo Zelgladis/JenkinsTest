@@ -10,7 +10,7 @@ def call(Map args){
     description = args.get('description', 'Null')
 
     switch (type) {
-        case 'string':
+        case 'bool':
             ret = booleanParam(name: pname, defaultValue: valueBool, description: description)
             break
         default:
