@@ -1,13 +1,15 @@
 def call(){
     node {
-        properties([
-            parameters([
-                [$class: 'ChoiceParameterDefinition', 
-                    name: 'DynamicChoice2', 
-                    choices: timeline(), 
-                    description: 'Select a dynamic option']
+        if (!params.DynamicChoice) {
+            properties([
+                parameters([
+                    [$class: 'ChoiceParameterDefinition', 
+                        name: 'DynamicChoice', 
+                        choices: timeline(), 
+                        description: 'Select a dynamic option']
+                ])
             ])
-        ])
+        }
 
         
         stage("Example Stage") {
