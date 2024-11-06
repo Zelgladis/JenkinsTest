@@ -17,7 +17,7 @@ def call(){
 }
 
 
-def addChoice() {
+def addChoice1() {
     // Получаем текущие параметры
     def currentProperties = currentBuild.rawBuild.getAction(ParametersAction)?.parameters
 
@@ -32,4 +32,24 @@ def addChoice() {
     if (!currentProperties?.any { it.name == 'VersionRollback' }) {
         currentBuild.rawBuild.addAction(new ParametersAction(currentProperties + newParameter))
     }
+}
+
+def addChoice2() {
+    // Получаем текущие параметры
+    def existingParams = params.keySet().collect { key ->
+        [$class: 'StringParameterDefinition', name: key, defaultValue: params[key], description: "Existing parameter: ${key}"]
+    }
+
+    // Добавляем новый параметр, сохраняя старые
+    def newParam = [
+        $class: 'ChoiceParameterDefinition',
+        name: 'VersionRollback',
+        choices: call(),
+        description: 'Select a version to rollback'
+    ]
+
+    // Обновляем параметры в джобе
+    properties([
+        parameters(existingParams + newParam)
+    ])
 }
