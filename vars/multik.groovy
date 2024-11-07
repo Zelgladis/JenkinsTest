@@ -1,8 +1,10 @@
 def call(){
     mpline.git_pull('main', 'https://github.com/Zelgladis/JenkinsTest.git')
     if (params.MY_PARAM?.trim()) {
+        echo "Set params to []"
         setParams([])
     }else{
+        echo "Set params to FULL"
         def my_params = []
         my_params.add(booleanParam(name: 'Booler', defaultValue: false, description: 'Booler desc'))
         my_params.add(string(name: 'Stringer', defaultValue: 'empty', description: 'Stringer desc'))
