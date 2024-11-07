@@ -4,8 +4,14 @@ def call(){
         setParams([])
     }else{
         def my_params = []
-        my_params.add(paramen_ret(type: 'bool',name: 'BoolTest', valueBool: true, description: 'Hello world'))
-        my_params.add(paramen_ret(type: 'bool',name: 'BoolTest2', description: '2 world'))
+        my_params.add(booleanParam(name: 'Booler', defaultValue: false, description: 'Booler desc')))
+        my_params.add(string(name: 'Stringer', defaultValue: 'empty', description: 'Stringer desc'))
+        my_params.add([
+                $class: 'ChoiceParameterDefinition', 
+                name: 'ChoiceMe', 
+                choices: ['1', '2', '3'],
+                description: 'some choice desc'
+            ])
         setParams(my_params)
     }
 }
