@@ -1,6 +1,6 @@
 def call(){
     mpline.git_pull('main', 'https://github.com/Zelgladis/JenkinsTest.git')
-    if (params.MY_PARAM?.trim()) {
+    if (params.isEmpty()) {
         echo "Set params to []"
         setParams([])
     }else{
