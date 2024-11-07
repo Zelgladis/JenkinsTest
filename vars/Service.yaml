@@ -1,70 +1,9 @@
 pipelines:
-- name: 81-17/cnts-blok-resolver
+- name: dslPipe/test1
   parameters:
     mono: false
     mvncommand: docker mvn
     GitName: cnts-blok-resolver
-- name: K4/81-12/cnts-rqtx-notification-manager
+- name: dslPipe/test2
   parameters:
     CONTOUR: ./inventory/K4/cnts-rqtx-notification-manager
-- name: PROD/PS5/81-11/cnts-bnkr-api-gateway
-  parameters:
-    CONTOUR: ./inventory/PROD/cnts-bnkr-api-gateway
-    DEPLOY_TARGET: DR
-    values: values.ps5
-- name: PROD/PS2/81-11/cnts-bnkr-api-gateway
-  parameters:
-    CONTOUR: ./inventory/PROD/cnts-bnkr-api-gateway
-    values: values.ps2
-- name: fist_try
-  parameters:
-    GitName: JenkinsTest
-    mono: MQMN6n67
-    mvncommand: clean project
-    projectver: f3XYi9u9UV
-    qqq: mkfkISCmYGVCVCy8
-    zxc: '705894'
-    target_list: 
-      - sosiska
-      - kolbaska
-      - vetyanka
-- name: test0/1
-  parameters:
-    GitName: JenkinsTest
-    Platform: Platform
-    globalSystem: Zelgladis
-    mono: MQMN6n679
-    mvncommand: clean project
-    projectver: f3XYi9u9UV
-    qqq: mkfkISCmYGVCVCy8
-    zxc: '705894'
-- name: test0/10
-  parameters:
-    GitName: JenkinsTest
-    Platform: Platform
-    globalSystem: Zelgladis
-    mono: F8IvJuA3
-    mvncommand: clean project
-    projectver: ofi3rYlMmt
-    qqq: HH7BZL0UBBmpHiAJ
-    zxc: '903927'
-- name: test1/4
-  parameters:
-    GitName: JenkinsTest
-    Platform: Platform
-    globalSystem: Zelgladis
-    mono: bC1uHGJF
-    mvncommand: clean project
-    projectver: 5ySpaWBVl8
-    qqq: ioSumh6JWuKeLYWl
-    zxc: '633840'
-- name: test1/noo/job3
-  parameters:
-    GitName: JenkinsTest
-    Platform: Platform
-    globalSystem: Zelgladis
-    mono: u7CXRvLM
-    mvncommand: clean project
-    projectver: 3G5RRzWMdj
-    qqq: ZPRFfgLj8oBj3SVV
-    zxc: '695518'
