@@ -6,7 +6,7 @@ def call(){
         def folders = []
         yamlData.pipelines.each { pipeline ->
             if (pipeline.name.contains('/')) {
-                def bober = rekurwa(pipeline.name)
+                def bober = myUtils.rekurwa(pipeline.name)
                 def k8s_metka = pipeline.name.split('/')[1].toUpperCase()
                 pipeline.parameters.sys_num = pipeline.name.split('/')[0]
                 bober.each{
