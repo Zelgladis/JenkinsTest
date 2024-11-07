@@ -10,6 +10,7 @@ def call(args) {
 
 def create_dsl(){
     node(){
+        git_pull('main', 'https://github.com/Zelgladis/JenkinsTest.git')
         dsl_run()
     }
 }
@@ -19,7 +20,7 @@ def git_pull(bracnh_name, url){
     stage('🥵Git pull project') {
         info = git (
                 branch: bracnh_name,
-                credentialsId: 'GIT_TOKEN',
+                credentialsId: 'git_token',
                 url: url
         )
         sh 'ls'
