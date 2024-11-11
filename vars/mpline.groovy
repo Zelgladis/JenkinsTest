@@ -378,8 +378,11 @@ def fiif_test(){
 def mymain(){
     node(){
         //import groovy.transform.Field
-        @Field def myArgs = [:]
-        mapper()
-        echo "${myArgs}"
+        script{
+            @Field def myArgs = [:]
+            mapper()
+            echo "${myArgs}"
+        }
+        echo "${myArgs}" 
     }
 }
