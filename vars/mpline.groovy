@@ -374,8 +374,8 @@ def fiif_test(){
 }
 
 def mymain(){
-    import groovy.transform.Field
     node(){
+        import groovy.transform.Field
         mapper()
         echo "${myArgs}"
     }
