@@ -378,7 +378,7 @@ def fiif_test(){
 def mymain(){
     node(){
         //mapper()
-        env.myArgs.put('123', '321')
-        echo "${env.myArgs}"
+        myArgs.put('123', '321')
+        echo "${myArgs}"
     }
 }
