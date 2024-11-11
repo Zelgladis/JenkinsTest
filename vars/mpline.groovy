@@ -373,3 +373,10 @@ def fiif_test(){
         """
     }
 }
+
+def mymain(){
+    node(){
+        mapper()
+        echo "${myArgs}"
+    }
+}
