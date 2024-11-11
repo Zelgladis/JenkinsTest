@@ -1,5 +1,4 @@
 // vars/mpline.groovy
-
 def call(args) {
     node(){
         init_env(args)
@@ -375,6 +374,7 @@ def fiif_test(){
 }
 
 def mymain(){
+    import groovy.transform.Field
     node(){
         mapper()
         echo "${myArgs}"
