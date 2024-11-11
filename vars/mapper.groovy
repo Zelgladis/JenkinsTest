@@ -1,5 +1,5 @@
 import groovy.transform.Field
 
 def call(){
-    myArgs.put('hy', 'hello')
+    env.myArgs.put('hy', 'hello')
 }
