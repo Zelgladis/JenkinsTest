@@ -86,35 +86,35 @@ def git_branch_cleaner(Map args){
 
                     # Клонируем репозиторий (только для чтения веток, не клонируем всю историю)
                     if [ -d "\$REPO_PATH" ]; then
-                    rm -rf "\$REPO_PATH"  # Очистка предыдущей версии
+                        rm -rf "\$REPO_PATH"  # Очистка предыдущей версии
                     fi
-                    git clone --mirror "\$REPO_URL" "\$REPO_PATH"
+                    git clone "\$REPO_URL" "\$REPO_PATH"
                     ls
-                    cd "\$REPO_PATH" || exit 1
+                        cd "\$REPO_PATH" || exit 1
                     ls
                     # Проверка, что клонирование прошло успешно
                     if [ ! -d ".git" ]; then
-                    echo "Ошибка: Репозиторий не был клонирован!"
+                        echo "Ошибка: Репозиторий не был клонирован!"
                     exit 1
                     fi
 
                     # Получаем список удаленных веток
                     OLD_BRANCHES=()
                     for branch in \$(git for-each-ref --format '%(refname:short) %(committerdate:unix)' refs/remotes | awk -v days="\$DAYS_OLD" '{if ((systime() - \$2) > (days * 24 * 3600)) print \$1}'); do
-                    # Исключаем основную ветку (обычно main или master)
-                    if [[ "\$branch" != "origin/main" && "\$branch" != "origin/master" ]]; then
-                        OLD_BRANCHES+=("\$branch")
-                    fi
+                        # Исключаем основную ветку (обычно main или master)
+                        if [[ "\$branch" != "origin/main" && "\$branch" != "origin/master" ]]; then
+                            OLD_BRANCHES+=("\$branch")
+                        fi
                     done
 
                     # Удаление старых веток
                     if [ \${#OLD_BRANCHES[@]} -eq 0 ]; then
-                    echo "Нет старых веток для удаления."
+                        echo "Нет старых веток для удаления."
                     else
-                    for branch in "\${OLD_BRANCHES[@]}"; do
-                        # Удаление ветки на удаленном сервере
-                        #git push origin --delete "\${branch#origin/}"
-                        echo "Удалена старая ветка: \${branch#origin/}"
+                        for branch in "\${OLD_BRANCHES[@]}"; do
+                            # Удаление ветки на удаленном сервере
+                            #git push origin --delete "\${branch#origin/}"
+                            echo "Удалена старая ветка: \${branch#origin/}"
                     done
                     fi
                 """
