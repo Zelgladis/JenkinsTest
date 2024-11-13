@@ -112,8 +112,7 @@ def git_branch_cleaner(Map args){
                             echo "skip \$branch 2"
                         else
                             echo "Удалена старая ветка: \$branch"
-                            # git push origin --delete "\$branch"
-
+                            git push origin --delete "\$branch"
                         fi
                     done
                 """
