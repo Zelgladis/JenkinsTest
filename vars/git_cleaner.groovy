@@ -1,7 +1,7 @@
 def call(){
     node(){
         stage('cleane_git'){
-            sshagent (credentials: ["git_key"]) {
+            sshagent (credentials: ["git_token"]) {
                 script {
             sh"""
                 #!/bin/bash
