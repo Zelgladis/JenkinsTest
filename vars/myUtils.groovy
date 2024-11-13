@@ -140,7 +140,7 @@ def git_branch_cleaner(Map args){
                     DAYS_OLD="0"          # Количество дней для фильтрации веток
 
                     # Пороговое время для сравнения
-                    THRESHOLD_TIME=$(( $(date +%s) - DAYS_OLD * 24 * 3600 ))
+                    THRESHOLD_TIME=\$(( \$(date +%s) - DAYS_OLD * 24 * 3600 ))
 
                     # Клонируем репозиторий (только для чтения веток)
                     if [ -d "\$REPO_PATH" ]; then
