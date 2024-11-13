@@ -29,7 +29,7 @@ def call(){
                 
                 OLD_FILES=\$(git ls-files -z | xargs -0 -I{} bash -c '
                 LAST_MODIFIED=\$(git log -1 --format="%ct" -- "{}")
-                if (( \$(date +%s) - LAST_MODIFIED > DAYS_OLD * 24 * 3600 )); then
+                if (( \$(date +%s) - LAST_MODIFIED > 180 * 24 * 3600 )); then
                     echo "{}"
                 fi
                 ' -- DAYS_OLD="\$DAYS_OLD")
