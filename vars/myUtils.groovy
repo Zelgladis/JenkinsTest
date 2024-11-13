@@ -76,8 +76,7 @@ def git_branch_cleaner(Map args){
             script {
                 def REPO_URL = args.REPO_URL
                 def DAYS_OLD = args.DAYS_OLD
-                sh"""
-                    #!/bin/bash
+                sh"""#!/bin/bash
                     # Удаление старых веток
                     # Параметры
                     REPO_URL="$REPO_URL"          # URL вашего репозитория
