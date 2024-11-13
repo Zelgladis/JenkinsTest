@@ -90,7 +90,7 @@ def git_branch_cleaner(Map args){
                     fi
                     git clone --mirror "\$REPO_URL" "\$REPO_PATH"
                     cd "\$REPO_PATH" || exit 1
-
+                    ls
                     # Проверка, что клонирование прошло успешно
                     if [ ! -d ".git" ]; then
                     echo "Ошибка: Репозиторий не был клонирован!"
