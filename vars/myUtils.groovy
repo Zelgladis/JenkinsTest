@@ -106,9 +106,9 @@ def git_branch_cleaner(Map args){
                                             awk -v threshold="\$THRESHOLD_TIME" '{if (\$2 < threshold) print \$1}')
 
                     echo "\$OLD_BRANCHES" | while read -r branch; do
-                        if [ "\$branch" == "origin\/main" ]; then
+                        if [ "\$branch" == 'origin/main' ]; then
                             echo "skip \$branch"
-                        elif [ "\$branch" != "origin" ]; then
+                        elif [ "\$branch" != 'origin' ]; then
                             echo "skip \$branch"
                         else
                             echo "delete \$bracnh"
