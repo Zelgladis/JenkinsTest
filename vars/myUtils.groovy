@@ -92,7 +92,7 @@ def git_branch_cleaner(Map args){
                       rm -rf "\$REPO_PATH"
                     fi
 
-                    #git clone --no-checkout "\$REPO_URL" "\$REPO_PATH"
+                    git clone --no-checkout "\$REPO_URL" "\$REPO_PATH"
                     cd "\$REPO_PATH" || exit 1
 
                     # Проверка успешного клонирования
