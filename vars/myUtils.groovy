@@ -99,7 +99,7 @@ def git_branch_cleaner(Map args){
                     fi
 
                     # Получаем список удаленных веток
-                    OLD_BRANCHES=()
+                    OLD_BRANCHES=''
                     for branch in \$(git for-each-ref --format '%(refname:short) %(committerdate:unix)' refs/remotes | awk -v days="\$DAYS_OLD" '{if ((systime() - \$2) > (days * 24 * 3600)) print \$1}'); do
                         # Исключаем основную ветку (обычно main или master)
                         if [[ "\$branch" != "origin/main" && "\$branch" != "origin/master" ]]; then
