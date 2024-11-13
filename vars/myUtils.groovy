@@ -106,8 +106,8 @@ def git_branch_cleaner2(Map args){
                         awk -v threshold="\$THRESHOLD_TIME" '{if (\$2 < threshold) print \$1}')
                     
                     # Исключаем основную ветку (обычно main или master)
-                    OLD_BRANCHES=( "\${OLD_BRANCHES[@]/origin\/main}" )
-                    OLD_BRANCHES=( "\${OLD_BRANCHES[@]/origin\/master}" )
+                    #OLD_BRANCHES=( "\${OLD_BRANCHES[@]/origin\/main}" )
+                    #OLD_BRANCHES=( "\${OLD_BRANCHES[@]/origin\/master}" )
 
                     # Удаление старых веток
                     if [ \${#OLD_BRANCHES[@]} -eq 0 ]; then
