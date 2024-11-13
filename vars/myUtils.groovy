@@ -158,7 +158,7 @@ def git_branch_cleaner(Map args){
 
                     echo "Текущий порог времени: \$THRESHOLD_TIME"
                     OLD_BRANCHES=\$(git for-each-ref --format '%(refname:short) %(committerdate:unix)' refs/remotes | \
-                                            awk -v threshold="$THRESHOLD_TIME" '{if (\$2 < threshold) print \$1}')
+                                            awk -v threshold="\$THRESHOLD_TIME" '{if (\$2 < threshold) print \$1}')
 
                     readarray -t br_arr <<< "\$OLD_BRANCHES"
 
