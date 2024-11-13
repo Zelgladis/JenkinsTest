@@ -111,7 +111,7 @@ def git_branch_cleaner(Map args){
                         elif [ "\$branch" = 'origin' ]; then
                             echo "skip \$branch 2"
                         else
-                            echo "delete \$bracnh 3"
+                            echo "delete \$branch 3"
                         fi
                     done
                 """
