@@ -105,12 +105,10 @@ def git_branch_cleaner(Map args){
                     OLD_BRANCHES=\$(git for-each-ref --format '%(refname:short) %(committerdate:unix)' refs/remotes | \
                                             awk -v threshold="\$THRESHOLD_TIME" '{if (\$2 < threshold) print \$1}')
 
-                    readarray -t br_arr <<< "\$OLD_BRANCHES"
-
-                    for i in "\${br_arr[@]}"; do
-                    if [[ "\$i" != "origin/main" && "\$i" != "origin" ]]; then
-                        echo "\$i"
-                    fi
+                    echo "\$OLD_BRANCHES" | while read -r branch; do
+                        if [[ "\$branch" != "origin/main" && "\$branch" != "origin" ]]; then
+                            echo "\$branch"
+                        fi
                     done
                 """
             }
