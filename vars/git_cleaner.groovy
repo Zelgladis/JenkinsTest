@@ -24,7 +24,7 @@ def call(){
                 fi
 
                 # Находим файлы, которые не менялись более \$DAYS_OLD дней
-                OLD_FILES=\$(git ls-files -z | xargs -0 -I{} sh -c 'if [ "\$(git log -1 --format="%ct" -- {} | awk -v days="\$DAYS_OLD" "{ if ((systime() - ($1)) > (days * 24 * 3600)) print 1; }")" == "1" ]; then echo {}; fi')
+                OLD_FILES=\$(git ls-files -z | xargs -0 -I{} sh -c 'if [ "\$(git log -1 --format="%ct" -- {} | awk -v days="\$DAYS_OLD" "{ if ((systime() - (\S$1)) > (days * 24 * 3600)) print 1; }")" == "1" ]; then echo {}; fi')
 
                 # Удаление старых файлов
                 for FILE in \$OLD_FILES; do
