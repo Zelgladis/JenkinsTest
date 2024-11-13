@@ -33,7 +33,7 @@ def call(){
                     echo "{}"
                 fi
 
-                ' -- DAYS_OLD="$DAYS_OLD")
+                ' -- DAYS_OLD="\$DAYS_OLD")
                 # Удаление старых файлов
                 for FILE in \$OLD_FILES; do
                 rm -f "\$FILE"
