@@ -70,7 +70,7 @@ def git_file_cleaner(git_url, days){
     }
 }
 
-def git_branch_cleaner(Map args){
+def git_branch_cleaner2(Map args){
     stage('cleane_branch_git'){
         sshagent (credentials: ["git_token"]) {
             script {
@@ -127,3 +127,48 @@ def git_branch_cleaner(Map args){
     }
 }
 
+def git_branch_cleaner(Map args){
+    stage('cleane_branch_git'){
+        sshagent (credentials: ["git_token"]) {
+            script {
+                def REPO_URL = args.REPO_URL
+                def DAYS_OLD = args.DAYS_OLD
+                sh"""
+                    #!/bin/bash
+                    REPO_URL="git@github.com:Zelgladis/JenkisTestGit.git"          # URL вашего репозитория
+                    REPO_PATH="./mrepos"          # Локальный путь, куда будет клонирован репозиторий
+                    DAYS_OLD="0"          # Количество дней для фильтрации веток
+
+                    # Пороговое время для сравнения
+                    THRESHOLD_TIME=$(( $(date +%s) - DAYS_OLD * 24 * 3600 ))
+
+                    # Клонируем репозиторий (только для чтения веток)
+                    if [ -d "\$REPO_PATH" ]; then
+                      rm -rf "\$REPO_PATH"
+                    fi
+
+                    #git clone --no-checkout "\$REPO_URL" "\$REPO_PATH"
+                    cd "\$REPO_PATH" || exit 1
+
+                    # Проверка успешного клонирования
+                    if [ ! -d ".git" ]; then
+                    echo "Ошибка: Репозиторий не был клонирован!"
+                    exit 1
+                    fi
+
+                    echo "Текущий порог времени: \$THRESHOLD_TIME"
+                    OLD_BRANCHES=\$(git for-each-ref --format '%(refname:short) %(committerdate:unix)' refs/remotes | \
+                                            awk -v threshold="$THRESHOLD_TIME" '{if (\$2 < threshold) print \$1}')
+
+                    readarray -t br_arr <<< "\$OLD_BRANCHES"
+
+                    for i in "\${br_arr[@]}"; do
+                    if [[ "\$i" != "origin/main" && "\$i" != "origin" ]]; then
+                        echo "\$i"
+                    fi
+                    done
+                """
+            }
+        }
+    }
+}
