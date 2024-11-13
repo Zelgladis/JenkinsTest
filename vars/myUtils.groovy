@@ -74,13 +74,15 @@ def git_branch_cleaner(Map args){
     stage('cleane_git'){
         sshagent (credentials: ["git_token"]) {
             script {
+                def REPO_URL = args.REPO_URL
+                def DAYS_OLD = args.DAYS_OLD
                 sh"""
                     #!/bin/bash
                     # Удаление старых веток
                     # Параметры
-                    REPO_URL="${args.REPO_URL}"          # URL вашего репозитория
+                    REPO_URL="$REPO_URL"          # URL вашего репозитория
                     REPO_PATH="./mrepos"            # Локальный путь, куда будет клонирован репозиторий
-                    DAYS_OLD="${args.DAYS_OLD}"        # Количество дней для фильтрации веток
+                    DAYS_OLD="$DAYS_OLD"        # Количество дней для фильтрации веток
 
                     # Клонируем репозиторий (только для чтения веток, не клонируем всю историю)
                     if [ -d "\$REPO_PATH" ]; then
