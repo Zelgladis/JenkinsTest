@@ -76,7 +76,7 @@ def git_branch_cleaner(Map args){
             script {
                 def REPO_URL = args.REPO_URL
                 def DAYS_OLD = args.DAYS_OLD
-                sh"""#!/bin/bash
+                sh """#!/bin/bash
                     # Удаление старых веток
                     # Параметры
                     REPO_URL="$REPO_URL"          # URL вашего репозитория
@@ -87,21 +87,29 @@ def git_branch_cleaner(Map args){
                     if [ -d "\$REPO_PATH" ]; then
                         rm -rf "\$REPO_PATH"  # Очистка предыдущей версии
                     fi
-                    git clone "\$REPO_URL" "\$REPO_PATH"
-                        cd "\$REPO_PATH" || exit 1
+                    git clone --no-checkout "\$REPO_URL" "\$REPO_PATH"
+                    cd "\$REPO_PATH" || exit 1
+
                     # Проверка, что клонирование прошло успешно
                     if [ ! -d ".git" ]; then
                         echo "Ошибка: Репозиторий не был клонирован!"
-                    exit 1
+                        exit 1
                     fi
 
                     # Получаем список удаленных веток
                     OLD_BRANCHES=()
-                    for branch in \$(git for-each-ref --format '%(refname:short) %(committerdate:unix)' refs/remotes | \
-                        awk -v days="\$DAYS_OLD" '{if ((systime() - \$2) > (days * 24 * 3600)) print \$1}'); do
-                        # Исключаем основную ветку (обычно main или master)
-                        if [[ "\$branch" != "origin/main" && "\$branch" != "origin/master" ]]; then
-                            OLD_BRANCHES+=("\$branch")
+                    CURRENT_TIME=\$(date +%s)
+                    
+                    echo "Порог времени: \$DAYS_OLD дней назад"
+                    echo "Текущие ветки и их дата последнего коммита:"
+                    
+                    git for-each-ref --format '%(refname:short) %(committerdate:unix)' refs/remotes | while read -r branch commit_date; do
+                        echo "Ветка: \$branch, Дата коммита: \$commit_date"
+                        if (( CURRENT_TIME - commit_date > DAYS_OLD * 24 * 3600 )); then
+                            # Исключаем основную ветку (обычно main или master)
+                            if [[ "\$branch" != "origin/main" && "\$branch" != "origin/master" ]]; then
+                                OLD_BRANCHES+=("\$branch")
+                            fi
                         fi
                     done
 
@@ -109,11 +117,12 @@ def git_branch_cleaner(Map args){
                     if [ \${#OLD_BRANCHES[@]} -eq 0 ]; then
                         echo "Нет старых веток для удаления."
                     else
+                        echo "Следующие ветки будут удалены:"
                         for branch in "\${OLD_BRANCHES[@]}"; do
-                            # Удаление ветки на удаленном сервере
-                            #git push origin --delete "\${branch#origin/}"
                             echo "Удалена старая ветка: \${branch#origin/}"
-                    done
+                            # Удаление ветки на удаленном сервере
+                            # git push origin --delete "\${branch#origin/}"
+                        done
                     fi
                 """
             }
