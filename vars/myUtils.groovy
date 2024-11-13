@@ -78,36 +78,36 @@ def git_branch_cleaner(Map args){
                 def DAYS_OLD = args.DAYS_OLD
                 sh """#!/bin/bash
                     # Удаление старых веток
-                    # Параметры
                     REPO_URL="$REPO_URL"          # URL вашего репозитория
-                    REPO_PATH="./mrepos"            # Локальный путь, куда будет клонирован репозиторий
-                    DAYS_OLD="$DAYS_OLD"        # Количество дней для фильтрации веток
+                    REPO_PATH="./mrepos"          # Локальный путь, куда будет клонирован репозиторий
+                    DAYS_OLD="$DAYS_OLD"          # Количество дней для фильтрации веток
 
-                    # Клонируем репозиторий (только для чтения веток, не клонируем всю историю)
+                    # Пороговое время для сравнения
+                    THRESHOLD_TIME=\$(( \$(date +%s) - DAYS_OLD * 24 * 3600 ))
+
+                    # Клонируем репозиторий (только для чтения веток)
                     if [ -d "\$REPO_PATH" ]; then
-                        rm -rf "\$REPO_PATH"  # Очистка предыдущей версии
+                        rm -rf "\$REPO_PATH"
                     fi
                     git clone --no-checkout "\$REPO_URL" "\$REPO_PATH"
                     cd "\$REPO_PATH" || exit 1
 
-                    # Проверка, что клонирование прошло успешно
+                    # Проверка успешного клонирования
                     if [ ! -d ".git" ]; then
                         echo "Ошибка: Репозиторий не был клонирован!"
                         exit 1
                     fi
 
-                    # Получаем список удаленных веток
+                    # Получаем список старых веток для удаления
                     OLD_BRANCHES=()
-                    CURRENT_TIME=\$(date +%s)
-                    
-                    echo "Порог времени: \$DAYS_OLD дней назад"
-                    echo "Текущие ветки и их дата последнего коммита:"
+                    echo "Текущий порог времени: \$THRESHOLD_TIME"
                     
                     git for-each-ref --format '%(refname:short) %(committerdate:unix)' refs/remotes | while read -r branch commit_date; do
-                        echo "Ветка: \$branch, Дата коммита: \$commit_date"
-                        if (( CURRENT_TIME - commit_date > DAYS_OLD * 24 * 3600 )); then
+                        echo "Проверка ветки: \$branch с датой последнего коммита: \$commit_date"
+                        if (( commit_date < THRESHOLD_TIME )); then
                             # Исключаем основную ветку (обычно main или master)
                             if [[ "\$branch" != "origin/main" && "\$branch" != "origin/master" ]]; then
+                                echo "Добавлена старая ветка для удаления: \$branch"
                                 OLD_BRANCHES+=("\$branch")
                             fi
                         fi
@@ -125,6 +125,7 @@ def git_branch_cleaner(Map args){
                         done
                     fi
                 """
+
             }
         }
     }
