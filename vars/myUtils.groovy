@@ -80,7 +80,7 @@ def git_branch_cleaner(Map args){
                 def DAYS_OLD = args.DAYS_OLD
                 sh"""
                     #!/bin/bash
-                    REPO_URL="git@github.com:Zelgladis/JenkisTestGit.git"          # URL вашего репозитория
+                    REPO_URL="$REPO_URL"          # URL вашего репозитория
                     REPO_PATH="./mrepos"          # Локальный путь, куда будет клонирован репозиторий
                     DAYS_OLD="0"          # Количество дней для фильтрации веток
 
