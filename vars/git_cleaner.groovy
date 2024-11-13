@@ -8,7 +8,7 @@ def call(){
                 # Параметры
                 REPO_URL="ssh://git@github.com:Zelgladis/JenkisTestGit.git"  # URL репозитория
                 REPO_PATH="./chl"   # Локальный путь, куда будет клонирован репозиторий
-                DAYS_OLD=90                                        # Количество дней для фильтрации файлов
+                DAYS_OLD=180                                        # Количество дней для фильтрации файлов
 
                 # Клонирование репозитория
                 if [ -d "$REPO_PATH" ]; then
