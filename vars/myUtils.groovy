@@ -71,7 +71,7 @@ def git_file_cleaner(git_url, days){
 }
 
 def git_branch_cleaner(Map args){
-    stage('cleane_git'){
+    stage('cleane_branch_git'){
         sshagent (credentials: ["git_token"]) {
             script {
                 def REPO_URL = args.REPO_URL
