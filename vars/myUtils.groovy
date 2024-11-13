@@ -89,6 +89,7 @@ def git_branch_cleaner(Map args){
                     rm -rf "\$REPO_PATH"  # Очистка предыдущей версии
                     fi
                     git clone --mirror "\$REPO_URL" "\$REPO_PATH"
+                    ls
                     cd "\$REPO_PATH" || exit 1
                     ls
                     # Проверка, что клонирование прошло успешно
