@@ -102,16 +102,12 @@ def git_branch_cleaner(Map args){
                     OLD_BRANCHES=()
                     echo "Текущий порог времени: \$THRESHOLD_TIME"
                     
-                    git for-each-ref --format '%(refname:short) %(committerdate:unix)' refs/remotes | while read -r branch commit_date; do
-                        echo "Проверка ветки: \$branch с датой последнего коммита: \$commit_date"
-                        if (( commit_date < THRESHOLD_TIME )); then
-                            # Исключаем основную ветку (обычно main или master)
-                            if [[ "\$branch" != "origin/main" && "\$branch" != "origin/master" ]]; then
-                                echo "Добавлена старая ветка для удаления: \$branch"
-                                OLD_BRANCHES+=("\$branch")
-                            fi
-                        fi
-                    done
+                    mapfile -t OLD_BRANCHES < <(git for-each-ref --format '%(refname:short) %(committerdate:unix)' refs/remotes | \
+                        awk -v threshold="\$THRESHOLD_TIME" '{if ($2 < threshold) print $1}')
+                    
+                    # Исключаем основную ветку (обычно main или master)
+                    OLD_BRANCHES=( "\${OLD_BRANCHES[@]/origin\/main}" )
+                    OLD_BRANCHES=( "\${OLD_BRANCHES[@]/origin\/master}" )
 
                     # Удаление старых веток
                     if [ \${#OLD_BRANCHES[@]} -eq 0 ]; then
@@ -120,11 +116,11 @@ def git_branch_cleaner(Map args){
                         echo "Следующие ветки будут удалены:"
                         for branch in "\${OLD_BRANCHES[@]}"; do
                             echo "Удалена старая ветка: \${branch#origin/}"
-                            # Удаление ветки на удаленном сервере
                             # git push origin --delete "\${branch#origin/}"
                         done
                     fi
                 """
+
 
             }
         }
