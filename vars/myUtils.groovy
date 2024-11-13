@@ -97,8 +97,8 @@ def git_branch_cleaner(Map args){
 
                     # Проверка успешного клонирования
                     if [ ! -d ".git" ]; then
-                    echo "Ошибка: Репозиторий не был клонирован!"
-                    exit 1
+                        echo "Ошибка: Репозиторий не был клонирован!"
+                        exit 1
                     fi
 
                     echo "Текущий порог времени: \$THRESHOLD_TIME"
@@ -112,7 +112,7 @@ def git_branch_cleaner(Map args){
                             echo "skip \$branch 2"
                         else
                             echo "Удалена старая ветка: \$branch"
-                            git push origin --delete "\$branch"
+                            git push origin --delete "\${branch#origin/}"
                         fi
                     done
                 """
