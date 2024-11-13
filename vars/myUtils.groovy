@@ -78,8 +78,7 @@ def git_branch_cleaner(Map args){
             script {
                 def REPO_URL = args.REPO_URL
                 def DAYS_OLD = args.DAYS_OLD
-                sh"""
-                    #!/bin/bash
+                sh"""#!/bin/bash
                     REPO_URL="$REPO_URL"          # URL вашего репозитория
                     REPO_PATH="./mrepos"          # Локальный путь, куда будет клонирован репозиторий
                     DAYS_OLD="$DAYS_OLD"          # Количество дней для фильтрации веток
@@ -106,13 +105,11 @@ def git_branch_cleaner(Map args){
                                             awk -v threshold="\$THRESHOLD_TIME" '{if (\$2 < threshold) print \$1}')
 
                     echo "\$OLD_BRANCHES" | while read -r branch; do
-                        if [ "\$branch" = 'origin/main' ]; then
-                            echo "skip \$branch 1"
-                        elif [ "\$branch" = 'origin' ]; then
-                            echo "skip \$branch 2"
-                        else
+                        if [[ "\$branch" != 'origin/main' && "\$branch" != 'origin' ]]; then
                             echo "Удалена старая ветка: \$branch"
-                            git push origin --delete "\${branch#origin/}"
+                            #git push origin --delete "\${branch#origin/}"
+                        else
+                            echo "skip \$branch"
                         fi
                     done
                 """
