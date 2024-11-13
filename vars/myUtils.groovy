@@ -82,7 +82,7 @@ def git_branch_cleaner(Map args){
                     #!/bin/bash
                     REPO_URL="$REPO_URL"          # URL вашего репозитория
                     REPO_PATH="./mrepos"          # Локальный путь, куда будет клонирован репозиторий
-                    DAYS_OLD="0"          # Количество дней для фильтрации веток
+                    DAYS_OLD="$DAYS_OLD"          # Количество дней для фильтрации веток
 
                     # Пороговое время для сравнения
                     THRESHOLD_TIME=\$(( \$(date +%s) - DAYS_OLD * 24 * 3600 ))
@@ -111,7 +111,9 @@ def git_branch_cleaner(Map args){
                         elif [ "\$branch" = 'origin' ]; then
                             echo "skip \$branch 2"
                         else
-                            echo "delete \$branch 3"
+                            echo "Удалена старая ветка: \$branch"
+                            # git push origin --delete "\$branch"
+
                         fi
                     done
                 """
