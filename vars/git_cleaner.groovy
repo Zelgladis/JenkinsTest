@@ -33,6 +33,7 @@ def call(){
                     echo "{}"
                 fi
                 echo "\$LAST_MODIFIED"
+                echo "----------"
 
                 ' -- DAYS_OLD="\$DAYS_OLD")
                 # Удаление старых файлов
