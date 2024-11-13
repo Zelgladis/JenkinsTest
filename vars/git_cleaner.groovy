@@ -6,7 +6,7 @@ def call(){
             sh"""
                 #!/bin/bash
                 # Параметры
-                REPO_URL="git@github.com/JenkisTestGit.git"  # URL репозитория
+                REPO_URL="git@github.com/Zelgladis/JenkisTestGit.git"  # URL репозитория
                 REPO_PATH="./chl"   # Локальный путь, куда будет клонирован репозиторий
                 DAYS_OLD=180                                        # Количество дней для фильтрации файлов
 
