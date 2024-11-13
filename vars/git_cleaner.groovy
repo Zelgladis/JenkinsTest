@@ -32,7 +32,7 @@ def call(){
                 if (( \$(date +%s) - LAST_MODIFIED > DAYS_OLD * 24 * 3600 )); then
                     echo "{}"
                 fi
-                ' -- DAYS_OLD="180")
+                ' --DAYS_OLD="\$DAYS_OLD")
                 # Удаление старых файлов
                 for FILE in \$OLD_FILES; do
                 rm -f "\$FILE"
