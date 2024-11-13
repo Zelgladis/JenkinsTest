@@ -28,9 +28,9 @@ def call(){
                 # OLD_FILES=\$(git ls-files -z | xargs -0 -I{} sh -c 'if [ "\$(git log -1 --format="%ct" -- {} | awk -v days="\$DAYS_OLD" "{ if ((systime() - (\$1)) > (days * 24 * 3600)) print 1; }")" == "1" ]; then echo {}; fi')
                 
                 OLD_FILES=\$(git ls-files -z | xargs -0 -I{} bash -c '
-                LAST_MODIFIED=\$(git log -1 --format="%ct" -- "{}")
+                LAST_MODIFIED=\$(git log -1 --format="%ct" -- "\$1")
                 if (( \$(date +%s) - LAST_MODIFIED > \$2 * 24 * 3600 )); then
-                    echo "{}"
+                    echo "\$1"
                 fi
                 ' -- {} "\$DAYS_OLD")
                 # Удаление старых файлов
