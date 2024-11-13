@@ -88,9 +88,7 @@ def git_branch_cleaner(Map args){
                         rm -rf "\$REPO_PATH"  # Очистка предыдущей версии
                     fi
                     git clone "\$REPO_URL" "\$REPO_PATH"
-                    ls
                         cd "\$REPO_PATH" || exit 1
-                    ls
                     # Проверка, что клонирование прошло успешно
                     if [ ! -d ".git" ]; then
                         echo "Ошибка: Репозиторий не был клонирован!"
@@ -99,7 +97,7 @@ def git_branch_cleaner(Map args){
 
                     # Получаем список удаленных веток
                     OLD_BRANCHES=()
-                    for branch in \$(git for-each-ref --format '%(refname:short) %(committerdate:unix)' refs/remotes | awk -v days="\$DAYS_OLD" '{if ((systime() - \$2) > (days * 24 * 3600)) print \$1}'); do
+                    for branch in \$(git for-each-ref --format '%(refname:short) %(committerdate:unix)' refs/remotes | awk -v days="$DAYS_OLD" '{if ((systime() - \$2) > (days * 24 * 3600)) print \$1}'); do
                         # Исключаем основную ветку (обычно main или master)
                         if [[ "\$branch" != "origin/main" && "\$branch" != "origin/master" ]]; then
                             OLD_BRANCHES+=("\$branch")
