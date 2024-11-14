@@ -25,7 +25,7 @@ pipelineJob(yamlData.pipelines[c].name) {
 
       if (yamlData.pipelines[c].parameters.mvncommand == 'dotnet nupkg') {
         stringParam('VersionNupkg', '2.0.', 'Версия пакетов')
-      }else if(yamlData.pipelines[c].parameters == clean_only == true){
+      }else if(yamlData.pipelines[c].parameters.clean_only == true){
       }
       else {
         booleanParam('Move_Distr', false, 'Перемещение дистрибутива для перекладки в CDL')
