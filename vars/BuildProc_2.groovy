@@ -12,8 +12,7 @@ pipelineJob(yamlData.pipelines[c].name) {
       if (yamlData.pipelines[c].parameters.mvncommand == 'dotnet nupkg') {
         stringParam('VersionNupkg', '2.0.', 'Версия пакетов')
       }else if(yamlData.pipelines[c].parameters.clean_only == true){
-      }
-      else {
+      }else {
         gitParameter {
           name('BRANCH_NAME')
           branch('main')
