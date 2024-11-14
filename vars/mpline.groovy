@@ -231,7 +231,7 @@ def dsl_runer(){
                     additionalParameters: [
                             pipeline: pipeline,
                     ],
-                    sandbox: true
+                    sandbox: false
         }
     }
 }
