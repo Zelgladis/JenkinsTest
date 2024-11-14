@@ -1,38 +1,39 @@
 pipelineJob(yamlData.pipelines[c].name) {
-    parameters {
-      //nonStoredPasswordParam('vault_password', 'Пароль для дешифровки')
-      if (yamlData.pipelines[c].dep_key == 'true') {
-        //credentialsParam('DEPLOY_KEY') {
-        //  type('org.jenkinsci.plugins.plaincredentials.impl.StringCredentialsImpl')
-        //  required()
-        //  defaultValue('QWE')
-        //  description('Решение всех проблем')
-        //}
-      }
-      if (yamlData.pipelines[c].parameters.mvncommand == 'dotnet nupkg') {
-        stringParam('VersionNupkg', '2.0.', 'Версия пакетов')
-      }else if(yamlData.pipelines[c].parameters.clean_only == true){
-      }else {
-        gitParameter {
-          name('BRANCH_NAME')
-          branch('main')
-          description('Необходимо выбрать ветку для сборки')
-          tagFilter('*')
-          type('BRANCH_TAG')
-          defaultValue('main')
-          quickFilterEnabled(true)
-          branchFilter('origin/(.*)')
-          sortMode('NONE')
-          selectedValue('NONE')
-          useRepository("ssh://git@github.com/${yamlData.pipelines[c].parameters.globalSystem}/${yamlData.pipelines[c].parameters.GitName}.git")
-      }
-        booleanParam('Move_Distr', false, 'Перемещение дистрибутива для перекладки в CDL')
-        booleanParam('Deploy_to_dev', false, 'Установка пакета на DSO')
-        if (yamlData.pipelines[c].parameters.Platform == 'OC') {
-          stringParam('Version_inv', '', 'Указываем вертку Inv')
-          stringParam('Version_supply', '', 'Указываем ветку Supply')
+    if(yamlData.pipelines[c].parameters.clean_only != true){  
+      parameters {
+        //nonStoredPasswordParam('vault_password', 'Пароль для дешифровки')
+        if (yamlData.pipelines[c].dep_key == 'true') {
+          //credentialsParam('DEPLOY_KEY') {
+          //  type('org.jenkinsci.plugins.plaincredentials.impl.StringCredentialsImpl')
+          //  required()
+          //  defaultValue('QWE')
+          //  description('Решение всех проблем')
+          //}
         }
-        booleanParam('Debug', false, 'Включение Debug')
+        if (yamlData.pipelines[c].parameters.mvncommand == 'dotnet nupkg') {
+          stringParam('VersionNupkg', '2.0.', 'Версия пакетов')
+        }else {
+          gitParameter {
+            name('BRANCH_NAME')
+            branch('main')
+            description('Необходимо выбрать ветку для сборки')
+            tagFilter('*')
+            type('BRANCH_TAG')
+            defaultValue('main')
+            quickFilterEnabled(true)
+            branchFilter('origin/(.*)')
+            sortMode('NONE')
+            selectedValue('NONE')
+            useRepository("ssh://git@github.com/${yamlData.pipelines[c].parameters.globalSystem}/${yamlData.pipelines[c].parameters.GitName}.git")
+        }
+          booleanParam('Move_Distr', false, 'Перемещение дистрибутива для перекладки в CDL')
+          booleanParam('Deploy_to_dev', false, 'Установка пакета на DSO')
+          if (yamlData.pipelines[c].parameters.Platform == 'OC') {
+            stringParam('Version_inv', '', 'Указываем вертку Inv')
+            stringParam('Version_supply', '', 'Указываем ветку Supply')
+          }
+          booleanParam('Debug', false, 'Включение Debug')
+        }
       }
     }
     definition {
