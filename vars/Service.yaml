@@ -10,3 +10,6 @@ pipelines:
 - name: clean_it
   parameters: 
     clean_only: true
+    target_list:
+      - 'asd'
+      - 'dsa'
