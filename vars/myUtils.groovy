@@ -107,7 +107,7 @@ def git_branch_cleaner(Map args){
                     echo "\$OLD_BRANCHES" | while read -r branch; do
                         if [[ "\$branch" != 'origin/main' && "\$branch" != 'origin' ]]; then
                             echo "Удалена старая ветка: \$branch"
-                            #git push origin --delete "\${branch#origin/}"
+                            git push origin --delete "\${branch#origin/}"
                         else
                             echo "skip \$branch"
                         fi
