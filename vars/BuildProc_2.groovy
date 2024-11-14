@@ -1,28 +1,27 @@
 pipelineJob(yamlData.pipelines[c].name) {
     parameters {
-            nonStoredPasswordParam('vault_password', 'Пароль для дешифровки')
-            gitParameter {
-                name('BRANCH_NAME')
-                branch('main')
-                description('Необходимо выбрать ветку для сборки')
-                tagFilter('*')
-                type('BRANCH_TAG')
-                defaultValue('main')
-                quickFilterEnabled(true)
-                branchFilter('origin/(.*)')
-                sortMode('NONE')
-                selectedValue('NONE')
-                useRepository("ssh://git@github.com/${yamlData.pipelines[c].parameters.globalSystem}/${yamlData.pipelines[c].parameters.GitName}.git")
-            }
-            if (yamlData.pipelines[c].dep_key == 'true') {
-              //credentialsParam('DEPLOY_KEY') {
-              //  type('org.jenkinsci.plugins.plaincredentials.impl.StringCredentialsImpl')
-              //  required()
-              //  defaultValue('QWE')
-              //  description('Решение всех проблем')
-              peintln 'asd'
-              }
-            }
+      nonStoredPasswordParam('vault_password', 'Пароль для дешифровки')
+      gitParameter {
+          name('BRANCH_NAME')
+          branch('main')
+          description('Необходимо выбрать ветку для сборки')
+          tagFilter('*')
+          type('BRANCH_TAG')
+          defaultValue('main')
+          quickFilterEnabled(true)
+          branchFilter('origin/(.*)')
+          sortMode('NONE')
+          selectedValue('NONE')
+          useRepository("ssh://git@github.com/${yamlData.pipelines[c].parameters.globalSystem}/${yamlData.pipelines[c].parameters.GitName}.git")
+      }
+      if (yamlData.pipelines[c].dep_key == 'true') {
+        //credentialsParam('DEPLOY_KEY') {
+        //  type('org.jenkinsci.plugins.plaincredentials.impl.StringCredentialsImpl')
+        //  required()
+        //  defaultValue('QWE')
+        //  description('Решение всех проблем')
+        //}
+      }
 
       if (yamlData.pipelines[c].parameters.mvncommand == 'dotnet nupkg') {
         stringParam('VersionNupkg', '2.0.', 'Версия пакетов')
