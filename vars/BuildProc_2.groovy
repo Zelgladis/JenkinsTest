@@ -20,6 +20,7 @@ pipelineJob(yamlData.pipelines[c].name) {
               //  required()
               //  defaultValue('QWE')
               //  description('Решение всех проблем')
+              peintln 'asd'
               }
             }
 
