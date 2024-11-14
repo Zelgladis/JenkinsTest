@@ -25,7 +25,8 @@ pipelineJob(yamlData.pipelines[c].name) {
 
       if (yamlData.pipelines[c].parameters.mvncommand == 'dotnet nupkg') {
         stringParam('VersionNupkg', '2.0.', 'Версия пакетов')
-        }
+      }else if(yamlData.pipelines[c].parameters.mvncommand == clean_only == true){
+      }
       else {
         booleanParam('Move_Distr', false, 'Перемещение дистрибутива для перекладки в CDL')
         booleanParam('Deploy_to_dev', false, 'Установка пакета на DSO')
