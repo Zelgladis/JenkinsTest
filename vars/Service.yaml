@@ -8,4 +8,4 @@ pipelines:
   parameters:
     CONTOUR: ./inventory/K4/cnts-rqtx-notification-manager
 - name: clean_it
-  parameters:
+  parameters: []
