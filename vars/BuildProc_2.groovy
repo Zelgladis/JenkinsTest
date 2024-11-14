@@ -15,11 +15,11 @@ pipelineJob(yamlData.pipelines[c].name) {
                 useRepository("ssh://git@github.com/${yamlData.pipelines[c].parameters.globalSystem}/${yamlData.pipelines[c].parameters.GitName}.git")
             }
             if (yamlData.pipelines[c].dep_key == 'true') {
-              credentialsParam('DEPLOY_KEY') {
-                type('org.jenkinsci.plugins.plaincredentials.impl.StringCredentialsImpl')
-                required()
-                defaultValue('QWE')
-                description('Решение всех проблем')
+              //credentialsParam('DEPLOY_KEY') {
+              //  type('org.jenkinsci.plugins.plaincredentials.impl.StringCredentialsImpl')
+              //  required()
+              //  defaultValue('QWE')
+              //  description('Решение всех проблем')
               }
             }
 
