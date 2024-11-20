@@ -76,43 +76,44 @@ def git_branch_cleaner(Map args){
     stage('cleane_branch_git'){
         sshagent (credentials: ["git_token"]) {
             script {
-                def REPO_URL = args.REPO_URL
                 def DAYS_OLD = args.DAYS_OLD
-                sh"""#!/bin/bash
-                    REPO_URL="$REPO_URL"          # URL вашего репозитория
-                    REPO_PATH="./mrepos"          # Локальный путь, куда будет клонирован репозиторий
-                    DAYS_OLD="$DAYS_OLD"          # Количество дней для фильтрации веток
+                args.target_list.each{ target ->
+                    sh"""#!/bin/bash
+                        REPO_URL="$target"          # URL вашего репозитория
+                        REPO_PATH="./mrepos"          # Локальный путь, куда будет клонирован репозиторий
+                        DAYS_OLD="$DAYS_OLD"          # Количество дней для фильтрации веток
 
-                    # Пороговое время для сравнения
-                    THRESHOLD_TIME=\$(( \$(date +%s) - DAYS_OLD * 24 * 3600 ))
+                        # Пороговое время для сравнения
+                        THRESHOLD_TIME=\$(( \$(date +%s) - DAYS_OLD * 24 * 3600 ))
 
-                    # Клонируем репозиторий (только для чтения веток)
-                    if [ -d "\$REPO_PATH" ]; then
-                      rm -rf "\$REPO_PATH"
-                    fi
-
-                    git clone --no-checkout "\$REPO_URL" "\$REPO_PATH"
-                    cd "\$REPO_PATH" || exit 1
-
-                    # Проверка успешного клонирования
-                    if [ ! -d ".git" ]; then
-                        echo "Ошибка: Репозиторий не был клонирован!"
-                        exit 1
-                    fi
-
-                    echo "Текущий порог времени: \$THRESHOLD_TIME"
-                    OLD_BRANCHES=\$(git for-each-ref --format '%(refname:short) %(committerdate:unix)' refs/remotes | \
-                                            awk -v threshold="\$THRESHOLD_TIME" '{if (\$2 < threshold) print \$1}')
-
-                    echo "\$OLD_BRANCHES" | while read -r branch; do
-                        if [[ "\$branch" != 'origin/main' && "\$branch" != 'origin' ]]; then
-                            echo "Удалена старая ветка: \$branch"
-                            git push origin --delete "\${branch#origin/}"
-                        else
-                            echo "skip \$branch"
+                        # Клонируем репозиторий (только для чтения веток)
+                        if [ -d "\$REPO_PATH" ]; then
+                        rm -rf "\$REPO_PATH"
                         fi
-                    done
-                """
+
+                        git clone --no-checkout "\$REPO_URL" "\$REPO_PATH"
+                        cd "\$REPO_PATH" || exit 1
+
+                        # Проверка успешного клонирования
+                        if [ ! -d ".git" ]; then
+                            echo "Ошибка: Репозиторий не был клонирован!"
+                            exit 1
+                        fi
+
+                        echo "Текущий порог времени: \$THRESHOLD_TIME"
+                        OLD_BRANCHES=\$(git for-each-ref --format '%(refname:short) %(committerdate:unix)' refs/remotes | \
+                                                awk -v threshold="\$THRESHOLD_TIME" '{if (\$2 < threshold) print \$1}')
+
+                        echo "\$OLD_BRANCHES" | while read -r branch; do
+                            if [[ "\$branch" != 'origin/main' && "\$branch" != 'origin' ]]; then
+                                echo "Удалена старая ветка: \$branch"
+                                git push origin --delete "\${branch#origin/}"
+                            else
+                                echo "skip \$branch"
+                            fi
+                        done
+                    """
+                }
             }
         }
     }
