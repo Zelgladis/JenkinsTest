@@ -400,7 +400,7 @@ def folders(prefix){
 
     def sortedFolders = filteredFolders.sort { folder ->
     // Извлечение даты из формата release.22-дата
-        def datePart = originalString.length() >= 10 ? originalString[-16..-1] : originalString
+        def datePart = folder.length() >= 10 ? folder[-16..-1] : folder
         try {
                 new SimpleDateFormat("HH24-MI_dd-mm-yyyy").parse(datePart) // Преобразование даты для сортировки
             } catch (Exception e) {
