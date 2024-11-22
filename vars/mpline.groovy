@@ -383,11 +383,34 @@ def mymain(){
     }
 }
 
-def folders(){
+def folders(prefix){
     git_pull('main', 'https://github.com/Zelgladis/JenkinsTest.git')
-    def str = '23:22_23-11-2024'
-    def ttime = new SimpleDateFormat("HH:mm_dd-MM-yyyy").parse(str) // Преобразование даты для сортировки
-    echo "${ttime}"
+    //def str = '23-22_23-11-2024'
+    //def ttime = new SimpleDateFormat("HH-mm_dd-MM-yyyy").parse(str) // Преобразование даты для сортировки
+    def directoryPath = "./JenkinsTest"
+    def folderNames = new File(directoryPath).listFiles()
+        .findAll { it.isDirectory() } 
+        .collect { it.name }
+
+    def filteredFolders = folderNames.findAll { it.startsWith(prefix) }
+    if (filteredFolders.isEmpty()) {
+        println "Нет папок, соответствующих префиксу '${prefix}' в директории '${directoryPath}'"
+        return
+    }
+
+    def sortedFolders = filteredFolders.sort { folder ->
+    // Извлечение даты из формата release.22-дата
+        def datePart = originalString.length() >= 10 ? originalString[-16..-1] : originalString
+        try {
+                new SimpleDateFormat("HH24-MI_dd-mm-yyyy").parse(datePart) // Преобразование даты для сортировки
+            } catch (Exception e) {
+                println "Ошибка при обработке даты в папке: ${folder}"
+                return new Date(0) // Устанавливаем минимальную дату в случае ошибки
+            }
+    }
+
+
+    println "$sortedFolders"
 }
 
 //"dd/MM/yyyy HH:mm:ss"
