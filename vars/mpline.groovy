@@ -389,8 +389,8 @@ def mkdirs(){
         mkdir -p release.22-21-20_24-11-2024
         mkdir -p release.22-22-20_24-11-2024
         mkdir -p release.22-23-21_24-11-2024
-        mkdir -p release.22-24-20_24-11-2024
-        mkdir -p release.22-25-20_24-11-2024
+        mkdir -p release.22-23-20_24-11-2024
+        mkdir -p release.22-22-20_24-11-2024
         mkdir -p release.23-22-20_24-11-2024
         mkdir -p release.23-21-21_24-11-2024
         mkdir -p release.23-21-20_24-11-2024
