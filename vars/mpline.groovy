@@ -408,8 +408,9 @@ def folders(prefix){
     def dateFormat = new SimpleDateFormat("HH-mm_dd-MM-yyyy")
 
     // Получение списка папок из директории
-    def folderNames = new File("$directoryPath/").listFiles()
-        .findAll { it.isDirectory() && it.name.startsWith(releasePrefix) }
+    def folderNames = new File(directoryPath).listFiles()
+        .findAll { it.isDirectory() } // Оставляем только папки
+        .findAll { it.name.startsWith(releasePrefix) } // Фильтруем по префиксу
         .collect { it.name } // Берем только имена папок
 
     // Список для хранения пар: папка и распарсенная дата
