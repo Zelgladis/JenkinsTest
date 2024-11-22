@@ -444,6 +444,8 @@ def folders2(prefix){
         //def str = '23-22_23-11-2024'
     //def ttime = new SimpleDateFormat("HH-mm_dd-MM-yyyy").parse(str) // Преобразование даты для сортировки
     def directoryPath = "${workspace}"
+    def folderу = new File(directoryPath)
+    println "$folderу"
     def folderNames = new File(directoryPath).listFiles()
         .findAll { it.isDirectory() } 
         .collect { it.name }
