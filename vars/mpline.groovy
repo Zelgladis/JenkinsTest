@@ -448,6 +448,10 @@ def folders2(prefix){
     def folderNames = new File('./').listFiles()
         .collect { it.name }
 
+
+    println "$folderNames"
+
+
     def filteredFolders = folderNames.findAll { it.startsWith(prefix) }
     if (filteredFolders.isEmpty()) {
         println "Нет папок, соответствующих префиксу '${prefix}' в директории '${directoryPath}'"
