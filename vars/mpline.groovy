@@ -405,20 +405,6 @@ def folders(prefix){
     sh "ls ${directoryPath}"
     // Указанный релиз (начало имени папки)
     def releasePrefix = "release.22"
-
-    // Регулярное выражение для извлечения даты
-    def dateRegex = /(\d{2}-\d{2}_\d{2}-\d{2}-\d{4})/
-
-    // Формат даты
-    def dateFormat = new SimpleDateFormat("HH-mm_dd-MM-yyyy")
-
-    def fileList = new File(directoryPath).listFiles()
-    if (fileList == null) {
-        println "Директория '${directoryPath}' не существует или недоступна."
-    } else {
-        println "Найдено файлов/папок: ${fileList.size()}"
-        fileList.each { println it.name + (it.isDirectory() ? " (Папка)" : " (Файл)") }
-    }
     sh"""#!/bin/bash
 
         # Путь к директории
@@ -451,40 +437,6 @@ def folders(prefix){
             echo "Не найдено папок с префиксом \${RELEASE_PREFIX} в директории \${DIRECTORY}."
         fi
     """
-
-    // Получение списка папок из директории
-    def folderNames = new File(directoryPath).listFiles()
-        .findAll { it.isDirectory() } // Оставляем только папки
-        .findAll { it.name.startsWith(releasePrefix) } // Фильтруем по префиксу
-        .collect { it.name } // Берем только имена папок
-    def fs = new File(directoryPath).listFiles().collect { it.name }
-
-    // Список для хранения пар: папка и распарсенная дата
-    def parsedFolders = []
-    println "${folderNames}"
-    println "${fs}"
-
-    folderNames.each { folder ->
-        def matcher = (folder =~ dateRegex)
-        if (matcher.find()) {
-            def dateString = matcher[0] // Извлеченная строка с датой
-            try {
-                def date = dateFormat.parse(dateString) // Парсинг даты
-                parsedFolders << [folder: folder, date: date] // Добавляем папку и дату в список
-            } catch (Exception e) {
-                println "Ошибка парсинга даты в папке: ${folder}"
-            }
-        }
-    }
-
-    // Сортировка папок по дате
-    parsedFolders.sort { it.date }
-
-    // Выбираем папку с самой последней датой
-    def latestFolder = parsedFolders[-1]?.folder
-
-    // Результат
-    println "Самая последняя папка для релиза '${releasePrefix}': ${latestFolder}"
 }
 
 def folders2(prefix){
