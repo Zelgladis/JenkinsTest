@@ -407,15 +407,25 @@ def folders(prefix){
     // Формат даты
     def dateFormat = new SimpleDateFormat("HH-mm_dd-MM-yyyy")
 
+    def fileList = new File(directoryPath).listFiles()
+    if (fileList == null) {
+        println "Директория '${directoryPath}' не существует или недоступна."
+    } else {
+        println "Найдено файлов/папок: ${fileList.size()}"
+        fileList.each { println it.name + (it.isDirectory() ? " (Папка)" : " (Файл)") }
+    }
+
     // Получение списка папок из директории
     def folderNames = new File(directoryPath).listFiles()
         .findAll { it.isDirectory() } // Оставляем только папки
         .findAll { it.name.startsWith(releasePrefix) } // Фильтруем по префиксу
         .collect { it.name } // Берем только имена папок
+    def fs = new File(directoryPath).listFiles().collect { it.name }
 
     // Список для хранения пар: папка и распарсенная дата
     def parsedFolders = []
     println "${folderNames}"
+    println "${fs}"
 
     folderNames.each { folder ->
         def matcher = (folder =~ dateRegex)
