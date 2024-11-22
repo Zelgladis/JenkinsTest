@@ -385,32 +385,47 @@ def mymain(){
 
 def folders(prefix){
     git_pull('main', 'https://github.com/Zelgladis/JenkinsTest.git')
-    //def str = '23-22_23-11-2024'
-    //def ttime = new SimpleDateFormat("HH-mm_dd-MM-yyyy").parse(str) // Преобразование даты для сортировки
+    // Путь к директории
     def directoryPath = "./JenkinsTest"
+
+    // Указанный релиз (начало имени папки)
+    def releasePrefix = "release.22"
+
+    // Регулярное выражение для извлечения даты
+    def dateRegex = /(\d{2}-\d{2}_\d{2}-\d{2}-\d{4})/
+
+    // Формат даты
+    def dateFormat = new SimpleDateFormat("HH-mm_dd-MM-yyyy")
+
+    // Получение списка папок из директории
     def folderNames = new File(directoryPath).listFiles()
-        .findAll { it.isDirectory() } 
-        .collect { it.name }
+        .findAll { it.isDirectory() && it.name.startsWith(releasePrefix) } // Фильтруем папки по префиксу
+        .collect { it.name } // Берем только имена папок
 
-    def filteredFolders = folderNames.findAll { it.startsWith(prefix) }
-    if (filteredFolders.isEmpty()) {
-        println "Нет папок, соответствующих префиксу '${prefix}' в директории '${directoryPath}'"
-        return
-    }
+    // Список для хранения пар: папка и распарсенная дата
+    def parsedFolders = []
 
-    def sortedFolders = filteredFolders.sort { folder ->
-    // Извлечение даты из формата release.22-дата
-        def datePart = folder.length() >= 10 ? folder[-16..-1] : folder
-        try {
-                new SimpleDateFormat("HH24-MI_dd-mm-yyyy").parse(datePart) // Преобразование даты для сортировки
+    folderNames.each { folder ->
+        def matcher = (folder =~ dateRegex)
+        if (matcher.find()) {
+            def dateString = matcher[0] // Извлеченная строка с датой
+            try {
+                def date = dateFormat.parse(dateString) // Парсинг даты
+                parsedFolders << [folder: folder, date: date] // Добавляем папку и дату в список
             } catch (Exception e) {
-                println "Ошибка при обработке даты в папке: ${folder}"
-                return new Date(0) // Устанавливаем минимальную дату в случае ошибки
+                println "Ошибка парсинга даты в папке: ${folder}"
             }
+        }
     }
 
+    // Сортировка папок по дате
+    parsedFolders.sort { it.date }
 
-    println "$sortedFolders"
+    // Выбираем папку с самой последней датой
+    def latestFolder = parsedFolders[-1]?.folder
+
+    // Результат
+    println "Самая последняя папка для релиза '${releasePrefix}': ${latestFolder}"
 }
 
 //"dd/MM/yyyy HH:mm:ss"
