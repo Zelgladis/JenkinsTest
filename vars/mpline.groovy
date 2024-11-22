@@ -414,6 +414,7 @@ def folders(prefix){
 
     // Список для хранения пар: папка и распарсенная дата
     def parsedFolders = []
+    println "${folderNames}"
 
     folderNames.each { folder ->
         def matcher = (folder =~ dateRegex)
