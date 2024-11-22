@@ -397,7 +397,7 @@ def folders(prefix){
     mkdirs()
     // Путь к директории
     def directoryPath = "${workspace}"
-    sh 'ls'
+    sh "ls ${directoryPath}"
     // Указанный релиз (начало имени папки)
     def releasePrefix = "release.22"
 
