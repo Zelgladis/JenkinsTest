@@ -385,11 +385,11 @@ def mymain(){
 
 def mkdirs(){
     sh"""
-        mkdir release.21-23-20_24-11-2024
-        mkdir release.22-20-20_24-11-2024
-        mkdir release.23-22-20_24-11-2024
-        mkdir release.23-21-21_24-11-2024
-        mkdir release.23-21-20_24-11-2024
+        mkdir -p release.21-23-20_24-11-2024
+        mkdir -p release.22-20-20_24-11-2024
+        mkdir -p release.23-22-20_24-11-2024
+        mkdir -p release.23-21-21_24-11-2024
+        mkdir -p release.23-21-20_24-11-2024
     """
 }
 
@@ -438,6 +438,7 @@ def folders(prefix){
 }
 
 def folders2(prefix){
+    mkdirs()
         //def str = '23-22_23-11-2024'
     //def ttime = new SimpleDateFormat("HH-mm_dd-MM-yyyy").parse(str) // Преобразование даты для сортировки
     def directoryPath = "./"
