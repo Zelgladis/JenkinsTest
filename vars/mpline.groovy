@@ -387,7 +387,6 @@ def folders(prefix){
     git_pull('main', 'https://github.com/Zelgladis/JenkinsTest.git')
     // Путь к директории
     def directoryPath = "./JenkinsTest"
-
     // Указанный релиз (начало имени папки)
     def releasePrefix = "release.22"
 
@@ -426,6 +425,36 @@ def folders(prefix){
 
     // Результат
     println "Самая последняя папка для релиза '${releasePrefix}': ${latestFolder}"
+}
+
+def folders2(prefix){
+    git_pull('main', 'https://github.com/Zelgladis/JenkinsTest.git')
+        //def str = '23-22_23-11-2024'
+    //def ttime = new SimpleDateFormat("HH-mm_dd-MM-yyyy").parse(str) // Преобразование даты для сортировки
+    def directoryPath = "./JenkinsTest"
+    def folderNames = new File(directoryPath).listFiles()
+        .findAll { it.isDirectory() } 
+        .collect { it.name }
+
+    def filteredFolders = folderNames.findAll { it.startsWith(prefix) }
+    if (filteredFolders.isEmpty()) {
+        println "Нет папок, соответствующих префиксу '${prefix}' в директории '${directoryPath}'"
+        return
+    }
+
+    def sortedFolders = filteredFolders.sort { folder ->
+    // Извлечение даты из формата release.22-дата
+        def datePart = folder.length() >= 10 ? folder[-16..-1] : folder
+        try {
+                new SimpleDateFormat("HH24-MI_dd-mm-yyyy").parse(datePart) // Преобразование даты для сортировки
+            } catch (Exception e) {
+                println "Ошибка при обработке даты в папке: ${folder}"
+                return new Date(0) // Устанавливаем минимальную дату в случае ошибки
+            }
+    }
+    def latestFolder = sortedFolders[-1]
+
+    println "$latestFolder"
 }
 
 //"dd/MM/yyyy HH:mm:ss"
