@@ -445,6 +445,7 @@ def folders2(prefix){
     def sortedFolders = filteredFolders.sort { folder ->
     // Извлечение даты из формата release.22-дата
         def datePart = folder.length() >= 10 ? folder[-16..-1] : folder
+        echo "$datePart"
         try {
                 new SimpleDateFormat("HH24-MI_dd-mm-yyyy").parse(datePart) // Преобразование даты для сортировки
             } catch (Exception e) {
