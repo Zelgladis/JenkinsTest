@@ -396,7 +396,7 @@ def mkdirs(){
 def folders(prefix){
     mkdirs()
     // Путь к директории
-    def directoryPath = "./"
+    def directoryPath = "${workspace}"
     sh 'ls'
     // Указанный релиз (начало имени папки)
     def releasePrefix = "release.22"
@@ -409,7 +409,7 @@ def folders(prefix){
 
     // Получение списка папок из директории
     def folderNames = new File(directoryPath).listFiles()
-        .findAll { it.isDirectory() } // Фильтруем папки по префиксу
+        .findAll { it.isDirectory() && it.name.startsWith(releasePrefix) } // Фильтруем папки по префиксу
         .collect { it.name } // Берем только имена папок
 
     // Список для хранения пар: папка и распарсенная дата
@@ -443,7 +443,7 @@ def folders2(prefix){
     mkdirs()
         //def str = '23-22_23-11-2024'
     //def ttime = new SimpleDateFormat("HH-mm_dd-MM-yyyy").parse(str) // Преобразование даты для сортировки
-    def directoryPath = "./"
+    def directoryPath = "${workspace}"
     def folderNames = new File(directoryPath).listFiles()
         .findAll { it.isDirectory() } 
         .collect { it.name }
