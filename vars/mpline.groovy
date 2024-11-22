@@ -417,33 +417,33 @@ def folders(prefix){
     sh"""#!/bin/bash
 
         # Путь к директории
-        DIRECTORY="\$directoryPath"
+        DIRECTORY="$directoryPath"
 
         # Префикс релиза
-        RELEASE_PREFIX="\$releasePrefix"
+        RELEASE_PREFIX="$releasePrefix"
 
         # Проверяем, существует ли директория
-        if [[ ! -d "$DIRECTORY" ]]; then
-            echo "Директория $DIRECTORY не существует!"
+        if [[ ! -d "\$DIRECTORY" ]]; then
+            echo "Директория \$DIRECTORY не существует!"
             exit 1
         fi
 
         # Ищем папки с указанным префиксом и сортируем их по дате в названии
-        LATEST_FOLDER=$(find "$DIRECTORY" -type d -name "${RELEASE_PREFIX}*" | awk -F'[-_]' '
+        LATEST_FOLDER=\$(find "\$DIRECTORY" -type d -name "\${RELEASE_PREFIX}*" | awk -F'[-_]' '
         {
             # Извлекаем части названия: HH-mm_dd-MM-yyyy
-            split($NF, datetime, /[_-]/)
+            split(\$NF, datetime, /[_-]/)
             # Преобразуем в формат YYYYMMDDHHMM для сортировки
             date = datetime[3] datetime[4] datetime[2] datetime[1]
-            print date, $0
+            print date, \$0
         }
-        ' | sort -n | awk '{print $2}' | tail -n 1)
+        ' | sort -n | awk '{print \$2}' | tail -n 1)
 
         # Выводим результат
-        if [[ -n "$LATEST_FOLDER" ]]; then
-            echo "Самая последняя папка для релиза ${RELEASE_PREFIX}: $LATEST_FOLDER"
+        if [[ -n "\$LATEST_FOLDER" ]]; then
+            echo "Самая последняя папка для релиза \${RELEASE_PREFIX}: \$LATEST_FOLDER"
         else
-            echo "Не найдено папок с префиксом ${RELEASE_PREFIX} в директории ${DIRECTORY}."
+            echo "Не найдено папок с префиксом \${RELEASE_PREFIX} в директории \${DIRECTORY}."
         fi
     """
 
