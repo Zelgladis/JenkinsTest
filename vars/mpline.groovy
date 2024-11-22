@@ -445,8 +445,10 @@ def folders2(prefix){
     def directoryPath = "${workspace}"
     def folderу = new File(directoryPath)
     println "$folderу"
-    def folderNames = new File("./home/mio/OTB/jenkins/ssh_agent_folder/workspace/Tests/folder_date_finder2/").listFiles()
-        .collect { it.name }
+    def folderNames = sh(
+    script: "ls -d ${directoryPath}/*/",
+    returnStdout: true
+    ).trim().split('\n').collect { it.split('/').last() }
 
 
     println "$folderNames"
