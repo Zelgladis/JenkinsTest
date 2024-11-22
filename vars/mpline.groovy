@@ -398,6 +398,7 @@ def mkdirs(){
 }
 
 def folders(prefix){
+    cleanWs()
     mkdirs()
     // Путь к директории
     def directoryPath = "${workspace}"
