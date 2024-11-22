@@ -1,5 +1,5 @@
 // vars/mpline.groovy
-import groovy.transform.Field
+import java.text.SimpleDateFormat
 
 def call(args) {
     node(){
@@ -381,4 +381,10 @@ def mymain(){
         myArgs.put('123', '321')
         echo "${myArgs}"
     }
+}
+
+def folders(){
+    sh"""
+        ls
+    """
 }
