@@ -409,7 +409,7 @@ def folders(prefix){
 
     // Получение списка папок из директории
     def folderNames = new File(directoryPath).listFiles()
-        .findAll { it.isDirectory() && it.name.startsWith(releasePrefix) } // Фильтруем папки по префиксу
+        .findAll { it.isDirectory()  } // Фильтруем папки по префиксу
         .collect { it.name } // Берем только имена папок
 
     // Список для хранения пар: папка и распарсенная дата
