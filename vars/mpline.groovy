@@ -445,7 +445,7 @@ def folders2(prefix){
     def directoryPath = "${workspace}"
     def folderу = new File(directoryPath)
     println "$folderу"
-    def folderNames = new File('./').listFiles()
+    def folderNames = new File("$directoryPath/").listFiles()
         .collect { it.name }
 
 
