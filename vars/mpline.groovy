@@ -383,10 +383,20 @@ def mymain(){
     }
 }
 
+def mkdirs(){
+    sh"""
+        mkdir release.21-23-20_24-11-2024
+        mkdir release.22-20-20_24-11-2024
+        mkdir release.23-22-20_24-11-2024
+        mkdir release.23-21-21_24-11-2024
+        mkdir release.23-21-20_24-11-2024
+    """
+}
+
 def folders(prefix){
-    git_pull('main', 'https://github.com/Zelgladis/JenkinsTestGit.git')
+    mkdirs()
     // Путь к директории
-    def directoryPath = "./JenkinsTestGit"
+    def directoryPath = "./"
     // Указанный релиз (начало имени папки)
     def releasePrefix = "release.22"
 
@@ -428,10 +438,9 @@ def folders(prefix){
 }
 
 def folders2(prefix){
-    git_pull('main', 'https://github.com/Zelgladis/JenkinsTestGit.git')
         //def str = '23-22_23-11-2024'
     //def ttime = new SimpleDateFormat("HH-mm_dd-MM-yyyy").parse(str) // Преобразование даты для сортировки
-    def directoryPath = "./JenkinsTestGit"
+    def directoryPath = "./"
     def folderNames = new File(directoryPath).listFiles()
         .findAll { it.isDirectory() } 
         .collect { it.name }
