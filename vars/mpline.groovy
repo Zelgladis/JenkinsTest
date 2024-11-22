@@ -386,6 +386,6 @@ def mymain(){
 def folders(){
     git_pull('main', 'https://github.com/Zelgladis/JenkinsTest.git')
     def str = '23:22_23-11-2024'
-    def ttime new SimpleDateFormat("HH24:MI_dd-mm-yyyy").parse(str) // Преобразование даты для сортировки
+    def ttime = new SimpleDateFormat("HH24:MI_dd-mm-yyyy").parse(str) // Преобразование даты для сортировки
     echo "${ttime}"
 }
