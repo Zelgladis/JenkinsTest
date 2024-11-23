@@ -443,8 +443,6 @@ def folders2(prefix){
     cleanWs()
     mkdirs()
     def directoryPath = "${workspace}"
-    def folderу = new File(directoryPath)
-    println "$folderу"
     def folderNames = sh(
     script: "ls -d ${directoryPath}/*/",
     returnStdout: true
