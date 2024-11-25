@@ -383,6 +383,19 @@ def mymain(){
     }
 }
 
+def input_choice(){
+    stage('des'){
+        def choices = ['Oleg', 'Ne Oleg']
+        def selectedOption = input message: 'Выберите опцию', parameters: [
+            choice(name: 'DynamicChoice', choices: choices, description: 'Select a dynamic option')
+        ]
+        
+        echo selectedOption
+}
+
+
+}
+
 def mkdirs(){
     sh"""
         mkdir -p release.21-23-20_24-11-2024
