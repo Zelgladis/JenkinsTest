@@ -391,6 +391,7 @@ def input_choice(){
         ]
         
         echo selectedOption
+    }
 }
 
 
