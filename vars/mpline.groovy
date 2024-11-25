@@ -395,8 +395,6 @@ def input_choice(){
 }
 
 
-}
-
 def mkdirs(){
     sh"""
         mkdir -p release.21-23-20_24-11-2024
