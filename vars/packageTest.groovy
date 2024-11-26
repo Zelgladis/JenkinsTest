@@ -12,5 +12,7 @@ def call() {
         myzal()
         fff()
     }
-    echo come.VarsM.ms
+    come.VarsM.ms.each{ v->
+        echo v
+    }
 }
