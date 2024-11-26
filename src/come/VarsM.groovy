@@ -14,7 +14,8 @@ class VarsM {
         'ms3',
         'ms4',
         'ms5',
-        'ms6'
+        'ms6',
+        'ms0'
     ]
 
     VarsM(){

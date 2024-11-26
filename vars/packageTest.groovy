@@ -3,7 +3,7 @@ import fistry.*
 
 def call() {
     def err = false
-    if(!params.MICROSERVICE_NAME){
+    if(!params.MICROSERVICE_NAME || params.MICROSERVICE_NAME != come.VarsM.ms){
         err = true
     }
     properties([
@@ -13,7 +13,7 @@ def call() {
             ])
         ])
     if(err){
-        error('MICROSERVICE_NAME created')
+        error('список MICROSERVICE_NAME создан/пересоздан')
     }
     mypr = new come.mypro()
     myzal = new come.zaluna()
