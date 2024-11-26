@@ -486,4 +486,10 @@ def folders2(prefix){
     println "$latestFolder"
 }
 
+def env_test_2(){
+    sh"""
+        echo "$VERY_VAR"
+    """
+}
+
 //"dd/MM/yyyy HH:mm:ss"
