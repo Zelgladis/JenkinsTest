@@ -8,6 +8,10 @@ class VarsM {
     static String closeCol = '\u001B[0m'
     static String greeting = 'Hello World!'
 
+    VarsM(){
+        this.tea = 'test'
+    }
+
     static void printAsd() {
         echo greet
     }
