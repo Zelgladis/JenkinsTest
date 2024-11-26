@@ -8,6 +8,14 @@ class VarsM {
     static String closeCol = '\u001B[0m'
     static String greeting = 'Hello World!'
     public String tea
+    static List ms = [
+        'ms1',
+        'ms2',
+        'ms3',
+        'ms4',
+        'ms5',
+        'ms6'
+    ]
 
     VarsM(){
         this.tea = 'test'
