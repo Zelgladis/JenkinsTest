@@ -7,6 +7,7 @@ class VarsM {
     static String yellowSt = '\u001B[32m'
     static String closeCol = '\u001B[0m'
     static String greeting = 'Hello World!'
+    public String tea
 
     VarsM(){
         this.tea = 'test'
