@@ -3,18 +3,12 @@ import fistry.*
 
 def call() {
     def err = false
-    if(!params.MICROSERVICE_NAME || params.MICROSERVICE_NAME != come.VarsM.ms){
-        err = true
-    }
     properties([
             parameters([choice(name: 'MICROSERVICE_NAME', 
                 choices: come.VarsM.ms,
                 description: 'description')
             ])
         ])
-    if(err){
-        error('список MICROSERVICE_NAME создан/пересоздан')
-    }
     mypr = new come.mypro()
     myzal = new come.zaluna()
     fff = new fistry.omg()
