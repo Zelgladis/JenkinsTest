@@ -5,7 +5,7 @@ def call() {
     mypr = new come.mypro()
     myzal = new come.zaluna()
     fff = new fistry.omg()
-    varsm = new come.VarsM.()
+    varsm = new come.VarsM()
     stage('TestPackage') {
         mypr.mypro()
         mypr.ddd()
