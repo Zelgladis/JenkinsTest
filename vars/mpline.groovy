@@ -488,7 +488,7 @@ def folders2(prefix){
 
 def env_test_2(){
     sh"""
-        echo "$VERY_VAR"
+        echo "\$VERY_VAR"
     """
 }
 
