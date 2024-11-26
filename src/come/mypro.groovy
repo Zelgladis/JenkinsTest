@@ -1,6 +1,6 @@
 package come
 
-def greet = 'Hello!'
+greet = 'Hello!'
 
 def mypro(){
     echo 'Hello World! mypro'
