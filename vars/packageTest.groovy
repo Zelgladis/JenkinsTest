@@ -11,4 +11,5 @@ def call() {
         myzal()
         fff()
     }
+    echo mypr.greet
 }
