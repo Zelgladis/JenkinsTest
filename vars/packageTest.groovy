@@ -5,12 +5,13 @@ def call() {
     mypr = new come.mypro()
     myzal = new come.zaluna()
     fff = new fistry.omg()
-    //varsm = new varsM()
+    varsm = new come.varsM()
     stage('TestPackage') {
         mypr.mypro()
         mypr.ddd()
         myzal()
         fff()
     }
-    echo varsM.greet
+    echo come.varsM.greet
+    echo varsm.greet
 }
