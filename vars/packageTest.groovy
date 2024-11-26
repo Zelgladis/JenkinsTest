@@ -3,7 +3,7 @@ import fistry.*
 
 def call() {
     def err = false
-    if(params.MICROSERVICE_NAME == ''){
+    if(!params.MICROSERVICE_NAME){
         err = true
     }
     properties([
