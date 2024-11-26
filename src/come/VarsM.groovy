@@ -16,7 +16,7 @@ class VarsM {
         'ms5',
         'ms6',
         'ms0'
-    ]
+    ].sort()
 
     VarsM(){
         this.tea = 'test'
