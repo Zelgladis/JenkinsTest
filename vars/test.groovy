@@ -14,8 +14,7 @@ def call() {
 }
 
 def test() {
-  def str = 'DEV ST'
-  def konf_lst = str.split(' ')
+  def konf_lst = params.CONTUR.split(' ')
   def depl = ''
   node(){
     for (i in konf_lst) {
