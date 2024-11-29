@@ -18,7 +18,7 @@ def test() {
   def konf_lst = str.split(' ')
   def depl = ''
   for (i in konf_lst) {
-    depl = VarsM[$i]
+    depl = VarsM[i]
     stage("deploy to $depl"){
         println "Iteration: $depl"
     }
