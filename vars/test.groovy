@@ -17,10 +17,12 @@ def test() {
   def konf_lst = params.CONTUR.split(' ')
   def depl = ''
   node(){
-    for (i in konf_lst) {
-      depl = VarsM.dice[i]
-      stage("deploy to $depl"){
-          println "Iteration: $depl"
+    if(params.DEPLOY_MS){
+      for (i in konf_lst) {
+        depl = VarsM.dice[i]
+        stage("deploy to $depl"){
+            println "Iteration: $depl"
+        }
       }
     }
   }
