@@ -1,4 +1,5 @@
 class MyClass {
+  static Map dice = ['DEV': '123', 'ST': 'ASD']
   String var = 'TestString'
   String name = 'Sergey'
   String yami

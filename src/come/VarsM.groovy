@@ -1,6 +1,7 @@
 package come
 
 class VarsM {
+    static Map dice = ['DEV': '123', 'ST': 'ASD']
     static String greet = 'Hello'
     static String greenSt = '\u001B[32m'
     static String redSt = '\u001B[31m'
