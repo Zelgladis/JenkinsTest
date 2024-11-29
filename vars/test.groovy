@@ -15,13 +15,14 @@ def call() {
 
 def test() {
   def str = 'DEV ST'
-  def konf_lst = str.split(' ')
-  def depl = ''
-  for (i in konf_lst) {
-    depl = VarsM.dice[i]
-    stage("deploy to $depl"){
-        println "Iteration: $depl"
+  node(){
+    def konf_lst = str.split(' ')
+    def depl = ''
+    for (i in konf_lst) {
+      depl = VarsM.dice[i]
+      stage("deploy to $depl"){
+          println "Iteration: $depl"
+      }
     }
   }
-  
 }
