@@ -9,6 +9,7 @@ pipelines:
     CONTOUR: ./inventory/K4/cnts-rqtx-notification-manager
 - name: clean_it
   parameters: 
+    pom_path: 'some path'
     clean_only: true
     target_list:
       - 'asd'
