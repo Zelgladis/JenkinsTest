@@ -25,7 +25,6 @@ pipelineJob(yamlData.pipelines[__c__].name) {
                 selectedValue: 'NONE',
                 useRepository: "ssh://git@github.com/${yamlData.pipelines[__c__].parameters.globalSystem}/${yamlData.pipelines[__c__].parameters.GitName}.git"
             )
-        )
             booleanParam('Move_Distr', false, 'Перемещение дистрибутива для перекладки в CDL')
             booleanParam('Deploy_to_dev', false, 'Установка пакета на DSO')
             if (yamlData.pipelines[__c__].parameters.Platform == 'OC') {
