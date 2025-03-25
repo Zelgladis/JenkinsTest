@@ -1,8 +1,8 @@
 def call(){
     stage('dsl_runer'){
         def yamlData = readYaml text: libraryResource('Service.yaml')
-        def final_content = 'import funcutil.ret_params' +\
-                            'ret = new ret_params()' +\
+        def final_content = 'import funcutil.ret_params\n' +\
+                            'ret = new ret_params()\n' +\
                             'def yamlData = yamlData\n' + \
                             'def spaces = "\\n   "\n'
         def folders = []
