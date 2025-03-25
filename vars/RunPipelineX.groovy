@@ -22,7 +22,9 @@ def call(Map args){
             params.each { para ->
                 echo "$para"
             }
-            echo args.target_list
+            args.target_list.each { trg ->
+                echo "$trg"
+            }
         }
     }
     
