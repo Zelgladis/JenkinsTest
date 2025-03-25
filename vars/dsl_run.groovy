@@ -1,7 +1,9 @@
 def call(){
     stage('dsl_runer'){
         def yamlData = readYaml text: libraryResource('Service.yaml')
-        def final_content = 'def yamlData = yamlData\n' + \
+        def final_content = 'import funcutil.ret_params' +\
+                            'ret = new ret_params()' +\
+                            'def yamlData = yamlData\n' + \
                             'def spaces = "\\n   "\n'
         def folders = []
         yamlData.pipelines.each { pipeline ->
@@ -38,7 +40,7 @@ def call(){
         //final_content = final_content + "folder('${builded_path}'){}\n"
         jobContent = libraryResource('BuildProc_2.groovy')
         for(int i=0; i < yamlData.pipelines.size(); i++){
-            final_content = final_content + "\n" +(jobContent.replace("[c]", "[${i}]"))
+            final_content = final_content + "\n" +(jobContent.replace("__c__", "${i}"))
         }
         //printl final_content
         writeFile(file: "BuildProc_2.groovy", text: "${final_content}")
