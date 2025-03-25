@@ -1,7 +1,7 @@
 def call(){
     stage('dsl_runer'){
         def yamlData = readYaml text: libraryResource('Service.yaml')
-        def final_content = "@Library('lab') _\n" +\
+        def final_content = "" +\
                             'ret = new ret_params()\n' +\
                             'def yamlData = yamlData\n' + \
                             'def spaces = "\\n   "\n'
