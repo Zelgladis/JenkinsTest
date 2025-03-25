@@ -42,7 +42,7 @@ def call(){
         for(int i=0; i < yamlData.pipelines.size(); i++){
             final_content = final_content + "\n" +(jobContent.replace("__c__", "${i}"))
         }
-        printl final_content
+        println final_content
         writeFile(file: "BuildProc_2.groovy", text: "${final_content}")
 //         jobDsl targets: "BuildProc_2.groovy",
 //                 lookupStrategy: 'SEED_JOB',
