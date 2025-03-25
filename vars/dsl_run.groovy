@@ -1,7 +1,7 @@
 def call(){
     stage('dsl_runer'){
         def yamlData = readYaml text: libraryResource('Service.yaml')
-        def final_content = "" +\
+        def final_content = "@Library('lab') _\n" +\
                             'ret = new ret_params()\n' +\
                             'def yamlData = yamlData\n' + \
                             'def spaces = "\\n   "\n'
@@ -44,13 +44,13 @@ def call(){
         }
         printl final_content
         writeFile(file: "BuildProc_2.groovy", text: "${final_content}")
-        jobDsl targets: "BuildProc_2.groovy",
-                lookupStrategy: 'SEED_JOB',
-                ignoreExisting: false,
-                removedJobAction: "DELETE",
-                additionalParameters: [
-                        yamlData: yamlData,
-                ],
-                sandbox: true
+//         jobDsl targets: "BuildProc_2.groovy",
+//                 lookupStrategy: 'SEED_JOB',
+//                 ignoreExisting: false,
+//                 removedJobAction: "DELETE",
+//                 additionalParameters: [
+//                         yamlData: yamlData,
+//                 ],
+//                 sandbox: true
     }
 }
