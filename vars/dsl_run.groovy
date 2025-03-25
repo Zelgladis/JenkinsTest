@@ -1,7 +1,7 @@
 def call(){
     stage('dsl_runer'){
         def yamlData = readYaml text: libraryResource('Service.yaml')
-        def final_content = '@Library('lab') _\n' +\
+        def final_content = "@Library('lab') _\n" +\
                             'ret = new ret_params()\n' +\
                             'def yamlData = yamlData\n' + \
                             'def spaces = "\\n   "\n'
@@ -42,7 +42,7 @@ def call(){
         for(int i=0; i < yamlData.pipelines.size(); i++){
             final_content = final_content + "\n" +(jobContent.replace("__c__", "${i}"))
         }
-        //printl final_content
+        printl final_content
         writeFile(file: "BuildProc_2.groovy", text: "${final_content}")
         jobDsl targets: "BuildProc_2.groovy",
                 lookupStrategy: 'SEED_JOB',
