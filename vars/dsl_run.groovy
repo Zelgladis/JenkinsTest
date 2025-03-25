@@ -44,13 +44,13 @@ def call(){
         }
         println final_content
         writeFile(file: "BuildProc_2.groovy", text: "${final_content}")
-//         jobDsl targets: "BuildProc_2.groovy",
-//                 lookupStrategy: 'SEED_JOB',
-//                 ignoreExisting: false,
-//                 removedJobAction: "DELETE",
-//                 additionalParameters: [
-//                         yamlData: yamlData,
-//                 ],
-//                 sandbox: true
+        jobDsl targets: "BuildProc_2.groovy",
+                lookupStrategy: 'SEED_JOB',
+                ignoreExisting: false,
+                removedJobAction: "DELETE",
+                additionalParameters: [
+                        yamlData: yamlData,
+                ],
+                sandbox: true
     }
 }
