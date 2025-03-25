@@ -1,6 +1,6 @@
 package funcutil
 
-def ms_build(map yamlData, int __c__){
+def ms_build(Map yamlData, int __c__){
     def lst_params = []
     //nonStoredPasswordParam('vault_password', 'Пароль для дешифровки')
     if (yamlData.pipelines[__c__].dep_key == 'true') {
