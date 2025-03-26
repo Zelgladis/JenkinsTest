@@ -13,16 +13,16 @@ pipelineJob(yamlData.pipelines[__c__].name) {
             stringParam('VersionNupkg', '2.0.', 'Версия пакетов')
         }else {
             gitParameter{
-                     branch: ''
-                     branchFilter: 'origin/(.*)'
-                     defaultValue: 'master'
-                     description: ''
-                     name: 'BRANCH'
-                     quickFilterEnabled: false
-                     selectedValue: 'NONE'
-                     sortMode: 'NONE'
-                     tagFilter: '*'
-                     type: 'PT_BRANCH'
+                     branch: '',
+                     branchFilter: 'origin/(.*)',
+                     defaultValue: 'master',
+                     description: '',
+                     name: 'BRANCH',
+                     quickFilterEnabled: false,
+                     selectedValue: 'NONE',
+                     sortMode: 'NONE',
+                     tagFilter: '*',
+                     type: 'PT_BRANCH',
                      useRepository: "ssh://git@github.com/${yamlData.pipelines[__c__].parameters.globalSystem}/${yamlData.pipelines[__c__].parameters.GitName}.git"
             }
             booleanParam('Move_Distr', false, 'Перемещение дистрибутива для перекладки в CDL')
