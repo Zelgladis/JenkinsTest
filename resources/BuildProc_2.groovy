@@ -12,20 +12,6 @@ pipelineJob(yamlData.pipelines[__c__].name) {
     if (yamlData.pipelines[__c__].parameters.mvncommand == 'dotnet nupkg') {
         lst_params.add(stringParam('VersionNupkg', '2.0.', 'Версия пакетов'))
     }else {
-        lst_params.add(gitParameter {
-             name('BRANCH_NAME')
-             branch('main')
-             description('Необходимо выбрать ветку для сборки')
-             tagFilter('*')
-             type('BRANCH_TAG')
-             defaultValue('main')
-             quickFilterEnabled(true)
-             branchFilter('origin/(.*)')
-             sortMode('NONE')
-             selectedValue('NONE')
-             useRepository("ssh://git@github.com/${yamlData.pipelines[c].parameters.globalSystem}/${yamlData.pipelines[c].parameters.GitName}.git")
-         }
-    )
         lst_params.add(booleanParam('Move_Distr', false, 'Перемещение дистрибутива для перекладки в CDL'))
         lst_params.add(booleanParam('Deploy_to_dev', false, 'Установка пакета на DSO'))
         if (yamlData.pipelines[__c__].parameters.Platform == 'OC') {
