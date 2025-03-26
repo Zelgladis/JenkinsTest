@@ -12,7 +12,7 @@ pipelineJob(yamlData.pipelines[__c__].name) {
         if (yamlData.pipelines[__c__].parameters.mvncommand == 'dotnet nupkg') {
             stringParam('VersionNupkg', '2.0.', 'Версия пакетов')
         }else {
-            gitParameter([
+            gitParam([
                 name: 'BRANCH_NAME',
                 branch: 'main',
                 description: 'Необходимо выбрать ветку для сборки',
