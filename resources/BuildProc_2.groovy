@@ -1,5 +1,6 @@
 pipelineJob(yamlData.pipelines[__c__].name) {
     if(yamlData.pipelines[__c__].parameters.clean_only != true){
+      properties([
       parameters {[
         if (yamlData.pipelines[__c__].dep_key == 'true') {
         //credentialsParam('DEPLOY_KEY') {
@@ -34,6 +35,7 @@ pipelineJob(yamlData.pipelines[__c__].name) {
             booleanParam('Debug', false, 'Включение Debug')
         }
         booleanParam('test', true, 'test')
+      ]}
       ]}
     }
     definition {
