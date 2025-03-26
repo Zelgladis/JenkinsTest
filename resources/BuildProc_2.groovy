@@ -13,7 +13,6 @@ pipelineJob(yamlData.pipelines[__c__].name) {
             stringParam('VersionNupkg', '2.0.', 'Версия пакетов')
         }else {
             gitParameter{
-                     name: 'asdf'
                      branch: ''
                      branchFilter: 'origin/(.*)'
                      defaultValue: 'master'
@@ -24,6 +23,7 @@ pipelineJob(yamlData.pipelines[__c__].name) {
                      sortMode: 'NONE'
                      tagFilter: '*'
                      type: 'PT_BRANCH'
+                     useRepository: "ssh://git@github.com/${yamlData.pipelines[__c__].parameters.globalSystem}/${yamlData.pipelines[__c__].parameters.GitName}.git"
             }
             booleanParam('Move_Distr', false, 'Перемещение дистрибутива для перекладки в CDL')
             booleanParam('Deploy_to_dev', false, 'Установка пакета на DSO')
