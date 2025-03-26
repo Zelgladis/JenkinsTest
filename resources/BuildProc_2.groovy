@@ -36,7 +36,7 @@ pipelineJob(yamlData.pipelines[__c__].name) {
         }
         booleanParam('test', true, 'test')
       ]}
-      ]}
+      ])
     }
     definition {
         cps {
