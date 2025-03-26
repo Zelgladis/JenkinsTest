@@ -12,7 +12,7 @@ pipelineJob(yamlData.pipelines[__c__].name) {
         if (yamlData.pipelines[__c__].parameters.mvncommand == 'dotnet nupkg') {
             stringParam('VersionNupkg', '2.0.', 'Версия пакетов')
         }else {
-            gitParameter(branch: '',
+            gitParameter{branch: '',
                      branchFilter: 'origin/(.*)',
                      defaultValue: 'master',
                      description: '',
@@ -22,7 +22,7 @@ pipelineJob(yamlData.pipelines[__c__].name) {
                      sortMode: 'NONE',
                      tagFilter: '*',
                      type: 'PT_BRANCH'
-            )
+            }
             booleanParam('Move_Distr', false, 'Перемещение дистрибутива для перекладки в CDL')
             booleanParam('Deploy_to_dev', false, 'Установка пакета на DSO')
             if (yamlData.pipelines[__c__].parameters.Platform == 'OC') {
