@@ -36,7 +36,7 @@ pipelineJob(yamlData.pipelines[__c__].name) {
     }
     lst_params.add(booleanParam('test', true, 'test'))
 
-    parameters {lst_params as list}
+    parameters {lst_params as List}
     definition {
         cps {
             def var_block = "" + \
