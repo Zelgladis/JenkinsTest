@@ -20,7 +20,7 @@ pipelineJob(yamlData.pipelines[__c__].name) {
              tagFilter: '*',
              type: 'BRANCH_TAG',
              defaultValue: 'main',
-             quickFilterEnabled(true)
+             quickFilterEnabled: true,
              branchFilter: 'origin/(.*)',
              sortMode: 'NONE',
              selectedValue: 'NONE',
