@@ -14,6 +14,7 @@ def call() {
 }
 
 def test() {
+  text(name: 'MY_MULTI_STRING', defaultValue: 'Value1\nValue2\nValue3', description: 'Enter multiple strings separated by new lines')
   def konf_lst = params.CONTUR.split(' ')
   def depl = ''
   node(){

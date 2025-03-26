@@ -2,7 +2,9 @@ def call(){
     stage('dsl_runer'){
         def yamlData = readYaml text: libraryResource('Service.yaml')
         def final_content = 'def yamlData = yamlData\n' + \
-                            'def spaces = "\\n   "\n'
+                            'def spaces = "\\n   "\n' + \
+                            libraryResource('BuildUtilProc.groovy') + "\n"
+        
         def folders = []
         yamlData.pipelines.each { pipeline ->
             if (pipeline.name.contains('/')) {
