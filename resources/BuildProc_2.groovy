@@ -1,6 +1,6 @@
 pipelineJob(yamlData.pipelines[__c__].name) {
     if(yamlData.pipelines[__c__].parameters.clean_only != true){
-      parameters {
+      parameters {[
         if (yamlData.pipelines[__c__].dep_key == 'true') {
         //credentialsParam('DEPLOY_KEY') {
         //  type('org.jenkinsci.plugins.plaincredentials.impl.StringCredentialsImpl')
@@ -34,7 +34,7 @@ pipelineJob(yamlData.pipelines[__c__].name) {
             booleanParam('Debug', false, 'Включение Debug')
         }
         booleanParam('test', true, 'test')
-      }
+      ]}
     }
     definition {
         cps {
