@@ -4,7 +4,7 @@ pipelineJob('deployAll') {
             def var_block = ""
             // Получаем красивый паплайн
             def scriptContent = "@Library('lab') _\n" + \
-                "RunDeployAll()"
+                "runDeployAll()"
             script(scriptContent)
             sandbox(true)
         }
