@@ -42,7 +42,7 @@ def call(){
         //for(int i=0; i < yamlData1.pipelines.size(); i++){
         //    final_content = final_content + "\n" +(jobContent.replace("__c__", "${i}"))
         //}
-        def pipeGrp = yamlData1.collate(3)
+        def pipeGrp = yamlData1.pipelines.collate(3)
         def contentLst = []
         for(i=0; i < pipeGrp.size();i++){
             contentLst[i] = final_content
