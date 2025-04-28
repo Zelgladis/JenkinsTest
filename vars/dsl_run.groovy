@@ -49,6 +49,9 @@ def call(){
             for(ii=0; ii < pipeGrp[i].size(); ii++){
                 contentLst[i] += "\n" +(jobContent.replace("__c__", "${ii}"))
             }
+            pipeGrp[i] = [
+                'pipelines': pipeGrp[i]
+            ]
             println contentLst[i]
 
             writeFile(file: "BuildProc_2_${i}.groovy", text: "${contentLst[i]}")
