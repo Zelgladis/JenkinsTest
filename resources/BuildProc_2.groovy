@@ -39,15 +39,15 @@ pipelineJob(yamlData.pipelines[__c__].name) {
     definition {
         cps {
             def add_block = ''
-            if(! yamlData.pipelines[c].name.startsWith('Service-utils')){
-                if(yamlData.pipelines[c].parameters.gitName){
-                    add_block += "${spaces}gitName: '${yamlData.pipelines[c].parameters.gitName},\n"
+            if(! yamlData.pipelines[__c__].name.startsWith('Service-utils')){
+                if(yamlData.pipelines[__c__].parameters.gitName){
+                    add_block += "${spaces}gitName: '${yamlData.pipelines[__c__].parameters.gitName},\n"
                 }else{
-                    "${spaces}gitName: ${yamlData.pipelines[c].name.split('/')[-1]}"
+                    "${spaces}gitName: ${yamlData.pipelines[__c__].name.split('/')[-1]}"
                 }
             }else{
-                if(yamlData.pipelines[c].parameters.gitName){
-                    "${spaces}gitName: '${yamlData.pipelines[c].parameters.gitName}"
+                if(yamlData.pipelines[__c__].parameters.gitName){
+                    "${spaces}gitName: '${yamlData.pipelines[__c__].parameters.gitName}"
                 }
 
             }
