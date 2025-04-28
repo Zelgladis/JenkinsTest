@@ -60,7 +60,7 @@ def call(){
             jobDsl targets: "BuildProc_2_${i}.groovy",
                     lookupStrategy: 'SEED_JOB',
                     ignoreExisting: false,
-                    removedJobAction: "DELETE",
+                    removedJobAction: "IGNORE",
                     additionalParameters: [
                             yamlData: pipeGrp[i],
                     ],
