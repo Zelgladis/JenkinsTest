@@ -39,18 +39,27 @@ def call(){
         }
         //final_content = final_content + "folder('${builded_path}'){}\n"
         def jobContent = libraryResource('BuildProc_2.groovy')
-        for(int i=0; i < yamlData1.pipelines.size(); i++){
-            final_content = final_content + "\n" +(jobContent.replace("__c__", "${i}"))
+        //for(int i=0; i < yamlData1.pipelines.size(); i++){
+        //    final_content = final_content + "\n" +(jobContent.replace("__c__", "${i}"))
+        //}
+        def pipeGrp = yamlData1.collate(3)
+        def contentLst = []
+        for(i=0; i < pipeGrp.size();i++){
+            contentLst[i] = final_content
+            for(ii=0; ii < pipeGrp[i].size(); ii++){
+                contentLst[i] += "\n" +(jobContent.replace("__c__", "${ii}"))
+            }
+            println contentLst[i]
+
+            writeFile(file: "BuildProc_2_${i}.groovy", text: "${contentLst[i]}")
+            jobDsl targets: "BuildProc_2_${i}.groovy",
+                    lookupStrategy: 'SEED_JOB',
+                    ignoreExisting: false,
+                    removedJobAction: "DELETE",
+                    additionalParameters: [
+                            yamlData: pipeGrp[i],
+                    ],
+                    sandbox: true
         }
-        println final_content
-        writeFile(file: "BuildProc_2.groovy", text: "${final_content}")
-        jobDsl targets: "BuildProc_2.groovy",
-                lookupStrategy: 'SEED_JOB',
-                ignoreExisting: false,
-                removedJobAction: "DELETE",
-                additionalParameters: [
-                        yamlData: yamlData1,
-                ],
-                sandbox: true
     }
 }
