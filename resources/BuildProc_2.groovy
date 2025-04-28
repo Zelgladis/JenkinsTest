@@ -38,6 +38,19 @@ pipelineJob(yamlData.pipelines[__c__].name) {
      }
     definition {
         cps {
+            def add_block = ''
+            if(! yamlData.pipelines[c].name.startsWith('Service-utils')){
+                if(yamlData.pipelines[c].parameters.gitName){
+                    add_block += "${spaces}gitName: '${yamlData.pipelines[c].parameters.gitName},\n"
+                }else{
+                    "${spaces}gitName: ${yamlData.pipelines[c].name.split('/')[-1]}"
+                }
+            }else{
+                if(yamlData.pipelines[c].parameters.gitName){
+                    "${spaces}gitName: '${yamlData.pipelines[c].parameters.gitName}"
+                }
+
+            }
             def var_block = "" + \
                 "${(yamlData.pipelines[__c__].parameters.mono ? "${spaces}mono: '${yamlData.pipelines[__c__].parameters.mono}'," : "")}" + \
                 "${(yamlData.pipelines[__c__].parameters.mvncommand ? "${spaces}mvncommand: '${yamlData.pipelines[__c__].parameters.mvncommand}'," : "")}" + \

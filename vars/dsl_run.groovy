@@ -1,12 +1,12 @@
 def call(){
     stage('dsl_runer'){
-        def yamlData = readYaml text: libraryResource('Service.yaml')
-        def final_content = 'def yamlData = yamlData\n' + \
-                            'def spaces = "\\n   "\n' + \
+        def yamlData1 = readYaml text: libraryResource('Service.yaml')
+        def final_content = 'def yamlData = yamlData1\n' + \
+                            'spaces = "\\n   "\n' + \
                             libraryResource('BuildUtilProc.groovy') + "\n"
         
         def folders = []
-        yamlData.pipelines.each { pipeline ->
+        yamlData1.pipelines.each { pipeline ->
             if (pipeline.name.contains('/')) {
                 def bober = myUtils.rekurwa(pipeline.name)
                 def k8s_metka = pipeline.name.split('/')[1].toUpperCase()
@@ -39,7 +39,7 @@ def call(){
         }
         //final_content = final_content + "folder('${builded_path}'){}\n"
         def jobContent = libraryResource('BuildProc_2.groovy')
-        for(int i=0; i < yamlData.pipelines.size(); i++){
+        for(int i=0; i < yamlData1.pipelines.size(); i++){
             final_content = final_content + "\n" +(jobContent.replace("__c__", "${i}"))
         }
         println final_content
@@ -49,7 +49,7 @@ def call(){
                 ignoreExisting: false,
                 removedJobAction: "DELETE",
                 additionalParameters: [
-                        yamlData: yamlData,
+                        yamlData: yamlData1,
                 ],
                 sandbox: true
     }
