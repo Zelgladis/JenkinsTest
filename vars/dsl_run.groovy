@@ -53,7 +53,7 @@ def call(){
                 'pipelines': pipeGrp[i]
             ]
             println '-----------------------------------------------------------------------------------------------'
-            println contentLst[i]
+            //println contentLst[i]
             println '-----------------------------------------------------------------------------------------------'
 
             writeFile(file: "BuildProc_2_${i}.groovy", text: "${contentLst[i]}")
