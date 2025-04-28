@@ -65,6 +65,7 @@ def call(){
                             yamlData: pipeGrp[i],
                     ],
                     sandbox: true
+            break
         }
     }
 }
