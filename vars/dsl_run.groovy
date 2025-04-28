@@ -1,7 +1,7 @@
 def call(){
     stage('dsl_runer'){
         def yamlData1 = readYaml text: libraryResource('Service.yaml')
-        def final_content = 'def yamlData = yamlData1\n' + \
+        def final_content = 'yamlData = yamlData1\n' + \
                             'spaces = "\\n   "\n' + \
                             libraryResource('BuildUtilProc.groovy') + "\n"
         
