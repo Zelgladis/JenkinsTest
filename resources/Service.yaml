@@ -17,3 +17,6 @@ pipelines:
 - name: dslPipe/test3
   parameters:
     mvncommand: docker mvn
+- name: dslPipe/test4
+  parameters:
+    mvncommand: docker mvn
